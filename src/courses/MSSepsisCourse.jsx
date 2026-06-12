@@ -175,8 +175,8 @@ function MSSepsisCourse({ session, registered, onBack, onRegister, onGoHome }) {
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 7, marginBottom: 16 }}>
                       {m.sections.map(s => <div key={s.h} style={{ display: "flex", gap: 8, alignItems: "flex-start", padding: "6px 0", borderBottom: "1px solid #f8f8f8" }}><span style={{ color: m.color, fontWeight: 700, flexShrink: 0, fontSize: 12 }}>▸</span><span style={{ fontFamily: "'Source Sans 3',sans-serif", fontSize: 13, color: C.dark, lineHeight: 1.6 }}>{s.h.replace(/^[^\w\s]+\s*/, "")}</span></div>)}
                     </div>
-                    <button style={btn("primary", { padding: "8px 18px", fontSize: 13 })} onClick={e => { e.stopPropagation(); if (m.free || registered) { setReadMod(m); } else setPage("register"); }}>
-                      {m.free || registered ? "📖 Read Module" : "🎓 Enroll to Access"}
+                    <button style={btn("primary", { padding: "8px 18px", fontSize: 13 })} onClick={e => { e.stopPropagation(); if (m.free || registered || isAdmin()) { setReadMod(m); } else setPage("register"); }}>
+                      {m.free || registered || isAdmin() ? "📖 Read Module" : "🎓 Enroll to Access"}
                     </button>
                   </div>
                 )}
