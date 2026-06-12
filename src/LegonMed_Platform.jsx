@@ -149,6 +149,12 @@ const PILLARS=[
       {id:"amp",title:"Antimicrobial Pharmacology",sub:"Fighting Infection",status:"soon",icon:"\uD83E\uDDA0",dur:"12h",modules:5},
       {id:"cpk",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",status:"soon",icon:"\uD83D\uDCC8",dur:"10h",modules:4},
       {id:"tox",title:"Toxicology",sub:"When Drugs Harm",status:"soon",icon:"\u2620\uFE0F",dur:"10h",modules:4},
+      {id:"anp",title:"Autonomic Pharmacology",sub:"The Nervous System\u2019s Control Panel",status:"soon",icon:"\u26A1",dur:"10h",modules:4},
+      {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"soon",icon:"\uD83E\uDDEB",dur:"8h",modules:3},
+      {id:"iip",title:"Inflammo- & Immunopharmacology",sub:"Taming the Immune Response",status:"soon",icon:"\uD83D\uDEE1\uFE0F",dur:"10h",modules:4},
+      {id:"rp",title:"Respiratory Pharmacology",sub:"Drugs for Breath",status:"soon",icon:"\uD83C\uDF2C\uFE0F",dur:"8h",modules:3},
+      {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"soon",icon:"\uD83E\uDD60",dur:"8h",modules:3},
+      {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"soon",icon:"\u2697\uFE0F",dur:"10h",modules:4},
     ]},
     {name:"Advanced Pharmacology",icon:"\uD83D\uDD2C",courses:[
       {id:"dd",title:"Drug Discovery",sub:"From Lab to Lead",status:"soon",icon:"\uD83D\uDD2D",dur:"12h",modules:5},
