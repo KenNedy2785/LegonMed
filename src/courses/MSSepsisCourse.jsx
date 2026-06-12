@@ -1,6 +1,6 @@
 // Paste your MSSepsisCourse.jsx content here, then press Enter and Ctrl+D
 import { useState, useEffect } from 'react';
-import { C, RC, RL, btn, bdg, inp, UGLogo, DB } from '../shared.js';
+import { C, RC, RL, btn, bdg, inp, UGLogo, DB } from '../shared.jsx';
 import { Quiz, ModuleReader } from '../SharedUI.jsx';
 import { MS_MODS, MS_PRE_Q, MS_POST_Q } from '../data/ms_data.js';
 

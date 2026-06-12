@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 
 const DB = {
   _k: k => `lm_${k}`,
@@ -59,7 +60,7 @@ const PILLARS=[
     {name:"Obstetrics & Maternal Health",icon:"\uD83E\uDD30",courses:[
       {id:"pe",title:"Preeclampsia & Eclampsia",sub:"Storm in the Womb",status:"live",icon:"\uD83E\uDDEC",dur:"19h+",modules:7},
       {id:"oh",title:"Obstetric Haemorrhage",sub:"When Blood Won't Stop",status:"live",icon:"\uD83E\uDE78",dur:"12h",modules:5},
-      {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"soon",icon:"\uD83E\uDDA0",dur:"10h",modules:4},
+      {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"10h",modules:4},
       {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"soon",icon:"\uD83C\uDF6C",dur:"10h",modules:4},
       {id:"ptl",title:"Preterm Labour",sub:"Born Too Soon",status:"soon",icon:"\uD83D\uDC76",dur:"8h",modules:4},
       {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"soon",icon:"\u26A0\uFE0F",dur:"6h",modules:3},
@@ -2080,6 +2081,14 @@ export default function LegonMed(){
   );
 
   // ── ROUTING ──
+  if(view==="course"&&activeCourse==="ms") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <MSSepsisCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
   if(view==="course"&&activeCourse==="oh") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
