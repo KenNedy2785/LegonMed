@@ -8,6 +8,8 @@ const DB = {
   push: (k,r) => { const a=DB.get(k); a.push({...r,id:Date.now(),createdAt:new Date().toISOString()}); DB.set(k,a); },
   count: k => DB.get(k).length,
 };
+const isAdmin=()=>{try{return localStorage.getItem("lm_admin")==="true";}catch{return false;}};
+const setAdmin=(v)=>{try{localStorage.setItem("lm_admin",v?"true":"false");}catch{}};
 
 const PAYSTACK_KEY = "pk_test_REPLACE_WITH_YOUR_KEY";
 
@@ -46,7 +48,12 @@ const RC={doctor:"#003087",nurse:"#0d5e6e",pharmacist:"#6E2C00",labtech:"#1a5276
 const RL={doctor:"\u{1F468}\u200D\u2695\uFE0F Doctor / Clinician",nurse:"\u{1F469}\u200D\u2695\uFE0F Nurse / Midwife",pharmacist:"\uD83D\uDC8A Pharmacist",labtech:"\uD83D\uDD2C Lab Scientist",student:"\uD83C\uDF93 Student"};
 const ADMIN_PW="legonmed@UGMS2025!";
 
-const UGLogo=({size=60})=>(<img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/University_of_Ghana_coat_of_arms.svg/200px-University_of_Ghana_coat_of_arms.svg.png" alt="UG" width={size} height={size} style={{objectFit:"contain"}} onError={e=>{e.target.outerHTML=`<div style="width:${size}px;height:${size}px;border-radius:50%;background:#003087;display:flex;align-items:center;justify-content:center;color:#C8A951;font-weight:900;font-size:${Math.round(size*.28)}px">UG</div>`;}}/>);
+const UGLogo=({size=60})=>(
+  <div style={{width:size,height:size,borderRadius:"50%",background:"linear-gradient(135deg,#003087,#001a5e)",display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",flexShrink:0,boxShadow:"0 2px 12px rgba(0,48,135,.25)",border:"2px solid #C8A951"}}>
+    <div style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:Math.round(size*.32),fontWeight:900,color:"#C8A951",lineHeight:1,letterSpacing:"-1px"}}>LM</div>
+    {size>=48&&<div style={{fontFamily:"Arial,sans-serif",fontSize:Math.round(size*.11),color:"rgba(200,169,81,.7)",letterSpacing:"1.5px",textTransform:"uppercase",marginTop:1}}>MED</div>}
+  </div>
+);
 
 const bdg={display:"inline-block",background:"rgba(200,169,81,.13)",border:"1px solid #C8A951",color:"#C8A951",padding:"5px 17px",borderRadius:30,fontSize:11.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:"1.5px",textTransform:"uppercase"};
 const btn=(v="primary",ex={})=>({display:"inline-block",cursor:"pointer",fontFamily:"'Source Sans 3',sans-serif",fontWeight:700,letterSpacing:.4,transition:"all .22s",padding:v==="primary"?"13px 30px":"11px 26px",borderRadius:8,fontSize:14.5,background:v==="primary"?`linear-gradient(135deg,${C.gold},${C.gl})`:"transparent",color:v==="primary"?C.dark:C.gold,border:v==="secondary"?"2px solid "+C.gold:"none",...ex});
@@ -951,8 +958,8 @@ function PECourse({session,registered,onBack,onRegister,onGoHome}){
                       {m.sections.map(s=><div key={s.h} style={{display:"flex",gap:8,alignItems:"flex-start",padding:"6px 0",borderBottom:"1px solid #f8f8f8"}}><span style={{color:m.color,fontWeight:700,flexShrink:0,fontSize:12}}>▸</span><span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:C.txt,lineHeight:1.6}}>{s.h.replace(/^[^\w\s]+\s*/,"")}</span></div>)}
                     </div>
                     <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
-                      <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={e=>{e.stopPropagation();if(m.free||registered){setReadMod(m);}else setPage("register");}}>
-                        {m.free||registered?"📖 Read Module":"🎓 Enroll to Access"}
+                      <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={e=>{e.stopPropagation();if(m.free||registered||isAdmin()){setReadMod(m);}else setPage("register");}}>
+                        {m.free||registered||isAdmin()?"📖 Read Module":"🎓 Enroll to Access"}
                       </button>
                     </div>
                   </div>
@@ -1252,7 +1259,7 @@ function AdminPage({onBack}){
   const [auth,setAuth]=useState(false);
   const [err,setErr]=useState("");
   const [tab,setTab]=useState("dashboard");
-  const login=()=>{if(aPw===ADMIN_PW){setAuth(true);setErr("");}else setErr("Invalid credentials.");};
+  const login=()=>{if(aPw===ADMIN_PW){setAuth(true);setAdmin(true);setErr("");}else setErr("Invalid credentials.");};
 
   if(!auth) return(
     <div style={{maxWidth:400,margin:"80px auto",padding:"0 24px"}}>
@@ -1279,7 +1286,7 @@ function AdminPage({onBack}){
         <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(22px,4vw,34px)",fontWeight:700,color:C.dark}}>⚙ Admin Dashboard</h1>
         <div style={{display:"flex",gap:10}}>
           <button style={btn("secondary",{padding:"8px 14px",fontSize:13})} onClick={onBack}>← Platform</button>
-          <button style={btn("secondary",{padding:"8px 14px",fontSize:13})} onClick={()=>setAuth(false)}>Logout</button>
+          <button style={btn("secondary",{padding:"8px 14px",fontSize:13})} onClick={()=>{setAuth(false);setAdmin(false);}}>Logout</button>
         </div>
       </div>
 
@@ -1839,8 +1846,8 @@ function OHCourse({session,registered,onBack,onRegister,onGoHome}){
                     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:7,marginBottom:16}}>
                       {m.sections.map(s=><div key={s.h} style={{display:"flex",gap:8,alignItems:"flex-start",padding:"6px 0",borderBottom:"1px solid #f8f8f8"}}><span style={{color:m.color,fontWeight:700,flexShrink:0,fontSize:12}}>▸</span><span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:C.txt,lineHeight:1.6}}>{s.h.replace(/^[^\w\s]+\s*/,"")}</span></div>)}
                     </div>
-                    <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={e=>{e.stopPropagation();if(m.free||registered){setReadMod(m);}else setPage("register");}}>
-                      {m.free||registered?"📖 Read Module":"🎓 Enroll to Access"}
+                    <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={e=>{e.stopPropagation();if(m.free||registered||isAdmin()){setReadMod(m);}else setPage("register");}}>
+                      {m.free||registered||isAdmin()?"📖 Read Module":"🎓 Enroll to Access"}
                     </button>
                   </div>
                 )}
