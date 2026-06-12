@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
-
 const DB = {
   _k: k => `lm_${k}`,
   get: k => { try { return JSON.parse(localStorage.getItem(`lm_${k}`) || "[]"); } catch { return []; } },
@@ -8,6 +5,8 @@ const DB = {
   push: (k,r) => { const a=DB.get(k); a.push({...r,id:Date.now(),createdAt:new Date().toISOString()}); DB.set(k,a); },
   count: k => DB.get(k).length,
 };
+const isAdmin=()=>{try{return localStorage.getItem("lm_admin")==="true";}catch{return false;}};
+const setAdmin=(v)=>{try{localStorage.setItem("lm_admin",v?"true":"false");}catch{}};
 
 const PAYSTACK_KEY = "pk_test_REPLACE_WITH_YOUR_KEY";
 
@@ -58,6 +57,4 @@ const btn=(v="primary",ex={})=>({display:"inline-block",cursor:"pointer",fontFam
 const card=(ex={})=>({background:"#fff",borderRadius:18,padding:30,boxShadow:"0 4px 24px rgba(0,48,135,.08)",...ex});
 const inp=(ex={})=>({width:"100%",padding:"13px 16px",border:"2px solid #dde6f0",borderRadius:10,fontSize:15,fontFamily:"'Source Sans 3',sans-serif",outline:"none",background:"#fff",...ex});
 
-const isAdmin=()=>{try{return localStorage.getItem("lm_admin")==="true";}catch{return false;}};
-const setAdmin=(v)=>{try{localStorage.setItem("lm_admin",v?"true":"false");}catch{}};
 export { DB, C, RC, RL, ADMIN_PW, UGLogo, bdg, btn, card, inp, isAdmin, setAdmin };
