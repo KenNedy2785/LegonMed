@@ -16,22 +16,30 @@ export default function GPCourse({ onBack, onGoHome }) {
   ];
 
   return (
-    <div style={{ fontFamily: "'Source Sans 3', sans-serif", background: "#f8fafc", minHeight: "100vh", padding: "24px" }}>
-      {/* Header Bar */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#fff", padding: "16px 24px", borderRadius: "12px", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", marginBottom: "24px" }}>
+    <div style={{ fontFamily: "'Source Sans 3', sans-serif", background: "#fcfbfa", minHeight: "100vh" }}>
+      {/* Platform Navigation Header Consistent with Other Tracks */}
+      <div style={{ borderBottom: "1px solid #f2efeb", background: "#fff", padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
-          <button onClick={onBack} style={{ background: "none", border: "none", color: "#7D6608", fontWeight: "700", cursor: "pointer", marginRight: "16px", fontSize: "14px" }}>← Back to Pillar</button>
-          <button onClick={onGoHome} style={{ background: "none", border: "none", color: "#64748b", fontWeight: "600", cursor: "pointer", fontSize: "14px" }}>Home Dashboard</button>
+          <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "1.5px", color: "#7D6608", fontWeight: "700", display: "block", marginBottom: "4px" }}>Medical Education Portal</span>
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "22px", fontWeight: "700", color: "#1a1a1a" }}>General Pharmacology Institute</h1>
         </div>
-        <div style={{ fontWeight: "800", color: "#1e293b", fontSize: "18px" }}>🧬 General Pharmacology Institute</div>
-        <div style={{ fontSize: "14px", color: "#64748b", fontWeight: "700", background: "#f1f5f9", padding: "6px 12px", borderRadius: "20px" }}>Module {syllabusModules[currentModuleIdx].num} of 08</div>
+        <div style={{ display: "flex", gap: "16px" }}>
+          <button onClick={onBack} style={{ background: "none", border: "1px solid #e6e1da", padding: "10px 20px", borderRadius: "6px", fontSize: "13px", fontWeight: "600", color: "#4a4a4a", cursor: "pointer" }}>← Back to Pillar</button>
+          <button onClick={onGoHome} style={{ background: "#7D6608", border: "none", padding: "10px 20px", borderRadius: "6px", fontSize: "13px", fontWeight: "600", color: "#fff", cursor: "pointer" }}>Home Dashboard</button>
+        </div>
       </div>
 
-      <div style={{ display: "flex", gap: "24px", alignItems: "start" }}>
-        {/* Left Side Module Navigation Shells */}
-        <div style={{ width: "340px", background: "#fff", borderRadius: "12px", padding: "16px", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-          <h3 style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.05em", color: "#94a3b8", marginBottom: "12px", paddingLeft: "8px", fontWeight: "700" }}>Course Syllabus</h3>
-          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+      {/* Main Framework Content Layout Grid */}
+      <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px", display: "grid", gridTemplateColumns: "360px 1fr", gap: "40px" }}>
+        
+        {/* Left Track Navigation Panel */}
+        <div style={{ background: "#fff", border: "1px solid #e6e1da", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ paddingBottom: "16px", borderBottom: "1px solid #f2efeb", marginBottom: "20px" }}>
+            <h3 style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#8a847c", fontWeight: "700" }}>Course Syllabus Tracks</h3>
+            <p style={{ fontSize: "13px", color: "#6a6a6a", marginTop: "4px" }}>8 Core Instructional Blocks</p>
+          </div>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             {syllabusModules.map((mod, idx) => (
               <button
                 key={idx}
@@ -41,77 +49,84 @@ export default function GPCourse({ onBack, onGoHome }) {
                 }}
                 style={{
                   textAlign: "left",
-                  padding: "12px",
+                  padding: "14px 16px",
                   borderRadius: "8px",
-                  border: idx === currentModuleIdx ? "1px solid #f5cba7" : "1px solid transparent",
-                  background: idx === currentModuleIdx ? "#fdf2e9" : "transparent",
-                  color: idx === currentModuleIdx ? "#7D6608" : "#334155",
+                  border: idx === currentModuleIdx ? "1px solid #7D6608" : "1px solid #e6e1da",
+                  background: idx === currentModuleIdx ? "#fdfbf7" : "#fff",
+                  color: idx === currentModuleIdx ? "#7D6608" : "#2a2a2a",
                   fontWeight: idx === currentModuleIdx ? "700" : "500",
                   cursor: "pointer",
-                  fontSize: "13px",
+                  fontSize: "13.5px",
                   lineHeight: "1.4"
                 }}
               >
-                Module {mod.num}: {mod.title}
+                <span style={{ display: "block", fontSize: "11px", color: idx === currentModuleIdx ? "#7D6608" : "#8a847c", fontWeight: "700", marginBottom: "2px" }}>MODULE {mod.num}</span>
+                {mod.title}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Right Side Content Canvas Shell */}
-        <div style={{ flex: 1, background: "#fff", borderRadius: "12px", padding: "32px", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
-          <span style={{ background: "#fdf2e9", color: "#7D6608", padding: "4px 8px", borderRadius: "6px", fontSize: "12px", fontWeight: "700" }}>MODULE {syllabusModules[currentModuleIdx].num}</span>
-          <h2 style={{ fontSize: "24px", fontWeight: "900", color: "#1e293b", marginTop: "8px", marginBottom: "24px" }}>{syllabusModules[currentModuleIdx].title}</h2>
-          
-          <div style={{ display: "flex", borderBottom: "2px solid #e2e8f0", marginBottom: "24px", gap: "20px" }}>
+        {/* Right Active Workspace Panel */}
+        <div style={{ background: "#fff", border: "1px solid #e6e1da", borderRadius: "12px", padding: "40px" }}>
+          <div style={{ borderBottom: "1px solid #f2efeb", paddingBottom: "24px", marginBottom: "32px" }}>
+            <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "1.5px", color: "#7D6608", fontWeight: "700", background: "#fdfbf7", padding: "6px 12px", borderRadius: "4px", border: "1px solid #f5ebd6" }}>Active Track Frame</span>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "32px", fontWeight: "700", color: "#1a1a1a", marginTop: "16px" }}>{syllabusModules[currentModuleIdx].title}</h2>
+          </div>
+
+          {/* Sub-navigation Tabs matching layout matrices */}
+          <div style={{ display: "flex", borderBottom: "1px solid #e6e1da", marginBottom: "32px", gap: "24px" }}>
             {['objectives', 'content', 'quiz'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 style={{
-                  padding: "12px 8px",
+                  padding: "14px 4px",
                   background: "none",
                   border: "none",
-                  borderBottom: activeTab === tab ? "3px solid #7D6608" : "3px solid transparent",
-                  color: activeTab === tab ? "#7D6608" : "#64748b",
+                  borderBottom: activeTab === tab ? "2px solid #7D6608" : "2px solid transparent",
+                  color: activeTab === tab ? "#7D6608" : "#6a6a6a",
                   fontWeight: "700",
                   cursor: "pointer",
-                  fontSize: "14px",
-                  textTransform: "uppercase"
+                  fontSize: "13px",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px"
                 }}
               >
-                {tab === 'objectives' ? '📋 Objectives' : tab === 'content' ? '🔬 Core Science' : '🎯 Assessment'}
+                {tab === 'objectives' ? '�� Objectives' : tab === 'content' ? '🔬 Core Science' : '🎯 Assessment'}
               </button>
             ))}
           </div>
 
-          <div style={{ padding: "8px 0" }}>
+          {/* Core Display View Windows */}
+          <div style={{ minHeight: "300px" }}>
             {activeTab === 'objectives' && (
-              <div style={{ color: "#475569", fontSize: "15px", lineHeight: "1.6" }}>
-                <p style={{ marginBottom: "12px", fontWeight: "600" }}>Learning Objectives Shell:</p>
-                <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "8px", border: "1px dashed #cbd5e1" }}>
-                  Educational benchmarks and core targets for {syllabusModules[currentModuleIdx].title} are actively parsing.
+              <div>
+                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Learning Objectives & Benchmarks</h4>
+                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
+                  Educational benchmarks and core learning targets for <strong>{syllabusModules[currentModuleIdx].title}</strong> are actively parsing into this view state frame.
                 </div>
               </div>
             )}
             {activeTab === 'content' && (
-              <div style={{ color: "#475569", fontSize: "15px", lineHeight: "1.6" }}>
-                <p style={{ marginBottom: "12px", fontWeight: "600" }}>Core Science Canvas:</p>
-                <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "8px", border: "1px dashed #cbd5e1" }}>
-                  Detailed scientific principles, illustrations, and clinical parameters for this section are ready to connect.
+              <div>
+                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Core Scientific Material</h4>
+                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
+                  Detailed scientific principles, pharmacokinetic parameters, and high-yield system illustrations for this block are preparing to connect.
                 </div>
               </div>
             )}
             {activeTab === 'quiz' && (
-              <div style={{ color: "#475569", fontSize: "15px", lineHeight: "1.6" }}>
-                <p style={{ marginBottom: "12px", fontWeight: "600" }}>Evaluation Matrix:</p>
-                <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "8px", border: "1px dashed #cbd5e1" }}>
-                  Interactive knowledge checking blocks and board-style questions are staging here.
+              <div>
+                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Knowledge Check Evaluation</h4>
+                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
+                  Interactive knowledge checking structures, clinical scenario matching blocks, and board-style questions are staging here.
                 </div>
               </div>
             )}
           </div>
         </div>
+
       </div>
     </div>
   );
