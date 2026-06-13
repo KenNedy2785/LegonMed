@@ -1,5 +1,5 @@
 // MATERNAL SEPSIS — "The Silent Invasion"
-// 4 Modules, 10h, all 5 professions
+// 7 Modules, 14h, all 5 professions
 
 export const MS_MODS = [
   {

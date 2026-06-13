@@ -198,7 +198,6 @@ export const GP_POST_Q_M2 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology"
   },
-];
 
 export const GP_PRE_Q_M3 = [
   {q:"Volume of distribution (Vd) is best described as:",
