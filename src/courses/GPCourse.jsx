@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { C, RC, RL, btn, bdg, inp, UGLogo, DB } from '../shared.jsx';
+import { C, RC, RL, btn, bdg, inp, UGLogo, DB, isAdmin } from '../shared.jsx';
 import { Quiz, ModuleReader } from '../SharedUI.jsx';
 import {
   GP_MODS,
@@ -123,7 +123,7 @@ export default function GPCourse({ session, registered, onBack, onRegister, onGo
 
       <div style={{maxWidth:900,margin:"0 auto",padding:"40px 24px"}}>
         {GP_MODS.map(m=>{
-          const locked = !m.free && !registered;
+          const locked = !m.free && !registered && !isAdmin();
           return (
             <div key={m.id} style={{background:"#fff",borderRadius:14,padding:"22px 20px",marginBottom:16,borderLeft:"6px solid "+m.color,boxShadow:"0 3px 16px rgba(0,48,135,.07)"}}>
               <div style={{display:"flex",gap:12,alignItems:"flex-start",flexWrap:"wrap",justifyContent:"space-between"}}>
