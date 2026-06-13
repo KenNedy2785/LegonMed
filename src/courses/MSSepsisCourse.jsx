@@ -1,10 +1,22 @@
-// Paste your MSSepsisCourse.jsx content here, then press Enter and Ctrl+D
 import { useState, useEffect } from 'react';
 import { C, RC, RL, btn, bdg, inp, UGLogo, DB, isAdmin } from '../shared.jsx';
 import { Quiz, ModuleReader } from '../SharedUI.jsx';
-import { MS_MODS, MS_PRE_Q, MS_POST_Q } from '../data/ms_data.js';
+import { MS_MODS, MS_PRE_Q, MS_POST_Q, MS_MOD4, MS_MOD5, MS_MOD7 } from '../data/ms_data.js';
 
 const COURSE_COLOR = "#1B4F72";
+
+// Reassemble all 7 modules in correct order
+// MS_MODS = [mod1, mod2, mod3, old_mod4(ICU)]
+// Full order: mod1, mod2, mod3, MOD4(pharma), MOD5(source), ICU(now 06), MOD7(prevention)
+const ALL_MS_MODS = [
+  {...MS_MODS[0], num:"01"},
+  {...MS_MODS[1], num:"02"},
+  {...MS_MODS[2], num:"03"},
+  {...MS_MOD4,    num:"04"},
+  {...MS_MOD5,    num:"05"},
+  {...MS_MODS[3], num:"06", id:6},
+  {...MS_MOD7,    num:"07"},
+];
 
 function MSSepsisCourse({ session, registered, onBack, onRegister, onGoHome }) {
   const [page, setPage] = useState("home");
@@ -38,7 +50,7 @@ function MSSepsisCourse({ session, registered, onBack, onRegister, onGoHome }) {
     { id: "inst", label: "Institutional (20 seats)", ghc: 4000, usd: 400, features: ["20 Licences", "Admin Dashboard", "Group Certificate", "Priority Support"] },
   ];
 
-  const visibleMods = roleTab === "all" ? MS_MODS : MS_MODS.filter(m => m.aud.includes(roleTab));
+  const visibleMods = roleTab === "all" ? ALL_MS_MODS : ALL_MS_MODS.filter(m => m.aud.includes(roleTab));
 
   function submitPre() { let s = 0; MS_PRE_Q.forEach((q, i) => { if (preAns[i] === q.ans) s++; }); setPreScore(s); setPreDone(true); }
   function submitPost() { let s = 0; MS_POST_Q.forEach((q, i) => { if (postAns[i] === q.ans) s++; }); setPostScore(s); setPostDone(true); if (session) DB.push("completions", { ...session, postScore: s, preScore, course: "maternal-sepsis" }); }
@@ -86,7 +98,7 @@ function MSSepsisCourse({ session, registered, onBack, onRegister, onGoHome }) {
                   <button style={btn("secondary")} onClick={() => setPage("register")}>🎓 Enroll Now</button>
                 </div>
                 <div style={{ display: "flex", gap: 24, justifyContent: "center", marginTop: 44, flexWrap: "wrap" }}>
-                  {[["4", "Modules"], ["10h", "Content"], ["36", "Lessons"], ["5", "Professions"], ["Free", "Module 1"]].map(([n, l]) => (
+                  {[["7", "Modules"], ["14h", "Content"], ["53", "Lessons"], ["5", "Professions"], ["Free", "Module 1"]].map(([n, l]) => (
                     <div key={l} style={{ textAlign: "center" }}>
                       <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 32, fontWeight: 900, color: C.gold }}>{n}</div>
                       <div style={{ color: "rgba(255,255,255,.6)", fontSize: 11, fontFamily: "'Source Sans 3',sans-serif", letterSpacing: 1.5, textTransform: "uppercase" }}>{l}</div>
@@ -144,7 +156,7 @@ function MSSepsisCourse({ session, registered, onBack, onRegister, onGoHome }) {
           <div style={{ maxWidth: 1000, margin: "0 auto", padding: "48px 24px" }}>
             <div style={{ textAlign: "center", marginBottom: 34 }}>
               <span style={bdg}>Full Curriculum</span>
-              <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(22px,4vw,36px)", fontWeight: 700, color: C.dark, marginTop: 14, marginBottom: 10 }}>4 Modules · 36 Lessons · 10 Hours</h1>
+              <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(22px,4vw,36px)", fontWeight: 700, color: C.dark, marginTop: 14, marginBottom: 10 }}>7 Modules · 53 Lessons · 14 Hours</h1>
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 26 }}>
               {[["all", "All Roles"], ...Object.entries(RL).map(([k, l]) => [k, l.split(" ").slice(0, 2).join(" ")])].map(([k, l]) => (
