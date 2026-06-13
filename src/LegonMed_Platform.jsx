@@ -1,3 +1,4 @@
+import GPCourse from "./courses/GPCourse";
 import { useState, useEffect } from "react";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 
