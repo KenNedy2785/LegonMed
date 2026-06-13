@@ -67,7 +67,7 @@ const PILLARS=[
     {name:"Obstetrics & Maternal Health",icon:"\uD83E\uDD30",courses:[
       {id:"pe",title:"Preeclampsia & Eclampsia",sub:"Storm in the Womb",status:"live",icon:"\uD83E\uDDEC",dur:"19h+",modules:7},
       {id:"oh",title:"Obstetric Haemorrhage",sub:"When Blood Won't Stop",status:"live",icon:"\uD83E\uDE78",dur:"12h",modules:5},
-      {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"10h",modules:4},
+      {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"14h",modules:7},
       {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"soon",icon:"\uD83C\uDF6C",dur:"10h",modules:4},
       {id:"ptl",title:"Preterm Labour",sub:"Born Too Soon",status:"soon",icon:"\uD83D\uDC76",dur:"8h",modules:4},
       {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"soon",icon:"\u26A0\uFE0F",dur:"6h",modules:3},
