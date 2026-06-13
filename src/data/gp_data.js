@@ -50,32 +50,6 @@ export const GP_MODS = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; WHO INN Programme"
   },
-
-export const GP_PRE_Q_M1 = [
-  {q:"What does pharmacokinetics primarily describe?",
-   opts:["What the drug does to the body","What the body does to the drug","How drugs are marketed and named","The chemical structure of drugs"],ans:1},
-  {q:"Which of the following is the generic name for a drug?",
-   opts:["Panadol","N-acetyl-para-aminophenol","Paracetamol","Tylenol"],ans:2},
-  {q:"A drug name ending in '-olol' most likely belongs to which class?",
-   opts:["ACE inhibitor","Beta-blocker","Statin","Antifungal"],ans:1},
-  {q:"Which of these is an example of a biotechnology/recombinant-derived drug?",
-   opts:["Morphine","Recombinant human insulin","Quinine","Magnesium sulfate"],ans:1},
-  {q:"Why might dosage form matter for a drug like insulin?",
-   opts:["It has no effect on insulin's action","Insulin is destroyed by stomach acid if taken orally, so it must be injected","All dosage forms work equally well for insulin","Dosage form only affects taste"],ans:1},
-];
-
-export const GP_POST_Q_M1 = [
-  {q:"A pharmacy student is asked whether a medication adherence problem is a 'PK problem' or a 'PD problem'. The patient reports the drug 'doesn't seem to work' despite taking it correctly, and a blood level test shows the drug is present at therapeutic concentration. This is most likely:",
-   opts:["A pharmacokinetic problem — the drug isn't reaching the target","A pharmacodynamic problem — the drug is present but not producing the expected effect","Neither — this cannot be assessed pharmacologically","A dosage form problem only"],ans:1},
-  {q:"A patient transferring between hospitals brings a medication list showing 'Norvasc 5mg' from their previous facility. The new ward chart says 'Amlodipine 5mg'. The nurse reconciling this should recognise:",
-   opts:["These are different drugs and both should be continued","These are the same drug (brand vs generic name) — duplication must be avoided","This is an error that requires stopping both medications","Norvasc is a stronger formulation than Amlodipine"],ans:1},
-  {q:"Why is generic prescribing generally considered best practice, with exceptions for certain drug classes?",
-   opts:["Generic names are always cheaper with no exceptions ever needed","It reduces cost and confusion, but narrow therapeutic index drugs may need consistent branding due to bioavailability differences","Brand names are more accurate scientifically","There is no clinical reason — it is purely administrative"],ans:1},
-  {q:"Streptomycin is derived from which source?",
-   opts:["A plant","A mineral","A microorganism (Streptomyces bacteria)","Recombinant DNA technology"],ans:2},
-  {q:"A laboratory receives a therapeutic drug monitoring request. Recognising both brand and generic names for commonly monitored drugs (e.g. digoxin, phenytoin) is important because:",
-   opts:["Brand names are never used clinically","Misreading the drug name could lead to the wrong assay being performed entirely","Generic names are only used in research settings","All drug monitoring assays are identical regardless of the drug"],ans:2},
-];
   {
     id:2, num:"02", icon:"🔄", free:false, dur:"2h 30m", lessons:6, color:"#154360",
     title:"Drug Absorption", sub:"Routes of Administration & Factors Affecting Absorption",
@@ -124,32 +98,6 @@ export const GP_POST_Q_M1 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology"
   },
-
-export const GP_PRE_Q_M2 = [
-  {q:"Absorption is NOT a relevant pharmacokinetic step for which route of administration?",
-   opts:["Oral","Intramuscular","Intravenous","Subcutaneous"],ans:2},
-  {q:"Why is glyceryl trinitrate (GTN) given sublingually rather than orally for acute angina?",
-   opts:["Sublingual tablets taste better","It bypasses first-pass hepatic metabolism and acts faster","Oral GTN is more expensive","There is no difference between the two routes"],ans:1},
-  {q:"A drug with an oral bioavailability of 25% means:",
-   opts:["25% of the dose is wasted in manufacturing","25% of the administered dose reaches systemic circulation","The drug works at 25% strength compared to IV","25% of patients will respond to the drug"],ans:1},
-  {q:"Which factor would most likely REDUCE the absorption of an oral tetracycline antibiotic?",
-   opts:["Taking it with water on an empty stomach","Taking it together with a calcium-containing antacid","Taking it at bedtime","Taking it with a full glass of water"],ans:1},
-  {q:"Which route of administration provides 100% bioavailability by definition?",
-   opts:["Oral","Sublingual","Intravenous","Rectal"],ans:2},
-];
-
-export const GP_POST_Q_M2 = [
-  {q:"A patient with diarrhoea is prescribed an oral antibiotic. The pharmacist is asked whether absorption might be affected. The most accurate response is:",
-   opts:["Diarrhoea has no effect on oral drug absorption","Diarrhoea may reduce absorption due to decreased gut transit/contact time","Diarrhoea always increases absorption of oral drugs","Diarrhoea only affects intravenous drugs"],ans:1},
-  {q:"A drug has an oral bioavailability of 30%. A clinician wants the same systemic exposure achieved by a 10mg IV dose. Approximately what oral dose would be needed (ignoring other factors)?",
-   opts:["10mg","13mg","33mg","100mg"],ans:2},
-  {q:"A critically ill patient in septic shock is prescribed an oral medication that is normally well-absorbed. The clinical team switches to an IV formulation instead. The most likely pharmacokinetic justification is:",
-   opts:["IV medications are always cheaper","Reduced gut perfusion in shock makes oral absorption unpredictable","Oral medications cannot be given to ICU patients under any circumstances","There is no pharmacokinetic reason — this is purely a nursing preference"],ans:1},
-  {q:"Two formulations of the same generic drug are described as 'bioequivalent'. This means:",
-   opts:["They are chemically identical molecules with no formulation differences","Their rate and extent of absorption are similar within accepted regulatory limits","They have identical prices","One formulation has 100% bioavailability and the other has 0%"],ans:1},
-  {q:"A patient is counselled to take their levothyroxine on an empty stomach, at least 30-60 minutes before food or other medications, particularly calcium or iron supplements. The pharmacological reason is most likely:",
-   opts:["Levothyroxine tastes unpleasant with food","Food and divalent cations (calcium, iron) can significantly reduce absorption of levothyroxine","This instruction has no pharmacological basis","Levothyroxine is only active at night"],ans:1},
-];
   {
     id:3, num:"03", icon:"🌊", free:false, dur:"2h 30m", lessons:6, color:"#0B5345",
     title:"Drug Distribution", sub:"Volume of Distribution & Body Compartments",
@@ -198,32 +146,6 @@ export const GP_POST_Q_M2 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology"
   },
-
-export const GP_PRE_Q_M3 = [
-  {q:"Volume of distribution (Vd) is best described as:",
-   opts:["The actual physical volume of blood in the body","A theoretical/apparent volume relating total drug in the body to plasma concentration","Always equal to total body water","A direct measurement of organ size"],ans:1},
-  {q:"A drug with a Vd of 500L in a 70kg patient most likely indicates:",
-   opts:["A laboratory error","Extensive distribution into tissues outside the plasma","The drug stays entirely in the bloodstream","The patient has 500L of body fluid"],ans:1},
-  {q:"Only the ____ fraction of a drug is able to cross membranes and bind receptors.",
-   opts:["Protein-bound","Total","Unbound (free)","Metabolised"],ans:2},
-  {q:"Hypoalbuminaemia in a patient on a highly protein-bound drug (e.g. phenytoin) is clinically significant because:",
-   opts:["It has no effect on drug levels","It decreases the free fraction, reducing drug effect","It increases the free fraction, increasing risk of toxicity at a 'normal' total level","Albumin has no role in drug binding"],ans:2},
-  {q:"Which statement about the blood-brain barrier is correct?",
-   opts:["It allows all drugs to enter the CNS equally","It restricts large, polar, highly protein-bound drugs more than small, lipophilic ones","It is completely impermeable in all conditions","It only matters for IV drugs"],ans:1},
-];
-
-export const GP_POST_Q_M3 = [
-  {q:"A patient in septic shock requires rapid therapeutic levels of a drug with a Vd of 50L. The clinical team gives a loading dose calculated as Vd × target concentration rather than waiting for steady-state with maintenance dosing alone. The primary reason for this approach is:",
-   opts:["Loading doses are always safer than maintenance dosing","To rapidly achieve a target plasma concentration without waiting through multiple half-lives","Vd has no relevance to dosing strategy","Loading doses bypass the need for any further dosing"],ans:1},
-  {q:"A patient with digoxin toxicity (high Vd, ~500L) is being considered for haemodialysis to remove the drug. The most accurate clinical reasoning is:",
-   opts:["Dialysis will rapidly and effectively remove digoxin regardless of Vd","Dialysis is likely to be ineffective because most digoxin is sequestered in tissue, inaccessible to the dialysis circuit","Vd is irrelevant to dialysis decisions","High Vd drugs are always safe in overdose"],ans:1},
-  {q:"A laboratory reports a 'normal' total phenytoin level in a malnourished patient with known hypoalbuminaemia, but the patient shows clinical signs of toxicity (nystagmus, ataxia). The most likely explanation is:",
-   opts:["The laboratory result must be wrong and should be ignored","The free (active) phenytoin level is likely elevated despite a 'normal' total level, due to reduced protein binding","Phenytoin toxicity cannot occur with a normal total level under any circumstances","Hypoalbuminaemia has no relevance to phenytoin levels"],ans:1},
-  {q:"A patient stable on warfarin is prescribed ibuprofen for back pain. The pharmacist is concerned about a potential interaction. The most likely pharmacokinetic mechanism is:",
-   opts:["Ibuprofen has no effect on warfarin","Ibuprofen displaces warfarin from albumin binding sites, transiently increasing free warfarin and bleeding risk","Ibuprofen increases warfarin's volume of distribution","This interaction only occurs with intravenous warfarin"],ans:1},
-  {q:"During an episode of bacterial meningitis, certain antibiotics achieve therapeutic CNS concentrations that would not normally be expected based on their blood-brain barrier penetration profile. The most likely explanation is:",
-   opts:["The blood-brain barrier is irrelevant during infection","Meningeal inflammation increases blood-brain barrier permeability, allowing greater antibiotic penetration","Antibiotics change their lipid solubility during infection","This is a coincidental finding with no pharmacological basis"],ans:1},
-];
   {
     id:4, num:"04", icon:"⚗️", free:false, dur:"2h 30m", lessons:6, color:"#6E2C00",
     title:"Drug Metabolism", sub:"Phase I & II Reactions, Enzyme Induction & Inhibition",
@@ -272,32 +194,6 @@ export const GP_POST_Q_M3 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; British National Formulary"
   },
-
-export const GP_PRE_Q_M4 = [
-  {q:"Phase I metabolism is primarily carried out by which enzyme family?",
-   opts:["UDP-glucuronosyltransferases","Cytochrome P450 (CYP450) enzymes","N-acetyltransferases","Sulfotransferases"],ans:1},
-  {q:"Codeine requires which enzyme to be converted to its active form, morphine?",
-   opts:["CYP3A4","CYP2D6","CYP2C9","CYP1A2"],ans:1},
-  {q:"Enzyme INHIBITION typically causes substrate drug levels to:",
-   opts:["Decrease rapidly","Increase rapidly","Increase slowly over weeks","Have no change"],ans:1},
-  {q:"Which of the following is a classic potent enzyme INDUCER?",
-   opts:["Fluconazole","Erythromycin","Rifampicin","Grapefruit juice"],ans:2},
-  {q:"Which Phase II reaction is involved in detoxifying the toxic paracetamol metabolite NAPQI?",
-   opts:["Acetylation","Glutathione conjugation","Sulfation","Methylation"],ans:1},
-];
-
-export const GP_POST_Q_M4 = [
-  {q:"A patient stable on warfarin (INR 2.5) is started on clarithromycin for a chest infection. One week later, INR is 5.2 with gum bleeding. The most likely mechanism is:",
-   opts:["Enzyme induction by clarithromycin increasing warfarin clearance","Enzyme inhibition by clarithromycin decreasing warfarin clearance, raising warfarin levels","Clarithromycin has no interaction with warfarin","Warfarin's volume of distribution has changed"],ans:1},
-  {q:"A patient starts rifampicin for TB while on a stable dose of an antiepileptic. Over the next 2-3 weeks, the antiepileptic level is likely to:",
-   opts:["Rise rapidly within 24 hours","Fall gradually as enzyme induction develops, risking seizure breakthrough","Remain completely unchanged","Become immediately toxic"],ans:1},
-  {q:"A breastfeeding mother is prescribed codeine for pain after delivery. Current guidance in many settings advises caution because:",
-   opts:["Codeine has no analgesic effect in breastfeeding mothers","'Ultra-rapid' CYP2D6 metabolisers may convert codeine to morphine very efficiently, risking infant morphine toxicity via breast milk","Codeine cannot cross into breast milk under any circumstances","CYP2D6 is irrelevant to codeine metabolism"],ans:1},
-  {q:"A patient on rifampicin for several months (with appropriately increased warfarin dose to maintain therapeutic INR) completes their TB treatment and stops rifampicin. Over the following weeks, without warfarin dose adjustment, the patient's INR is most likely to:",
-   opts:["Remain stable indefinitely with no monitoring needed","Rise gradually as induction wears off and warfarin clearance decreases, risking bleeding if the dose isn't reduced","Fall further, requiring a warfarin dose increase","Be completely unaffected by stopping rifampicin"],ans:1},
-  {q:"A clinician orders a digoxin level 6 hours after starting clarithromycin (a P-glycoprotein and CYP3A4 interaction concern with digoxin) and finds it unchanged, concluding 'no interaction is occurring.' The most appropriate interpretation is:",
-   opts:["This conclusively rules out any interaction, now and in the future","Some interactions take longer to manifest; a single early normal level does not exclude a developing interaction, and continued monitoring may be warranted","Digoxin levels are never affected by other drugs","This result proves clarithromycin is safe to continue indefinitely without monitoring"],ans:1},
-];
   {
     id:5, num:"05", icon:"🚽", free:false, dur:"2h 30m", lessons:6, color:"#1A5276",
     title:"Drug Excretion", sub:"Renal Excretion, Half-Life & Clearance",
@@ -346,32 +242,6 @@ export const GP_POST_Q_M4 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; British National Formulary"
   },
-
-export const GP_PRE_Q_M5 = [
-  {q:"Which renal process can secrete protein-bound drug from blood into urine, unlike glomerular filtration?",
-   opts:["Glomerular filtration","Tubular reabsorption","Tubular secretion","Biliary excretion"],ans:2},
-  {q:"Urine alkalinisation enhances elimination of aspirin (a weak acid) in overdose primarily by:",
-   opts:["Increasing glomerular filtration rate","Increasing ionisation of aspirin in urine, trapping it and preventing reabsorption","Directly neutralising aspirin chemically","Increasing hepatic metabolism of aspirin"],ans:1},
-  {q:"Clearance is best defined as:",
-   opts:["The time for drug concentration to fall by half","The volume of plasma cleared of drug per unit time","The total amount of drug in the body","The fraction of drug that is protein-bound"],ans:1},
-  {q:"Approximately how many half-lives does it take to reach steady state with regular dosing?",
-   opts:["1-2","2-3","4-5","8-10"],ans:2},
-  {q:"Zero-order (saturation) kinetics, as seen with phenytoin at high concentrations, means:",
-   opts:["Half-life is constant regardless of dose","A constant fraction of drug is eliminated per unit time","A constant AMOUNT of drug is eliminated per unit time, and half-life increases with concentration","The drug is not eliminated at all"],ans:2},
-];
-
-export const GP_POST_Q_M5 = [
-  {q:"A patient with CKD (eGFR 22 mL/min) is prescribed standard-dose gentamicin, which is primarily eliminated unchanged by the kidneys. Without dose adjustment, the most likely consequence is:",
-   opts:["No clinically significant change, since gentamicin is mostly metabolised by the liver","Drug accumulation toward toxic levels due to reduced renal clearance, risking ototoxicity and nephrotoxicity","Faster elimination than normal, risking subtherapeutic levels","Gentamicin levels are unaffected by renal function"],ans:1},
-  {q:"A patient is started on amiodarone (half-life of several weeks) without a loading dose, using only the standard maintenance dose. The clinical team is concerned about delayed therapeutic effect. The most accurate explanation is:",
-   opts:["Amiodarone works immediately regardless of half-life","Without a loading dose, it would take many weeks (4-5 half-lives) to reach therapeutic steady-state through maintenance dosing alone","Half-life is irrelevant to amiodarone dosing","Loading doses are never used for long half-life drugs"],ans:1},
-  {q:"A patient on phenytoin has their dose increased by 10% because their level was slightly below the therapeutic range. One week later, their level is now significantly ABOVE the toxic threshold, and they show signs of toxicity (ataxia, nystagmus). The most likely explanation is:",
-   opts:["The laboratory made an error","Phenytoin follows zero-order (saturation) kinetics near/above therapeutic levels, so a small dose increase caused a disproportionately large level increase","Phenytoin's half-life decreased, causing accumulation","This is unrelated to the dose change"],ans:1},
-  {q:"A patient stops taking a medication with a half-life of 24 hours. A colleague asks 'when will this drug be essentially out of their system?' The most accurate answer is:",
-   opts:["Immediately","After 24 hours","After approximately 4-5 days (4-5 half-lives)","Never - drugs remain in the body indefinitely"],ans:2},
-  {q:"A vancomycin trough level is drawn after only the SECOND dose in a patient with a long half-life relative to the dosing interval (i.e., steady state has not yet been reached). The clinical team uses this level to make a significant dose adjustment. The most appropriate concern is:",
-   opts:["This is standard practice and the level is fully interpretable","The level may not reflect the eventual steady-state concentration, and premature dose adjustments based on a pre-steady-state level could be inappropriate","Vancomycin levels are never useful before steady state under any circumstances","Half-life is irrelevant to vancomycin level interpretation"],ans:1},
-];
   {
     id:6, num:"06", icon:"🎯", free:false, dur:"2h 30m", lessons:6, color:"#512E5F",
     title:"Drug Targets & Receptor Interaction", sub:"Receptors, Agonists, Antagonists & Signal Transduction",
@@ -420,32 +290,6 @@ export const GP_POST_Q_M5 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology"
   },
-
-export const GP_PRE_Q_M6 = [
-  {q:"Affinity describes:",
-   opts:["The maximum effect a drug can produce","How well a drug binds to its receptor","The speed of drug metabolism","The route of drug administration"],ans:1},
-  {q:"A partial agonist, even at full receptor occupancy, produces:",
-   opts:["The maximum possible effect","No effect at all","A submaximal effect","An effect opposite to the normal agonist"],ans:2},
-  {q:"Naloxone reverses opioid overdose primarily by:",
-   opts:["Activating opioid receptors directly to produce a positive effect","Having zero intrinsic activity but blocking opioid agonists from binding","Increasing metabolism of opioids","Increasing renal excretion of opioids"],ans:1},
-  {q:"Which receptor type produces the FASTEST cellular response?",
-   opts:["Intracellular/nuclear receptors","G-protein coupled receptors","Ligand-gated ion channels","Enzyme-linked receptors"],ans:2},
-  {q:"Prolonged agonist exposure leading to reduced receptor numbers/sensitivity, and consequently reduced drug effect over time, is called:",
-   opts:["Up-regulation","Down-regulation (associated with tolerance)","Inverse agonism","Competitive antagonism"],ans:1},
-];
-
-export const GP_POST_Q_M6 = [
-  {q:"A patient is given naloxone for opioid overdose and initially improves, but 30 minutes later becomes unresponsive again with reduced respiratory rate. The most likely explanation is:",
-   opts:["Naloxone has caused a new, separate medical problem","The opioid (with a longer duration of action than naloxone) is again exerting its effect as naloxone's effect wears off","Naloxone has no real pharmacological effect","This indicates naloxone was given at the wrong dose and should never be repeated"],ans:1},
-  {q:"A patient on long-term propranolol for hypertension has their medication abruptly stopped due to a supply issue for several days, then restarted at the previous full dose. The patient develops severe tachycardia and chest pain. The most likely mechanism is:",
-   opts:["Propranolol has no withdrawal effects","Beta-receptor up-regulation during chronic antagonist therapy leads to rebound effects upon abrupt withdrawal/restart","This is unrelated to the medication change","Propranolol's half-life increased during the interruption"],ans:1},
-  {q:"Drug A produces 50% of maximum effect at a dose of 5mg and has a maximum effect (Emax) of 100%. Drug B produces 50% of maximum effect at a dose of 20mg and has a maximum effect (Emax) of 70%. Which statement is correct?",
-   opts:["Drug A is more potent and has higher efficacy than Drug B","Drug A is less potent but has higher efficacy than Drug B","Drug B is more potent than Drug A","Potency and efficacy cannot be compared between different drugs"],ans:0},
-  {q:"A bronchodilator (salbutamol, acting via a GPCR) produces effect within minutes, while an inhaled corticosteroid (acting via intracellular receptors affecting gene transcription) takes days to show anti-inflammatory benefit. A patient asks why they need to keep taking the steroid inhaler even though they 'don't feel it working immediately.' The best explanation is:",
-   opts:["The steroid inhaler doesn't actually work and can be stopped","Intracellular receptor-mediated effects require new protein synthesis via altered gene transcription, which takes time to develop but provides longer-lasting anti-inflammatory control","Steroid inhalers work exactly as fast as bronchodilators","There is no pharmacological difference between the two mechanisms"],ans:1},
-  {q:"A patient with chronic pain has been on stable-dose morphine for an extended period and reports the same dose 'doesn't work as well anymore,' requiring higher doses for the same pain relief. This phenomenon is best explained by:",
-   opts:["The patient is fabricating symptoms","Receptor down-regulation/desensitisation with chronic agonist exposure (tolerance) — a pharmacological phenomenon distinct from addiction","Morphine's half-life has increased over time","This indicates the original diagnosis was incorrect"],ans:1},
-];
   {
     id:7, num:"07", icon:"⚠️", free:false, dur:"2h 30m", lessons:6, color:"#922B21",
     title:"Variation in Drug Response", sub:"Adverse Drug Reactions, Drug Interactions & Special Populations",
@@ -494,32 +338,6 @@ export const GP_POST_Q_M6 = [
     ],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; WHO Pharmacovigilance Guidelines; British National Formulary for Children"
   },
-
-export const GP_PRE_Q_M7 = [
-  {q:"A patient develops anaphylaxis after their first-ever dose of penicillin. This is best classified as which type of ADR?",
-   opts:["Type A (Augmented) - dose-related","Type B (Bizarre) - immunological, unpredictable","Type C (Chronic)","Type E (End of use/withdrawal)"],ans:1},
-  {q:"Bradycardia occurring as an extension of a beta-blocker's known pharmacological action, which improves with dose reduction, is best classified as:",
-   opts:["Type A (Augmented)","Type B (Bizarre)","Type D (Delayed)","Type F (Failure of therapy)"],ans:0},
-  {q:"G6PD deficiency increases the risk of haemolysis with which of the following drugs?",
-   opts:["Paracetamol","Primaquine","Amoxicillin","Omeprazole"],ans:1},
-  {q:"Why are neonates at risk of prolonged drug half-lives compared to adults?",
-   opts:["Neonates have faster hepatic enzyme systems","Neonates have immature hepatic and renal function, reducing metabolism and clearance","Neonates have higher protein binding for all drugs","This is not true - neonates always clear drugs faster"],ans:1},
-  {q:"A pharmacodynamic drug interaction involves:",
-   opts:["One drug affecting another's absorption only","Two drugs with similar or opposing effects at receptors/systems, independent of pharmacokinetic changes","Only interactions involving CYP450 enzymes","Interactions that only occur with IV drugs"],ans:1},
-];
-
-export const GP_POST_Q_M7 = [
-  {q:"A patient who previously tolerated penicillin without issue develops anaphylaxis on a subsequent course. The clinical team documents this clearly and advises lifelong avoidance of penicillins (and assessment for cross-reactivity with other beta-lactams). The reasoning for 'lifelong avoidance' rather than 'reduce the dose next time' is best explained by:",
-   opts:["Penicillin allergies always resolve on their own with dose reduction","This is a Type B (immunological, unpredictable) reaction, not dose-dependent - dose reduction would not prevent recurrence and re-exposure carries serious risk","Type A reactions always require lifelong avoidance","There is no clinical difference between Type A and Type B reactions in management"],ans:1},
-  {q:"A neonate born in a region with high G6PD deficiency prevalence requires antimalarial prophylaxis or treatment in the future. Why might G6PD status be clinically relevant before prescribing certain antimalarials (e.g. primaquine)?",
-   opts:["G6PD status is irrelevant to antimalarial choice","G6PD-deficient individuals are at risk of significant haemolysis with oxidative-stress-inducing drugs like primaquine, so testing before use is clinically important where available","All antimalarials are equally safe regardless of G6PD status","G6PD deficiency only affects antibiotic choices, not antimalarials"],ans:1},
-  {q:"An elderly patient with multiple comorbidities is on 9 different medications. The pharmacist conducting a medication review identifies a potential pharmacodynamic interaction between a sedating antihistamine and a benzodiazepine, both prescribed by different specialists. The primary concern is:",
-   opts:["These drugs have no interaction since they act on different conditions","Additive CNS depressant (sedative) effects, increasing fall and confusion risk in an elderly patient - a pharmacodynamic interaction independent of any pharmacokinetic mechanism","This is purely a cost issue, not a clinical one","Polypharmacy is never a clinical concern if each drug is individually 'necessary'"],ans:1},
-  {q:"A pregnant patient with epilepsy, stable on an antiepileptic medication for years, asks whether she should stop taking it now that she is pregnant, due to concerns about effects on the baby. The most appropriate initial response is:",
-   opts:["Yes, stop immediately - all antiepileptics are absolutely contraindicated in pregnancy","This requires a collaborative discussion weighing the risks of the medication against the risks of uncontrolled seizures in pregnancy, with specialist input - abrupt unilateral discontinuation is not advised","No information is needed - continue exactly as before with no further discussion","Antiepileptic drugs have no relevance to pregnancy outcomes"],ans:1},
-  {q:"A neonatal dosing error occurs where a baby receives 5mg of a medication instead of the intended 0.5mg - a 10-fold overdose. This type of error is described in this module as being:",
-   opts:["Extremely rare and not a recognised pattern in paediatric medication safety","A recognised, disproportionately common error pattern in paediatric dosing due to decimal point errors with small numbers, which is why independent double-checking is standard practice","Only relevant to adult dosing, not paediatric","Impossible to prevent through any safety process"],ans:1},
-];
   {
     id:8, num:"08", icon:"🧬", free:false, dur:"2h 30m", lessons:6, color:"#7D6608",
     title:"Clinical Trials & Pharmacogenomics", sub:"Drug Development, Trial Phases & Personalised Medicine",
@@ -570,6 +388,188 @@ export const GP_POST_Q_M7 = [
   },
 ];
 
+
+export const GP_PRE_Q_M1 = [
+  {q:"What does pharmacokinetics primarily describe?",
+   opts:["What the drug does to the body","What the body does to the drug","How drugs are marketed and named","The chemical structure of drugs"],ans:1},
+  {q:"Which of the following is the generic name for a drug?",
+   opts:["Panadol","N-acetyl-para-aminophenol","Paracetamol","Tylenol"],ans:2},
+  {q:"A drug name ending in '-olol' most likely belongs to which class?",
+   opts:["ACE inhibitor","Beta-blocker","Statin","Antifungal"],ans:1},
+  {q:"Which of these is an example of a biotechnology/recombinant-derived drug?",
+   opts:["Morphine","Recombinant human insulin","Quinine","Magnesium sulfate"],ans:1},
+  {q:"Why might dosage form matter for a drug like insulin?",
+   opts:["It has no effect on insulin's action","Insulin is destroyed by stomach acid if taken orally, so it must be injected","All dosage forms work equally well for insulin","Dosage form only affects taste"],ans:1},
+];
+
+export const GP_POST_Q_M1 = [
+  {q:"A pharmacy student is asked whether a medication adherence problem is a 'PK problem' or a 'PD problem'. The patient reports the drug 'doesn't seem to work' despite taking it correctly, and a blood level test shows the drug is present at therapeutic concentration. This is most likely:",
+   opts:["A pharmacokinetic problem — the drug isn't reaching the target","A pharmacodynamic problem — the drug is present but not producing the expected effect","Neither — this cannot be assessed pharmacologically","A dosage form problem only"],ans:1},
+  {q:"A patient transferring between hospitals brings a medication list showing 'Norvasc 5mg' from their previous facility. The new ward chart says 'Amlodipine 5mg'. The nurse reconciling this should recognise:",
+   opts:["These are different drugs and both should be continued","These are the same drug (brand vs generic name) — duplication must be avoided","This is an error that requires stopping both medications","Norvasc is a stronger formulation than Amlodipine"],ans:1},
+  {q:"Why is generic prescribing generally considered best practice, with exceptions for certain drug classes?",
+   opts:["Generic names are always cheaper with no exceptions ever needed","It reduces cost and confusion, but narrow therapeutic index drugs may need consistent branding due to bioavailability differences","Brand names are more accurate scientifically","There is no clinical reason — it is purely administrative"],ans:1},
+  {q:"Streptomycin is derived from which source?",
+   opts:["A plant","A mineral","A microorganism (Streptomyces bacteria)","Recombinant DNA technology"],ans:2},
+  {q:"A laboratory receives a therapeutic drug monitoring request. Recognising both brand and generic names for commonly monitored drugs (e.g. digoxin, phenytoin) is important because:",
+   opts:["Brand names are never used clinically","Misreading the drug name could lead to the wrong assay being performed entirely","Generic names are only used in research settings","All drug monitoring assays are identical regardless of the drug"],ans:2},
+];
+
+export const GP_PRE_Q_M2 = [
+  {q:"Absorption is NOT a relevant pharmacokinetic step for which route of administration?",
+   opts:["Oral","Intramuscular","Intravenous","Subcutaneous"],ans:2},
+  {q:"Why is glyceryl trinitrate (GTN) given sublingually rather than orally for acute angina?",
+   opts:["Sublingual tablets taste better","It bypasses first-pass hepatic metabolism and acts faster","Oral GTN is more expensive","There is no difference between the two routes"],ans:1},
+  {q:"A drug with an oral bioavailability of 25% means:",
+   opts:["25% of the dose is wasted in manufacturing","25% of the administered dose reaches systemic circulation","The drug works at 25% strength compared to IV","25% of patients will respond to the drug"],ans:1},
+  {q:"Which factor would most likely REDUCE the absorption of an oral tetracycline antibiotic?",
+   opts:["Taking it with water on an empty stomach","Taking it together with a calcium-containing antacid","Taking it at bedtime","Taking it with a full glass of water"],ans:1},
+  {q:"Which route of administration provides 100% bioavailability by definition?",
+   opts:["Oral","Sublingual","Intravenous","Rectal"],ans:2},
+];
+
+export const GP_POST_Q_M2 = [
+  {q:"A patient with diarrhoea is prescribed an oral antibiotic. The pharmacist is asked whether absorption might be affected. The most accurate response is:",
+   opts:["Diarrhoea has no effect on oral drug absorption","Diarrhoea may reduce absorption due to decreased gut transit/contact time","Diarrhoea always increases absorption of oral drugs","Diarrhoea only affects intravenous drugs"],ans:1},
+  {q:"A drug has an oral bioavailability of 30%. A clinician wants the same systemic exposure achieved by a 10mg IV dose. Approximately what oral dose would be needed (ignoring other factors)?",
+   opts:["10mg","13mg","33mg","100mg"],ans:2},
+  {q:"A critically ill patient in septic shock is prescribed an oral medication that is normally well-absorbed. The clinical team switches to an IV formulation instead. The most likely pharmacokinetic justification is:",
+   opts:["IV medications are always cheaper","Reduced gut perfusion in shock makes oral absorption unpredictable","Oral medications cannot be given to ICU patients under any circumstances","There is no pharmacokinetic reason — this is purely a nursing preference"],ans:1},
+  {q:"Two formulations of the same generic drug are described as 'bioequivalent'. This means:",
+   opts:["They are chemically identical molecules with no formulation differences","Their rate and extent of absorption are similar within accepted regulatory limits","They have identical prices","One formulation has 100% bioavailability and the other has 0%"],ans:1},
+  {q:"A patient is counselled to take their levothyroxine on an empty stomach, at least 30-60 minutes before food or other medications, particularly calcium or iron supplements. The pharmacological reason is most likely:",
+   opts:["Levothyroxine tastes unpleasant with food","Food and divalent cations (calcium, iron) can significantly reduce absorption of levothyroxine","This instruction has no pharmacological basis","Levothyroxine is only active at night"],ans:1},
+];
+
+export const GP_PRE_Q_M3 = [
+  {q:"Volume of distribution (Vd) is best described as:",
+   opts:["The actual physical volume of blood in the body","A theoretical/apparent volume relating total drug in the body to plasma concentration","Always equal to total body water","A direct measurement of organ size"],ans:1},
+  {q:"A drug with a Vd of 500L in a 70kg patient most likely indicates:",
+   opts:["A laboratory error","Extensive distribution into tissues outside the plasma","The drug stays entirely in the bloodstream","The patient has 500L of body fluid"],ans:1},
+  {q:"Only the ____ fraction of a drug is able to cross membranes and bind receptors.",
+   opts:["Protein-bound","Total","Unbound (free)","Metabolised"],ans:2},
+  {q:"Hypoalbuminaemia in a patient on a highly protein-bound drug (e.g. phenytoin) is clinically significant because:",
+   opts:["It has no effect on drug levels","It decreases the free fraction, reducing drug effect","It increases the free fraction, increasing risk of toxicity at a 'normal' total level","Albumin has no role in drug binding"],ans:2},
+  {q:"Which statement about the blood-brain barrier is correct?",
+   opts:["It allows all drugs to enter the CNS equally","It restricts large, polar, highly protein-bound drugs more than small, lipophilic ones","It is completely impermeable in all conditions","It only matters for IV drugs"],ans:1},
+];
+
+export const GP_POST_Q_M3 = [
+  {q:"A patient in septic shock requires rapid therapeutic levels of a drug with a Vd of 50L. The clinical team gives a loading dose calculated as Vd × target concentration rather than waiting for steady-state with maintenance dosing alone. The primary reason for this approach is:",
+   opts:["Loading doses are always safer than maintenance dosing","To rapidly achieve a target plasma concentration without waiting through multiple half-lives","Vd has no relevance to dosing strategy","Loading doses bypass the need for any further dosing"],ans:1},
+  {q:"A patient with digoxin toxicity (high Vd, ~500L) is being considered for haemodialysis to remove the drug. The most accurate clinical reasoning is:",
+   opts:["Dialysis will rapidly and effectively remove digoxin regardless of Vd","Dialysis is likely to be ineffective because most digoxin is sequestered in tissue, inaccessible to the dialysis circuit","Vd is irrelevant to dialysis decisions","High Vd drugs are always safe in overdose"],ans:1},
+  {q:"A laboratory reports a 'normal' total phenytoin level in a malnourished patient with known hypoalbuminaemia, but the patient shows clinical signs of toxicity (nystagmus, ataxia). The most likely explanation is:",
+   opts:["The laboratory result must be wrong and should be ignored","The free (active) phenytoin level is likely elevated despite a 'normal' total level, due to reduced protein binding","Phenytoin toxicity cannot occur with a normal total level under any circumstances","Hypoalbuminaemia has no relevance to phenytoin levels"],ans:1},
+  {q:"A patient stable on warfarin is prescribed ibuprofen for back pain. The pharmacist is concerned about a potential interaction. The most likely pharmacokinetic mechanism is:",
+   opts:["Ibuprofen has no effect on warfarin","Ibuprofen displaces warfarin from albumin binding sites, transiently increasing free warfarin and bleeding risk","Ibuprofen increases warfarin's volume of distribution","This interaction only occurs with intravenous warfarin"],ans:1},
+  {q:"During an episode of bacterial meningitis, certain antibiotics achieve therapeutic CNS concentrations that would not normally be expected based on their blood-brain barrier penetration profile. The most likely explanation is:",
+   opts:["The blood-brain barrier is irrelevant during infection","Meningeal inflammation increases blood-brain barrier permeability, allowing greater antibiotic penetration","Antibiotics change their lipid solubility during infection","This is a coincidental finding with no pharmacological basis"],ans:1},
+];
+
+export const GP_PRE_Q_M4 = [
+  {q:"Phase I metabolism is primarily carried out by which enzyme family?",
+   opts:["UDP-glucuronosyltransferases","Cytochrome P450 (CYP450) enzymes","N-acetyltransferases","Sulfotransferases"],ans:1},
+  {q:"Codeine requires which enzyme to be converted to its active form, morphine?",
+   opts:["CYP3A4","CYP2D6","CYP2C9","CYP1A2"],ans:1},
+  {q:"Enzyme INHIBITION typically causes substrate drug levels to:",
+   opts:["Decrease rapidly","Increase rapidly","Increase slowly over weeks","Have no change"],ans:1},
+  {q:"Which of the following is a classic potent enzyme INDUCER?",
+   opts:["Fluconazole","Erythromycin","Rifampicin","Grapefruit juice"],ans:2},
+  {q:"Which Phase II reaction is involved in detoxifying the toxic paracetamol metabolite NAPQI?",
+   opts:["Acetylation","Glutathione conjugation","Sulfation","Methylation"],ans:1},
+];
+
+export const GP_POST_Q_M4 = [
+  {q:"A patient stable on warfarin (INR 2.5) is started on clarithromycin for a chest infection. One week later, INR is 5.2 with gum bleeding. The most likely mechanism is:",
+   opts:["Enzyme induction by clarithromycin increasing warfarin clearance","Enzyme inhibition by clarithromycin decreasing warfarin clearance, raising warfarin levels","Clarithromycin has no interaction with warfarin","Warfarin's volume of distribution has changed"],ans:1},
+  {q:"A patient starts rifampicin for TB while on a stable dose of an antiepileptic. Over the next 2-3 weeks, the antiepileptic level is likely to:",
+   opts:["Rise rapidly within 24 hours","Fall gradually as enzyme induction develops, risking seizure breakthrough","Remain completely unchanged","Become immediately toxic"],ans:1},
+  {q:"A breastfeeding mother is prescribed codeine for pain after delivery. Current guidance in many settings advises caution because:",
+   opts:["Codeine has no analgesic effect in breastfeeding mothers","'Ultra-rapid' CYP2D6 metabolisers may convert codeine to morphine very efficiently, risking infant morphine toxicity via breast milk","Codeine cannot cross into breast milk under any circumstances","CYP2D6 is irrelevant to codeine metabolism"],ans:1},
+  {q:"A patient on rifampicin for several months (with appropriately increased warfarin dose to maintain therapeutic INR) completes their TB treatment and stops rifampicin. Over the following weeks, without warfarin dose adjustment, the patient's INR is most likely to:",
+   opts:["Remain stable indefinitely with no monitoring needed","Rise gradually as induction wears off and warfarin clearance decreases, risking bleeding if the dose isn't reduced","Fall further, requiring a warfarin dose increase","Be completely unaffected by stopping rifampicin"],ans:1},
+  {q:"A clinician orders a digoxin level 6 hours after starting clarithromycin (a P-glycoprotein and CYP3A4 interaction concern with digoxin) and finds it unchanged, concluding 'no interaction is occurring.' The most appropriate interpretation is:",
+   opts:["This conclusively rules out any interaction, now and in the future","Some interactions take longer to manifest; a single early normal level does not exclude a developing interaction, and continued monitoring may be warranted","Digoxin levels are never affected by other drugs","This result proves clarithromycin is safe to continue indefinitely without monitoring"],ans:1},
+];
+
+export const GP_PRE_Q_M5 = [
+  {q:"Which renal process can secrete protein-bound drug from blood into urine, unlike glomerular filtration?",
+   opts:["Glomerular filtration","Tubular reabsorption","Tubular secretion","Biliary excretion"],ans:2},
+  {q:"Urine alkalinisation enhances elimination of aspirin (a weak acid) in overdose primarily by:",
+   opts:["Increasing glomerular filtration rate","Increasing ionisation of aspirin in urine, trapping it and preventing reabsorption","Directly neutralising aspirin chemically","Increasing hepatic metabolism of aspirin"],ans:1},
+  {q:"Clearance is best defined as:",
+   opts:["The time for drug concentration to fall by half","The volume of plasma cleared of drug per unit time","The total amount of drug in the body","The fraction of drug that is protein-bound"],ans:1},
+  {q:"Approximately how many half-lives does it take to reach steady state with regular dosing?",
+   opts:["1-2","2-3","4-5","8-10"],ans:2},
+  {q:"Zero-order (saturation) kinetics, as seen with phenytoin at high concentrations, means:",
+   opts:["Half-life is constant regardless of dose","A constant fraction of drug is eliminated per unit time","A constant AMOUNT of drug is eliminated per unit time, and half-life increases with concentration","The drug is not eliminated at all"],ans:2},
+];
+
+export const GP_POST_Q_M5 = [
+  {q:"A patient with CKD (eGFR 22 mL/min) is prescribed standard-dose gentamicin, which is primarily eliminated unchanged by the kidneys. Without dose adjustment, the most likely consequence is:",
+   opts:["No clinically significant change, since gentamicin is mostly metabolised by the liver","Drug accumulation toward toxic levels due to reduced renal clearance, risking ototoxicity and nephrotoxicity","Faster elimination than normal, risking subtherapeutic levels","Gentamicin levels are unaffected by renal function"],ans:1},
+  {q:"A patient is started on amiodarone (half-life of several weeks) without a loading dose, using only the standard maintenance dose. The clinical team is concerned about delayed therapeutic effect. The most accurate explanation is:",
+   opts:["Amiodarone works immediately regardless of half-life","Without a loading dose, it would take many weeks (4-5 half-lives) to reach therapeutic steady-state through maintenance dosing alone","Half-life is irrelevant to amiodarone dosing","Loading doses are never used for long half-life drugs"],ans:1},
+  {q:"A patient on phenytoin has their dose increased by 10% because their level was slightly below the therapeutic range. One week later, their level is now significantly ABOVE the toxic threshold, and they show signs of toxicity (ataxia, nystagmus). The most likely explanation is:",
+   opts:["The laboratory made an error","Phenytoin follows zero-order (saturation) kinetics near/above therapeutic levels, so a small dose increase caused a disproportionately large level increase","Phenytoin's half-life decreased, causing accumulation","This is unrelated to the dose change"],ans:1},
+  {q:"A patient stops taking a medication with a half-life of 24 hours. A colleague asks 'when will this drug be essentially out of their system?' The most accurate answer is:",
+   opts:["Immediately","After 24 hours","After approximately 4-5 days (4-5 half-lives)","Never - drugs remain in the body indefinitely"],ans:2},
+  {q:"A vancomycin trough level is drawn after only the SECOND dose in a patient with a long half-life relative to the dosing interval (i.e., steady state has not yet been reached). The clinical team uses this level to make a significant dose adjustment. The most appropriate concern is:",
+   opts:["This is standard practice and the level is fully interpretable","The level may not reflect the eventual steady-state concentration, and premature dose adjustments based on a pre-steady-state level could be inappropriate","Vancomycin levels are never useful before steady state under any circumstances","Half-life is irrelevant to vancomycin level interpretation"],ans:1},
+];
+
+export const GP_PRE_Q_M6 = [
+  {q:"Affinity describes:",
+   opts:["The maximum effect a drug can produce","How well a drug binds to its receptor","The speed of drug metabolism","The route of drug administration"],ans:1},
+  {q:"A partial agonist, even at full receptor occupancy, produces:",
+   opts:["The maximum possible effect","No effect at all","A submaximal effect","An effect opposite to the normal agonist"],ans:2},
+  {q:"Naloxone reverses opioid overdose primarily by:",
+   opts:["Activating opioid receptors directly to produce a positive effect","Having zero intrinsic activity but blocking opioid agonists from binding","Increasing metabolism of opioids","Increasing renal excretion of opioids"],ans:1},
+  {q:"Which receptor type produces the FASTEST cellular response?",
+   opts:["Intracellular/nuclear receptors","G-protein coupled receptors","Ligand-gated ion channels","Enzyme-linked receptors"],ans:2},
+  {q:"Prolonged agonist exposure leading to reduced receptor numbers/sensitivity, and consequently reduced drug effect over time, is called:",
+   opts:["Up-regulation","Down-regulation (associated with tolerance)","Inverse agonism","Competitive antagonism"],ans:1},
+];
+
+export const GP_POST_Q_M6 = [
+  {q:"A patient is given naloxone for opioid overdose and initially improves, but 30 minutes later becomes unresponsive again with reduced respiratory rate. The most likely explanation is:",
+   opts:["Naloxone has caused a new, separate medical problem","The opioid (with a longer duration of action than naloxone) is again exerting its effect as naloxone's effect wears off","Naloxone has no real pharmacological effect","This indicates naloxone was given at the wrong dose and should never be repeated"],ans:1},
+  {q:"A patient on long-term propranolol for hypertension has their medication abruptly stopped due to a supply issue for several days, then restarted at the previous full dose. The patient develops severe tachycardia and chest pain. The most likely mechanism is:",
+   opts:["Propranolol has no withdrawal effects","Beta-receptor up-regulation during chronic antagonist therapy leads to rebound effects upon abrupt withdrawal/restart","This is unrelated to the medication change","Propranolol's half-life increased during the interruption"],ans:1},
+  {q:"Drug A produces 50% of maximum effect at a dose of 5mg and has a maximum effect (Emax) of 100%. Drug B produces 50% of maximum effect at a dose of 20mg and has a maximum effect (Emax) of 70%. Which statement is correct?",
+   opts:["Drug A is more potent and has higher efficacy than Drug B","Drug A is less potent but has higher efficacy than Drug B","Drug B is more potent than Drug A","Potency and efficacy cannot be compared between different drugs"],ans:0},
+  {q:"A bronchodilator (salbutamol, acting via a GPCR) produces effect within minutes, while an inhaled corticosteroid (acting via intracellular receptors affecting gene transcription) takes days to show anti-inflammatory benefit. A patient asks why they need to keep taking the steroid inhaler even though they 'don't feel it working immediately.' The best explanation is:",
+   opts:["The steroid inhaler doesn't actually work and can be stopped","Intracellular receptor-mediated effects require new protein synthesis via altered gene transcription, which takes time to develop but provides longer-lasting anti-inflammatory control","Steroid inhalers work exactly as fast as bronchodilators","There is no pharmacological difference between the two mechanisms"],ans:1},
+  {q:"A patient with chronic pain has been on stable-dose morphine for an extended period and reports the same dose 'doesn't work as well anymore,' requiring higher doses for the same pain relief. This phenomenon is best explained by:",
+   opts:["The patient is fabricating symptoms","Receptor down-regulation/desensitisation with chronic agonist exposure (tolerance) — a pharmacological phenomenon distinct from addiction","Morphine's half-life has increased over time","This indicates the original diagnosis was incorrect"],ans:1},
+];
+
+export const GP_PRE_Q_M7 = [
+  {q:"A patient develops anaphylaxis after their first-ever dose of penicillin. This is best classified as which type of ADR?",
+   opts:["Type A (Augmented) - dose-related","Type B (Bizarre) - immunological, unpredictable","Type C (Chronic)","Type E (End of use/withdrawal)"],ans:1},
+  {q:"Bradycardia occurring as an extension of a beta-blocker's known pharmacological action, which improves with dose reduction, is best classified as:",
+   opts:["Type A (Augmented)","Type B (Bizarre)","Type D (Delayed)","Type F (Failure of therapy)"],ans:0},
+  {q:"G6PD deficiency increases the risk of haemolysis with which of the following drugs?",
+   opts:["Paracetamol","Primaquine","Amoxicillin","Omeprazole"],ans:1},
+  {q:"Why are neonates at risk of prolonged drug half-lives compared to adults?",
+   opts:["Neonates have faster hepatic enzyme systems","Neonates have immature hepatic and renal function, reducing metabolism and clearance","Neonates have higher protein binding for all drugs","This is not true - neonates always clear drugs faster"],ans:1},
+  {q:"A pharmacodynamic drug interaction involves:",
+   opts:["One drug affecting another's absorption only","Two drugs with similar or opposing effects at receptors/systems, independent of pharmacokinetic changes","Only interactions involving CYP450 enzymes","Interactions that only occur with IV drugs"],ans:1},
+];
+
+export const GP_POST_Q_M7 = [
+  {q:"A patient who previously tolerated penicillin without issue develops anaphylaxis on a subsequent course. The clinical team documents this clearly and advises lifelong avoidance of penicillins (and assessment for cross-reactivity with other beta-lactams). The reasoning for 'lifelong avoidance' rather than 'reduce the dose next time' is best explained by:",
+   opts:["Penicillin allergies always resolve on their own with dose reduction","This is a Type B (immunological, unpredictable) reaction, not dose-dependent - dose reduction would not prevent recurrence and re-exposure carries serious risk","Type A reactions always require lifelong avoidance","There is no clinical difference between Type A and Type B reactions in management"],ans:1},
+  {q:"A neonate born in a region with high G6PD deficiency prevalence requires antimalarial prophylaxis or treatment in the future. Why might G6PD status be clinically relevant before prescribing certain antimalarials (e.g. primaquine)?",
+   opts:["G6PD status is irrelevant to antimalarial choice","G6PD-deficient individuals are at risk of significant haemolysis with oxidative-stress-inducing drugs like primaquine, so testing before use is clinically important where available","All antimalarials are equally safe regardless of G6PD status","G6PD deficiency only affects antibiotic choices, not antimalarials"],ans:1},
+  {q:"An elderly patient with multiple comorbidities is on 9 different medications. The pharmacist conducting a medication review identifies a potential pharmacodynamic interaction between a sedating antihistamine and a benzodiazepine, both prescribed by different specialists. The primary concern is:",
+   opts:["These drugs have no interaction since they act on different conditions","Additive CNS depressant (sedative) effects, increasing fall and confusion risk in an elderly patient - a pharmacodynamic interaction independent of any pharmacokinetic mechanism","This is purely a cost issue, not a clinical one","Polypharmacy is never a clinical concern if each drug is individually 'necessary'"],ans:1},
+  {q:"A pregnant patient with epilepsy, stable on an antiepileptic medication for years, asks whether she should stop taking it now that she is pregnant, due to concerns about effects on the baby. The most appropriate initial response is:",
+   opts:["Yes, stop immediately - all antiepileptics are absolutely contraindicated in pregnancy","This requires a collaborative discussion weighing the risks of the medication against the risks of uncontrolled seizures in pregnancy, with specialist input - abrupt unilateral discontinuation is not advised","No information is needed - continue exactly as before with no further discussion","Antiepileptic drugs have no relevance to pregnancy outcomes"],ans:1},
+  {q:"A neonatal dosing error occurs where a baby receives 5mg of a medication instead of the intended 0.5mg - a 10-fold overdose. This type of error is described in this module as being:",
+   opts:["Extremely rare and not a recognised pattern in paediatric medication safety","A recognised, disproportionately common error pattern in paediatric dosing due to decimal point errors with small numbers, which is why independent double-checking is standard practice","Only relevant to adult dosing, not paediatric","Impossible to prevent through any safety process"],ans:1},
+];
 export const GP_PRE_Q_M8 = [
   {q:"Which clinical trial phase primarily focuses on safety and basic pharmacokinetics in a small number of (often healthy) participants?",
    opts:["Phase I","Phase II","Phase III","Phase IV"],ans:0},

@@ -1,133 +1,168 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { C, RC, RL, btn, bdg, inp, UGLogo, DB } from '../shared.jsx';
+import { Quiz, ModuleReader } from '../SharedUI.jsx';
+import {
+  GP_MODS,
+  GP_PRE_Q_M1, GP_POST_Q_M1,
+  GP_PRE_Q_M2, GP_POST_Q_M2,
+  GP_PRE_Q_M3, GP_POST_Q_M3,
+  GP_PRE_Q_M4, GP_POST_Q_M4,
+  GP_PRE_Q_M5, GP_POST_Q_M5,
+  GP_PRE_Q_M6, GP_POST_Q_M6,
+  GP_PRE_Q_M7, GP_POST_Q_M7,
+  GP_PRE_Q_M8, GP_POST_Q_M8,
+} from '../data/gp_data.js';
 
-export default function GPCourse({ onBack, onGoHome }) {
-  const [currentModuleIdx, setCurrentModuleIdx] = useState(0);
-  const [activeTab, setActiveTab] = useState('objectives');
+const QUIZ_BANKS = {
+  1:{pre:GP_PRE_Q_M1, post:GP_POST_Q_M1},
+  2:{pre:GP_PRE_Q_M2, post:GP_POST_Q_M2},
+  3:{pre:GP_PRE_Q_M3, post:GP_POST_Q_M3},
+  4:{pre:GP_PRE_Q_M4, post:GP_POST_Q_M4},
+  5:{pre:GP_PRE_Q_M5, post:GP_POST_Q_M5},
+  6:{pre:GP_PRE_Q_M6, post:GP_POST_Q_M6},
+  7:{pre:GP_PRE_Q_M7, post:GP_POST_Q_M7},
+  8:{pre:GP_PRE_Q_M8, post:GP_POST_Q_M8},
+};
 
-  const syllabusModules = [
-    { num: "01", title: "Introduction to Pharmacology" },
-    { num: "02", title: "Drug Absorption" },
-    { num: "03", title: "Drug Distribution" },
-    { num: "04", title: "Drug Metabolism" },
-    { num: "05", title: "Drug Excretion" },
-    { num: "06", title: "Drug Targets & Receptor Interaction" },
-    { num: "07", title: "Variation in Drug Response, ADRs & Drug Interactions" },
-    { num: "08", title: "Clinical Trials & Pharmacogenomics" }
-  ];
+const COURSE_COLOR = "#1B4F72";
+
+export default function GPCourse({ session, registered, onBack, onRegister, onGoHome }) {
+  const [view, setView] = useState("home");
+  const [activeMod, setActiveMod] = useState(null);
+  const [quizStage, setQuizStage] = useState("pre");
+  const [ans, setAns] = useState({});
+  const [done, setDone] = useState(false);
+  const [score, setScore] = useState(null);
+
+  const userRole = session?.profession || "";
+
+  function openModule(mod){
+    setActiveMod(mod);
+    setView("reader");
+  }
+
+  function openQuiz(mod, stage){
+    setActiveMod(mod);
+    setQuizStage(stage);
+    setAns({});
+    setDone(false);
+    setScore(null);
+    setView("quiz");
+  }
+
+  function submitQuiz(){
+    const bank = QUIZ_BANKS[activeMod.id][quizStage];
+    let s=0;
+    bank.forEach((q,i)=>{ if(ans[i]===q.ans) s++; });
+    setScore(s);
+    setDone(true);
+    if(session) DB.push("completions",{...session, course:"general-pharmacology", module:activeMod.id, stage:quizStage, score:s, total:bank.length});
+  }
+
+  if(view==="reader" && activeMod){
+    return <ModuleReader mod={activeMod} userRole={userRole} onClose={()=>setView("home")}/>;
+  }
+
+  if(view==="quiz" && activeMod){
+    const bank = QUIZ_BANKS[activeMod.id][quizStage];
+    return (
+      <div style={{fontFamily:"'Georgia',serif",background:C.off,minHeight:"100vh"}}>
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+        <div style={{background:`linear-gradient(135deg,${C.dark},${activeMod.color})`,padding:"18px 24px"}}>
+          <div style={{maxWidth:800,margin:"0 auto"}}>
+            <div style={{color:C.gold,fontFamily:"'Source Sans 3',sans-serif",fontSize:11,letterSpacing:2,textTransform:"uppercase",marginBottom:4}}>
+              Module {activeMod.num} · {quizStage==="pre"?"Pre-Test":"Post-Test"}
+            </div>
+            <h2 style={{color:"#fff",fontFamily:"'Playfair Display',serif",fontSize:"clamp(15px,3vw,22px)"}}>{activeMod.icon} {activeMod.title}</h2>
+          </div>
+        </div>
+        <div style={{maxWidth:800,margin:"0 auto",padding:"38px 24px 80px"}}>
+          {done ? (
+            <div style={{background:"#fff",borderRadius:18,padding:28,textAlign:"center",boxShadow:"0 4px 24px rgba(0,48,135,.08)",marginBottom:20}}>
+              <div style={{fontSize:48,marginBottom:12}}>{score>=Math.ceil(bank.length*0.6)?"🏆":"📚"}</div>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:22,color:C.blue,marginBottom:8}}>
+                {quizStage==="pre"?"Baseline":"Score"}: {score}/{bank.length}
+              </h2>
+              <div style={{display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap",marginTop:16}}>
+                {quizStage==="pre" && <button style={btn()} onClick={()=>openModule(activeMod)}>📖 Read Module →</button>}
+                {quizStage==="post" && <button style={btn()} onClick={()=>setView("home")}>← Back to Course</button>}
+                <button style={btn("secondary")} onClick={()=>setView("home")}>Course Home</button>
+              </div>
+            </div>
+          ):(
+            <Quiz qs={bank} ans={ans} setAns={setAns} done={done} onSubmit={submitQuiz} onSkip={()=>setView("home")}/>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div style={{ fontFamily: "'Source Sans 3', sans-serif", background: "#fcfbfa", minHeight: "100vh" }}>
-      {/* Platform Navigation Header Consistent with Other Tracks */}
-      <div style={{ borderBottom: "1px solid #f2efeb", background: "#fff", padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div>
-          <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "1.5px", color: "#7D6608", fontWeight: "700", display: "block", marginBottom: "4px" }}>Medical Education Portal</span>
-          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "22px", fontWeight: "700", color: "#1a1a1a" }}>General Pharmacology Institute</h1>
-        </div>
-        <div style={{ display: "flex", gap: "16px" }}>
-          <button onClick={onBack} style={{ background: "none", border: "1px solid #e6e1da", padding: "10px 20px", borderRadius: "6px", fontSize: "13px", fontWeight: "600", color: "#4a4a4a", cursor: "pointer" }}>← Back to Pillar</button>
-          <button onClick={onGoHome} style={{ background: "#7D6608", border: "none", padding: "10px 20px", borderRadius: "6px", fontSize: "13px", fontWeight: "600", color: "#fff", cursor: "pointer" }}>Home Dashboard</button>
-        </div>
-      </div>
+    <div style={{fontFamily:"'Georgia',serif",background:C.off,minHeight:"100vh"}}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
 
-      {/* Main Framework Content Layout Grid */}
-      <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px", display: "grid", gridTemplateColumns: "360px 1fr", gap: "40px" }}>
-        
-        {/* Left Track Navigation Panel */}
-        <div style={{ background: "#fff", border: "1px solid #e6e1da", borderRadius: "12px", padding: "24px" }}>
-          <div style={{ paddingBottom: "16px", borderBottom: "1px solid #f2efeb", marginBottom: "20px" }}>
-            <h3 style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#8a847c", fontWeight: "700" }}>Course Syllabus Tracks</h3>
-            <p style={{ fontSize: "13px", color: "#6a6a6a", marginTop: "4px" }}>8 Core Instructional Blocks</p>
-          </div>
-          
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-            {syllabusModules.map((mod, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  setCurrentModuleIdx(idx);
-                  setActiveTab('objectives');
-                }}
-                style={{
-                  textAlign: "left",
-                  padding: "14px 16px",
-                  borderRadius: "8px",
-                  border: idx === currentModuleIdx ? "1px solid #7D6608" : "1px solid #e6e1da",
-                  background: idx === currentModuleIdx ? "#fdfbf7" : "#fff",
-                  color: idx === currentModuleIdx ? "#7D6608" : "#2a2a2a",
-                  fontWeight: idx === currentModuleIdx ? "700" : "500",
-                  cursor: "pointer",
-                  fontSize: "13.5px",
-                  lineHeight: "1.4"
-                }}
-              >
-                <span style={{ display: "block", fontSize: "11px", color: idx === currentModuleIdx ? "#7D6608" : "#8a847c", fontWeight: "700", marginBottom: "2px" }}>MODULE {mod.num}</span>
-                {mod.title}
-              </button>
+      <div style={{background:`linear-gradient(140deg,${C.dark},${COURSE_COLOR},#0d2d45)`,padding:"60px 24px 50px",textAlign:"center"}}>
+        <div style={{maxWidth:900,margin:"0 auto"}}>
+          <div style={{display:"flex",justifyContent:"center",marginBottom:16}}><UGLogo size={70}/></div>
+          <span style={bdg}>🧪 Core Pharmacology · LegonMed Pharmacology Institute</span>
+          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(28px,5.5vw,52px)",fontWeight:900,color:"#fff",lineHeight:1.1,margin:"16px 0 8px"}}>General Pharmacology</h1>
+          <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(13px,2.5vw,20px)",fontWeight:400,color:C.gold,marginBottom:14,fontStyle:"italic"}}>The Foundation</h2>
+          <p style={{color:"rgba(255,255,255,.82)",fontSize:"clamp(13px,2vw,16px)",maxWidth:640,margin:"0 auto",lineHeight:1.8,fontFamily:"'Source Sans 3',sans-serif"}}>
+            From definitions to pharmacogenomics — the 8 foundational modules every pharmacology learner builds on. Module 1 is free.
+          </p>
+          <div style={{display:"flex",gap:20,justifyContent:"center",marginTop:30,flexWrap:"wrap"}}>
+            {[["8","Modules"],["20h","Content"],["48","Lessons"],["Free","Module 1"]].map(([n,l])=>(
+              <div key={l} style={{textAlign:"center"}}>
+                <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:900,color:C.gold}}>{n}</div>
+                <div style={{color:"rgba(255,255,255,.6)",fontSize:11,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
+              </div>
             ))}
           </div>
         </div>
-
-        {/* Right Active Workspace Panel */}
-        <div style={{ background: "#fff", border: "1px solid #e6e1da", borderRadius: "12px", padding: "40px" }}>
-          <div style={{ borderBottom: "1px solid #f2efeb", paddingBottom: "24px", marginBottom: "32px" }}>
-            <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "1.5px", color: "#7D6608", fontWeight: "700", background: "#fdfbf7", padding: "6px 12px", borderRadius: "4px", border: "1px solid #f5ebd6" }}>Active Track Frame</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "32px", fontWeight: "700", color: "#1a1a1a", marginTop: "16px" }}>{syllabusModules[currentModuleIdx].title}</h2>
-          </div>
-
-          {/* Sub-navigation Tabs matching layout matrices */}
-          <div style={{ display: "flex", borderBottom: "1px solid #e6e1da", marginBottom: "32px", gap: "24px" }}>
-            {['objectives', 'content', 'quiz'].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                style={{
-                  padding: "14px 4px",
-                  background: "none",
-                  border: "none",
-                  borderBottom: activeTab === tab ? "2px solid #7D6608" : "2px solid transparent",
-                  color: activeTab === tab ? "#7D6608" : "#6a6a6a",
-                  fontWeight: "700",
-                  cursor: "pointer",
-                  fontSize: "13px",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px"
-                }}
-              >
-                {tab === 'objectives' ? '�� Objectives' : tab === 'content' ? '🔬 Core Science' : '🎯 Assessment'}
-              </button>
-            ))}
-          </div>
-
-          {/* Core Display View Windows */}
-          <div style={{ minHeight: "300px" }}>
-            {activeTab === 'objectives' && (
-              <div>
-                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Learning Objectives & Benchmarks</h4>
-                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
-                  Educational benchmarks and core learning targets for <strong>{syllabusModules[currentModuleIdx].title}</strong> are actively parsing into this view state frame.
-                </div>
-              </div>
-            )}
-            {activeTab === 'content' && (
-              <div>
-                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Core Scientific Material</h4>
-                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
-                  Detailed scientific principles, pharmacokinetic parameters, and high-yield system illustrations for this block are preparing to connect.
-                </div>
-              </div>
-            )}
-            {activeTab === 'quiz' && (
-              <div>
-                <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#1a1a1a", marginBottom: "16px" }}>Knowledge Check Evaluation</h4>
-                <div style={{ background: "#faf9f6", padding: "24px", borderRadius: "8px", border: "1px dashed #e6e1da", color: "#5a5a5a", fontSize: "14.5px", lineHeight: "1.6" }}>
-                  Interactive knowledge checking structures, clinical scenario matching blocks, and board-style questions are staging here.
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
       </div>
+
+      <div style={{maxWidth:900,margin:"0 auto",padding:"40px 24px"}}>
+        {GP_MODS.map(m=>{
+          const locked = !m.free && !registered;
+          return (
+            <div key={m.id} style={{background:"#fff",borderRadius:14,padding:"22px 20px",marginBottom:16,borderLeft:"6px solid "+m.color,boxShadow:"0 3px 16px rgba(0,48,135,.07)"}}>
+              <div style={{display:"flex",gap:12,alignItems:"flex-start",flexWrap:"wrap",justifyContent:"space-between"}}>
+                <div style={{display:"flex",gap:12,alignItems:"flex-start",flex:1,minWidth:240}}>
+                  <div style={{background:m.color+"18",borderRadius:10,padding:"9px 12px",fontSize:22,flexShrink:0}}>{m.icon}</div>
+                  <div>
+                    <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:4,alignItems:"center"}}>
+                      <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:C.muted}}>Module {m.num} · {m.dur} · {m.lessons} lessons</span>
+                      {m.free && <span style={{background:C.ok,color:"#fff",padding:"2px 8px",borderRadius:20,fontSize:11,fontWeight:700,fontFamily:"'Source Sans 3',sans-serif"}}>FREE</span>}
+                    </div>
+                    <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(15px,2.5vw,19px)",color:m.color,marginBottom:3}}>{m.title}</h3>
+                    <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:m.color,fontWeight:600,marginBottom:4}}>{m.sub}</div>
+                    <p style={{fontFamily:"'Georgia',serif",fontSize:13,color:C.muted,lineHeight:1.7,fontStyle:"italic"}}>{m.tagline}</p>
+                  </div>
+                </div>
+              </div>
+              <div style={{display:"flex",gap:10,flexWrap:"wrap",marginTop:16}}>
+                {locked ? (
+                  <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={onRegister}>🎓 Enroll to Access</button>
+                ):(
+                  <>
+                    <button style={btn("secondary",{padding:"8px 18px",fontSize:13})} onClick={()=>openQuiz(m,"pre")}>📝 Pre-Test</button>
+                    <button style={btn("primary",{padding:"8px 18px",fontSize:13})} onClick={()=>openModule(m)}>📖 Read Module</button>
+                    <button style={btn("secondary",{padding:"8px 18px",fontSize:13})} onClick={()=>openQuiz(m,"post")}>🎯 Post-Test</button>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+        <div style={{textAlign:"center",marginTop:20}}>
+          <button style={btn("secondary")} onClick={onBack}>← Back to Pharmacology Institute</button>
+        </div>
+      </div>
+
+      <footer style={{background:C.dark,color:"rgba(255,255,255,.7)",padding:"24px",marginTop:30,textAlign:"center",fontFamily:"'Source Sans 3',sans-serif",fontSize:12}}>
+        <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:900,color:"#fff",marginBottom:4}}>Legon<span style={{color:C.gold}}>Med</span></div>
+        General Pharmacology · The Foundation · © 2025 LegonMed
+      </footer>
     </div>
   );
 }
