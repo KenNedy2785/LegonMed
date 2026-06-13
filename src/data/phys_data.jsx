@@ -20,10 +20,10 @@ export const PHYS_RC = {
 export const PHYS_MODS = [
   {
     id:1, num:"01", icon:"🔬", free:true, dur:"2h 30m", lessons:9, color:"#003087",
-    title:"The Living Cell", sub:"Cell & Membrane Physiology",
+    title:`The Living Cell", sub:"Cell & Membrane Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"Everything in medicine begins here. One cell. Four billion years of evolution. The blueprint of all life.",
-    story:"It is orientation week at the University of Ghana Medical School.\n\nMawuli sits in the front row of the anatomy lecture theatre, notebook open, pen ready. He is 19 years old. He has dreamed of this moment since he was seven, watching his grandmother die of a stroke in a village clinic in the Volta Region with no doctor present.\n\nProfessor Eyram walks in. She places nothing on the podium. No slides. No notes.\n\n"Before I teach you anything," she says, "I want you to understand one thing. Every disease you will ever encounter — every heart attack, every cancer, every infection, every mental illness — begins in a cell. Not in an organ. Not in a system. In a single cell doing something it should not do, or failing to do something it should."\n\nShe draws a circle on the board. One circle.\n\n"This," she says, "is where medicine begins."\n\nMawuli writes it down. He does not know yet that in four years, this single circle will explain almost everything he sees in the wards.\n\nThis module is that circle.",
+    story:`It is orientation week at the University of Ghana Medical School.\n\nMawuli sits in the front row of the anatomy lecture theatre, notebook open, pen ready. He is 19 years old. He has dreamed of this moment since he was seven, watching his grandmother die of a stroke in a village clinic in the Volta Region with no doctor present.\n\nProfessor Eyram walks in. She places nothing on the podium. No slides. No notes.\n\n"Before I teach you anything," she says, "I want you to understand one thing. Every disease you will ever encounter — every heart attack, every cancer, every infection, every mental illness — begins in a cell. Not in an organ. Not in a system. In a single cell doing something it should not do, or failing to do something it should."\n\nShe draws a circle on the board. One circle.\n\n"This," she says, "is where medicine begins."\n\nMawuli writes it down. He does not know yet that in four years, this single circle will explain almost everything he sees in the wards.\n\nThis module is that circle.`,
     sections:[
       {
         h:"🏗️ Cell Structure — The Architecture of Life",
@@ -88,10 +88,10 @@ export const PHYS_MODS = [
 
   {
     id:2, num:"02", icon:"❤️", free:false, dur:"2h 30m", lessons:9, color:"#8B0000",
-    title:"The Endless Pump", sub:"Cardiovascular Physiology",
+    title:`The Endless Pump", sub:"Cardiovascular Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"The heart beats 100,000 times a day, every day, for a lifetime. Understanding how — and why it fails — is the foundation of all of medicine.",
-    story:"Esinam is a second-year medical student. She is doing her first clinical attachment in the cardiology unit at Korle-Bu.\n\nShe is watching Professor Delali perform an echocardiogram on a 58-year-old man with heart failure. On the screen, the heart is visibly struggling — a dilated, poorly contracting left ventricle.\n\n"What is his ejection fraction?" Professor Delali asks the room.\n\nSilenece. Esinam has heard the term. She knows it is a percentage. But she cannot explain it.\n\nProfessor Delali looks at her kindly. "It is alright not to know. But by the end of your clinical years, not knowing this will cost your patient." He turns back to the screen. "This heart is pumping 25% of its blood with each beat instead of 60%. Every organ in this man's body is quietly starving."\n\nEsinam does not forget this moment. She goes home that night and opens her physiology textbook.\n\nThis module is what she found.",
+    story:`Esinam is a second-year medical student. She is doing her first clinical attachment in the cardiology unit at Korle-Bu.\n\nShe is watching Professor Delali perform an echocardiogram on a 58-year-old man with heart failure. On the screen, the heart is visibly struggling — a dilated, poorly contracting left ventricle.\n\n"What is his ejection fraction?" Professor Delali asks the room.\n\nSilenece. Esinam has heard the term. She knows it is a percentage. But she cannot explain it.\n\nProfessor Delali looks at her kindly. "It is alright not to know. But by the end of your clinical years, not knowing this will cost your patient." He turns back to the screen. "This heart is pumping 25% of its blood with each beat instead of 60%. Every organ in this man's body is quietly starving."\n\nEsinam does not forget this moment. She goes home that night and opens her physiology textbook.\n\nThis module is what she found.`,
     sections:[
       {
         h:"💓 Cardiac Cycle — The Mechanics of Every Heartbeat",
@@ -156,10 +156,10 @@ export const PHYS_MODS = [
 
   {
     id:3, num:"03", icon:"🫁", free:false, dur:"2h 30m", lessons:9, color:"#0B5345",
-    title:"The Breath of Life", sub:"Respiratory Physiology",
+    title:`The Breath of Life", sub:"Respiratory Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"You take 20,000 breaths a day without thinking. When breathing fails, it is the only thing you think about.",
-    story:"Fafali is a nursing student on her first night in the respiratory ward.\n\nAt 2AM a 67-year-old patient with COPD begins to deteriorate. His oxygen saturation drops from 92% to 84%. His respiratory rate is 28. He is using his accessory muscles. His lips are pursed.\n\nThe house officer arrives. She looks at the pulse oximeter. "Give him 15 litres via non-rebreather."\n\nFafali hesitates. She remembers something from her physiology lecture — something about COPD patients and oxygen. But she cannot quite recall it.\n\nShe gives the oxygen as instructed. Twenty minutes later, the patient's respiratory rate slows. The house officer smiles. "Better."\n\nBut Fafali notices something. His CO2 is rising on the monitor. He is becoming drowsy. Hypercapnic.\n\nThe physiology she half-remembered was this: some COPD patients depend on hypoxic drive to breathe. High-flow oxygen removes that drive.\n\nShe was right to hesitate. This module gives her — and you — the knowledge to act on that instinct with confidence.",
+    story:`Fafali is a nursing student on her first night in the respiratory ward.\n\nAt 2AM a 67-year-old patient with COPD begins to deteriorate. His oxygen saturation drops from 92% to 84%. His respiratory rate is 28. He is using his accessory muscles. His lips are pursed.\n\nThe house officer arrives. She looks at the pulse oximeter. "Give him 15 litres via non-rebreather."\n\nFafali hesitates. She remembers something from her physiology lecture — something about COPD patients and oxygen. But she cannot quite recall it.\n\nShe gives the oxygen as instructed. Twenty minutes later, the patient's respiratory rate slows. The house officer smiles. "Better."\n\nBut Fafali notices something. His CO2 is rising on the monitor. He is becoming drowsy. Hypercapnic.\n\nThe physiology she half-remembered was this: some COPD patients depend on hypoxic drive to breathe. High-flow oxygen removes that drive.\n\nShe was right to hesitate. This module gives her — and you — the knowledge to act on that instinct with confidence.`,
     sections:[
       {
         h:"🌬️ Lung Volumes, Capacities & Spirometry",
@@ -205,10 +205,10 @@ export const PHYS_MODS = [
 
   {
     id:4, num:"04", icon:"🫘", free:false, dur:"2h 30m", lessons:9, color:"#154360",
-    title:"The Great Filter", sub:"Renal & Fluid Physiology",
+    title:`The Great Filter", sub:"Renal & Fluid Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"The kidney filters 180 litres of fluid every day and returns 178.5 of it — with exquisite precision. When that precision fails, every system in the body suffers.",
-    story:"Eyram is a second-year pharmacy student. She is on attachment in the nephrology unit when a 52-year-old man is admitted with acute kidney injury after taking ibuprofen for back pain for two weeks.\n\n"Why does ibuprofen cause this?" she asks the registrar.\n\n"Because NSAIDs inhibit prostaglandins," the registrar says. "And prostaglandins dilate the afferent arteriole. Without them, the afferent arteriole constricts. GFR drops. Urine stops."\n\nEyram writes it down. Then she looks at the patient's drug chart. He is also on an ACE inhibitor for hypertension.\n\n"Two drugs," she says quietly. "Both affecting the same autoregulatory mechanism from different ends."\n\nThe registrar looks at her. "Exactly. NSAID + ACEi + diuretic. The triple whammy. One of the most common causes of hospital-acquired AKI in the world. And one of the most preventable."\n\nEyram understood renal physiology that day in a way no textbook had managed. This module is that understanding.",
+    story:`Eyram is a second-year pharmacy student. She is on attachment in the nephrology unit when a 52-year-old man is admitted with acute kidney injury after taking ibuprofen for back pain for two weeks.\n\n"Why does ibuprofen cause this?" she asks the registrar.\n\n"Because NSAIDs inhibit prostaglandins," the registrar says. "And prostaglandins dilate the afferent arteriole. Without them, the afferent arteriole constricts. GFR drops. Urine stops."\n\nEyram writes it down. Then she looks at the patient's drug chart. He is also on an ACE inhibitor for hypertension.\n\n"Two drugs," she says quietly. "Both affecting the same autoregulatory mechanism from different ends."\n\nThe registrar looks at her. "Exactly. NSAID + ACEi + diuretic. The triple whammy. One of the most common causes of hospital-acquired AKI in the world. And one of the most preventable."\n\nEyram understood renal physiology that day in a way no textbook had managed. This module is that understanding.`,
     sections:[
       {
         h:"🔬 Glomerular Filtration — The Beginning of Urine",
@@ -235,10 +235,10 @@ export const PHYS_MODS = [
 
   {
     id:5, num:"05", icon:"🍽️", free:false, dur:"2h 00m", lessons:7, color:"#2C3E50",
-    title:"The Digestive Engine", sub:"Gastrointestinal Physiology",
+    title:`The Digestive Engine", sub:"Gastrointestinal Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"The gut processes 9 litres of fluid daily, extracts nutrients from everything you eat, and produces more neurotransmitters than the brain. It is anything but simple.",
-    story:"Esela is an allied health student on attachment in gastroenterology. She watches an endoscopy on a patient with Helicobacter pylori-associated peptic ulcer disease.\n\n"The stomach has acid at pH 1," the gastroenterologist says. "Strong enough to dissolve metal. Yet the stomach lining survives. How?"\n\nEsela knows the answer is 'mucus', but she senses there is more to it.\n\n"Mucus, bicarbonate, prostaglandins, tight junctions, rapid cell turnover," the doctor continues. "Five overlapping defence mechanisms. H. pylori breaches all five. NSAIDs breach two. That is why both cause ulcers."\n\nEsela makes a note. Later, examining the biopsy results, she will understand not just what caused the ulcer but why the drugs used to treat it work. This module gives you that understanding.",
+    story:`Esela is an allied health student on attachment in gastroenterology. She watches an endoscopy on a patient with Helicobacter pylori-associated peptic ulcer disease.\n\n"The stomach has acid at pH 1," the gastroenterologist says. "Strong enough to dissolve metal. Yet the stomach lining survives. How?"\n\nEsela knows the answer is 'mucus', but she senses there is more to it.\n\n"Mucus, bicarbonate, prostaglandins, tight junctions, rapid cell turnover," the doctor continues. "Five overlapping defence mechanisms. H. pylori breaches all five. NSAIDs breach two. That is why both cause ulcers."\n\nEsela makes a note. Later, examining the biopsy results, she will understand not just what caused the ulcer but why the drugs used to treat it work. This module gives you that understanding.`,
     sections:[
       {
         h:"🧪 Gastric Physiology & Acid Secretion",
@@ -265,10 +265,10 @@ export const PHYS_MODS = [
 
   {
     id:6, num:"06", icon:"🦋", free:false, dur:"2h 30m", lessons:9, color:"#6E2C00",
-    title:"The Body's Orchestra", sub:"Endocrine & Reproductive Physiology",
+    title:`The Body's Orchestra", sub:"Endocrine & Reproductive Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"Hormones are the body's chemical messengers — carrying instructions from gland to target organ across the bloodstream. When the message is wrong, every system listens to the error.",
-    story:"Delali is a medical student presenting a case at grand rounds. She has chosen a 34-year-old woman who presented with weight gain, cold intolerance, constipation, menstrual irregularity, and depression over eight months.\n\n"Her GP treated her for depression," Delali says. "For six months."\n\nThe room is silent.\n\n"Her TSH was 48. Free T4 undetectable. She had severe primary hypothyroidism."\n\nShe pauses. "Every single symptom this woman had was explained by one hormone deficiency. One gland. One hormone. Eight months of unnecessary suffering."\n\nProfessor Eyram nods. "This is why endocrinology is not a subspecialty. It is a language. And every clinician in this room needs to be fluent in it."\n\nThis module is your fluency course.",
+    story:`Delali is a medical student presenting a case at grand rounds. She has chosen a 34-year-old woman who presented with weight gain, cold intolerance, constipation, menstrual irregularity, and depression over eight months.\n\n"Her GP treated her for depression," Delali says. "For six months."\n\nThe room is silent.\n\n"Her TSH was 48. Free T4 undetectable. She had severe primary hypothyroidism."\n\nShe pauses. "Every single symptom this woman had was explained by one hormone deficiency. One gland. One hormone. Eight months of unnecessary suffering."\n\nProfessor Eyram nods. "This is why endocrinology is not a subspecialty. It is a language. And every clinician in this room needs to be fluent in it."\n\nThis module is your fluency course.`,
     sections:[
       {
         h:"🦋 Thyroid Physiology — The Metabolic Thermostat",
@@ -314,10 +314,10 @@ export const PHYS_MODS = [
 
   {
     id:7, num:"07", icon:"🧠", free:false, dur:"2h 30m", lessons:9, color:"#4A235A",
-    title:"The Command Centre", sub:"Neurophysiology & Special Senses",
+    title:`The Command Centre", sub:"Neurophysiology & Special Senses`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"The brain contains 86 billion neurons, each making up to 10,000 connections. It weighs 1.4kg and uses 20% of the body's energy. It is the most complex object in the known universe — and when it fails, everything fails.",
-    story:"Kafui is a final-year medical student doing his neurology rotation.\n\nA 68-year-old woman is brought in by her daughter. "She woke up this morning and couldn't speak properly. Her face is drooping on one side."\n\nKafui examines her. Left facial droop. Right arm weakness. Expressive aphasia — she understands everything but cannot form words.\n\nHe thinks: left hemisphere stroke. Broca's area.\n\nHe knows this because he knows neuroanatomy. He knows which artery supplies Broca's area (MCA superior division). He knows the time window for thrombolysis (4.5 hours). He knows the NIHSS score will determine eligibility.\n\nHe acts.\n\nThe patient receives IV alteplase within 90 minutes of symptom onset. Her speech begins returning within hours.\n\nNeuroscience saved this woman. This module is that neuroscience.",
+    story:`Kafui is a final-year medical student doing his neurology rotation.\n\nA 68-year-old woman is brought in by her daughter. "She woke up this morning and couldn't speak properly. Her face is drooping on one side."\n\nKafui examines her. Left facial droop. Right arm weakness. Expressive aphasia — she understands everything but cannot form words.\n\nHe thinks: left hemisphere stroke. Broca's area.\n\nHe knows this because he knows neuroanatomy. He knows which artery supplies Broca's area (MCA superior division). He knows the time window for thrombolysis (4.5 hours). He knows the NIHSS score will determine eligibility.\n\nHe acts.\n\nThe patient receives IV alteplase within 90 minutes of symptom onset. Her speech begins returning within hours.\n\nNeuroscience saved this woman. This module is that neuroscience.`,
     sections:[
       {
         h:"⚡ Synaptic Transmission — How Neurons Talk",
@@ -344,10 +344,10 @@ export const PHYS_MODS = [
 
   {
     id:8, num:"08", icon:"🏃", free:false, dur:"2h 00m", lessons:7, color:"#1B4F72",
-    title:"The Integrated Body", sub:"Musculoskeletal, Haematology & Integrated Physiology",
+    title:`The Integrated Body", sub:"Musculoskeletal, Haematology & Integrated Physiology`,
     aud:["med_student","pharm_student","nursing_student","allied_student","resident"],
     tagline:"The body is not a collection of separate systems. It is one integrated organism — where every system supports and depends on every other. This final module ties the threads together.",
-    story:"It is the final physiology lecture of the year. Professor Eyram addresses the entire first-year class.\n\n"You have spent this year learning systems," she says. "Cardiovascular. Respiratory. Renal. Endocrine. Neurology. But I want you to do something now. I want you to think about what happens when a 60-year-old man with heart failure, type 2 diabetes, CKD stage 3, and atrial fibrillation stands up too quickly from his chair."\n\nShe pauses.\n\n"His baroreceptors fire — cardiovascular. His muscles need oxygen — respiratory. His kidneys regulate his fluid balance — renal. His insulin resistance affects his energy — endocrine. His brain coordinates the entire response — neurology."\n\nShe smiles at the room.\n\n"That is one second of standing up. Now you understand physiology."",
+    story:`It is the final physiology lecture of the year. Professor Eyram addresses the entire first-year class.\n\n"You have spent this year learning systems," she says. "Cardiovascular. Respiratory. Renal. Endocrine. Neurology. But I want you to do something now. I want you to think about what happens when a 60-year-old man with heart failure, type 2 diabetes, CKD stage 3, and atrial fibrillation stands up too quickly from his chair."\n\nShe pauses.\n\n"His baroreceptors fire — cardiovascular. His muscles need oxygen — respiratory. His kidneys regulate his fluid balance — renal. His insulin resistance affects his energy — endocrine. His brain coordinates the entire response — neurology."\n\nShe smiles at the room.\n\n"That is one second of standing up. Now you understand physiology."`,
     sections:[
       {
         h:"💪 Muscle Physiology — Contraction, Fatigue & Exercise",
