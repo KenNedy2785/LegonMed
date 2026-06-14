@@ -148,7 +148,7 @@ const PILLARS=[
    categories:[
     {name:"Core Pharmacology",icon:"\uD83E\uDDEA",courses:[
       {id:"gp",title:"General Pharmacology",sub:"The Foundation",status:"live",icon:"\uD83D\uDC8A",dur:"20h",modules:8},
-      {id:"anp",title:"Autonomic Pharmacology",sub:"The Nervous System\u2019s Control Panel",status:"soon",icon:"\u26A1",dur:"14h",modules:6},
+      {id:"anp",title:"Autonomic Pharmacology",sub:"The Nervous System\u2019s Control Panel",status:"live",icon:"\u26A1",dur:"14h",modules:6},
       {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"soon",icon:"\uD83E\uDDEB",dur:"17h",modules:7},
       {id:"iip",title:"Inflammo- & Immunopharmacology",sub:"Taming the Immune Response",status:"soon",icon:"\uD83D\uDEE1\uFE0F",dur:"38h",modules:17},
       {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"soon",icon:"\u2764\uFE0F",dur:"20h",modules:9},
