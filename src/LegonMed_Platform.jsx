@@ -3,6 +3,7 @@ import ANPCourse from "./courses/ANPCourse";
 import { useState, useEffect } from "react";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
+import BiochemCourse from "./courses/BiochemCourse.jsx";
 import PhysiologyCourse from "./courses/PhysiologyCourse.jsx";
 
 const DB = {
@@ -181,7 +182,7 @@ const PILLARS=[
     {name:"Preclinical Sciences",icon:"\uD83D\uDD2C",courses:[
       {id:"anat",title:"Anatomy",sub:"The Architecture of Life",status:"live",icon:"\uD83E\uDDB4",dur:"20h",modules:8},
       {id:"phys",title:"Physiology",sub:"The Body in Action",status:"live",icon:"\u26A1",dur:"20h",modules:8},
-      {id:"bioc",title:"Biochemistry",sub:"Chemistry of Life",status:"soon",icon:"\uD83E\uDDEA",dur:"18h",modules:7},
+      {id:"bioc",title:"Biochemistry",sub:"Chemistry of Life",status:"live",icon:"\uD83E\uDDEA",dur:"18h",modules:7},
       {id:"path",title:"Pathology",sub:"Disease Under the Microscope",status:"soon",icon:"\uD83D\uDD2C",dur:"18h",modules:7},
       {id:"pharm2",title:"Pharmacology",sub:"Drugs & Disease",status:"soon",icon:"\uD83D\uDC8A",dur:"16h",modules:6},
       {id:"micro2",title:"Microbiology",sub:"The Invisible World",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
@@ -2129,6 +2130,14 @@ export default function LegonMed(){
     </>
   );
 
+  if(view==="course"&&activeCourse==="bioc") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <BiochemCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
   if(view==="course"&&activeCourse==="anat") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2226,7 +2235,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["1","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["7","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
