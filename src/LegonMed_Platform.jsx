@@ -4,6 +4,7 @@ import ANPCourse from "./courses/ANPCourse";
 import { useState, useEffect } from "react";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
+import MicrobiologyCourse from "./courses/MicrobiologyCourse.jsx";
 import PathologyCourse from "./courses/PathologyCourse.jsx";
 import BiochemCourse from "./courses/BiochemCourse.jsx";
 import PhysiologyCourse from "./courses/PhysiologyCourse.jsx";
@@ -187,7 +188,7 @@ const PILLARS=[
       {id:"bioc",title:"Biochemistry",sub:"Chemistry of Life",status:"live",icon:"\uD83E\uDDEA",dur:"18h",modules:7},
       {id:"path",title:"Pathology",sub:"Disease Under the Microscope",status:"live",icon:"\uD83D\uDD2C",dur:"18h",modules:7},
       {id:"pharm2",title:"Pharmacology",sub:"Drugs & Disease",status:"soon",icon:"\uD83D\uDC8A",dur:"16h",modules:6},
-      {id:"micro2",title:"Microbiology",sub:"The Invisible World",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
+      {id:"micro2",title:"Microbiology",sub:"The Invisible World",status:"live",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
     ]},
     {name:"Clinical Medicine",icon:"\uD83E\uDE7A",courses:[
       {id:"im",title:"Internal Medicine",sub:"The Complete Physician",status:"soon",icon:"\uD83E\uDE7A",dur:"30h",modules:12},
@@ -2147,6 +2148,13 @@ export default function LegonMed(){
       {showReg&&<RegModal/>}
     </>
   );
+  if(view==="course"&&activeCourse==="micr") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <MicrobiologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
   if(view==="course"&&activeCourse==="anat") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2159,6 +2167,23 @@ export default function LegonMed(){
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <AutacoidsCourse onBack={()=>go("pillar",PILLARS[1])} onGoHome={()=>go("home")}/>
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="micro2") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;0,900;1,400&family=Source+Sans+3:wght=300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto', fontFamily: "'Source Sans 3', sans-serif" }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', marginBottom: '10px' }}>Microbiology</h1>
+        <p style={{ color: '#6a6a6a', marginBottom: '30px' }}>Medical Microbiology & Immunology Modules</p>
+        <div style={{ background: '#faf9f6', padding: '30px', borderRadius: '8px', border: '1px dashed #e6e1da', marginBottom: '20px' }}>
+          <h4>Module Content Under Construction</h4>
+          <p style={{ color: '#8a847c', marginTop: '8px' }}>This system tracking view frame is ready to stream structural instructional pathways.</p>
+        </div>
+        <button onClick={()=>go("pillar",PILLARS[2])} style={{ background: '#114B5F', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
+          ← Back to Pillar 3
+        </button>
+      </div>
     </>
   );
 
