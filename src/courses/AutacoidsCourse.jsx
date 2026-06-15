@@ -119,11 +119,11 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
             <UGLogo size={40} />
             <div>
               <div style={{ fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:900,color:"#fff" }}>Legon<span style={{ color:"#e65100" }}>Med</span></div>
-              <div style={{ fontSize:9,color:"#e65100",fontFamily:"'Source Sans 3',sans-serif",letterSpacing:"2px",textTransform:"uppercase" }}>Medical School</div>
+              <div style={{ fontSize:9,color:"#e65100",fontFamily:"'Source Sans 3',sans-serif",letterSpacing:"2px",textTransform:"uppercase" }}>Pharmacology Institute</div>
             </div>
           </div>
           <div className="au-dnav" style={{ display:"flex",gap:1,alignItems:"center",flexWrap:"wrap",justifyContent:"flex-end" }}>
-            <span className="au-nl" style={{ color:"rgba(230,81,0,.8)",marginRight:8,fontSize:12 }} onClick={onBack}>← Medical School</span>
+            <span className="au-nl" style={{ color:"rgba(230,81,0,.8)",marginRight:8,fontSize:12 }} onClick={onBack}>← Pharmacology Institute</span>
             {NAV.map(n => <span key={n.id} className={"au-nl"+(page===n.id?" act":"")} onClick={()=>setPage(n.id)}>{n.l}</span>)}
           </div>
           <button className="au-mob" onClick={()=>setMob(!mob)}>☰</button>
@@ -143,7 +143,7 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
               <div style={{ position:"absolute",top:-80,right:-80,width:400,height:400,borderRadius:"50%",background:"#e6510008",pointerEvents:"none" }} />
               <div style={{ maxWidth:900,margin:"0 auto",position:"relative" }}>
                 <div style={{ display:"flex",justifyContent:"center",marginBottom:18 }}><UGLogo size={80} /></div>
-                <span style={bdg}>📚 LegonMed Medical School · Pharmacology</span>
+                <span style={bdg}>📚 LegonMed Pharmacology Institute · Pharmacology</span>
                 <h1 style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(28px,6vw,58px)",fontWeight:900,color:"#fff",lineHeight:1.08,margin:"16px 0 10px" }}>Autacoids</h1>
                 <h2 style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(14px,2.8vw,22px)",fontWeight:400,color:"#e65100",marginBottom:18,fontStyle:"italic" }}>Histamine, Serotonin, Eicosanoids, Kinins, PAF, Nitric Oxide & Beyond</h2>
                 <p style={{ color:"rgba(255,255,255,.82)",fontSize:"clamp(14px,2vw,17px)",maxWidth:680,margin:"0 auto 30px",lineHeight:1.9,fontFamily:"'Source Sans 3',sans-serif" }}>
@@ -224,7 +224,7 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
                 </div>
               </div>
             </div>
-            <div style={{ padding:"20px",textAlign:"center" }}><button style={btn("secondary")} onClick={onBack}>← Back to Medical School</button></div>
+            <div style={{ padding:"20px",textAlign:"center" }}><button style={btn("secondary")} onClick={onBack}>← Back to Pharmacology Institute</button></div>
           </div>
         )}
 
@@ -371,7 +371,7 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
               <div>
                 <div style={{ background:"#fff",borderRadius:18,padding:"42px 38px",boxShadow:"0 8px 40px rgba(13,27,94,.12)",border:"3px solid #e65100",textAlign:"center" }}>
                   <div style={{ display:"flex",justifyContent:"center",marginBottom:12 }}><UGLogo size={64} /></div>
-                  <div style={{ fontFamily:"'Source Sans 3',sans-serif",fontSize:10,letterSpacing:3,textTransform:"uppercase",color:"#e65100",marginBottom:5 }}>LegonMed Medical School</div>
+                  <div style={{ fontFamily:"'Source Sans 3',sans-serif",fontSize:10,letterSpacing:3,textTransform:"uppercase",color:"#e65100",marginBottom:5 }}>LegonMed Pharmacology Institute</div>
                   <div style={{ fontFamily:"'Playfair Display',serif",fontSize:13,color:"#5a6a8a",marginBottom:9 }}>This is to certify that</div>
                   <div style={{ margin:"0 auto 9px",maxWidth:460 }}>
                     <input style={{ width:"100%",padding:"8px 0",textAlign:"center",fontFamily:"'Playfair Display',serif",fontSize:21,fontWeight:700,color:"#1a1a2e",border:"none",borderBottom:"2px solid #e65100",borderRadius:0,background:"transparent",outline:"none" }}
@@ -379,9 +379,9 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
                   </div>
                   <div style={{ fontFamily:"'Playfair Display',serif",fontSize:13,color:"#5a6a8a",marginBottom:5 }}>has successfully completed</div>
                   <h2 style={{ fontFamily:"'Playfair Display',serif",fontSize:"clamp(16px,3vw,24px)",fontWeight:700,color:"#1a1a2e",marginBottom:4 }}>Autacoids: Local Hormones in Health & Disease</h2>
-                  <div style={{ fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"#1a237e",marginBottom:18 }}>Pharmacology · LegonMed Medical School · University of Ghana</div>
+                  <div style={{ fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"#1a237e",marginBottom:18 }}>Pharmacology · LegonMed Pharmacology Institute · University of Ghana</div>
                   <div style={{ display:"flex",justifyContent:"center",gap:32,marginBottom:20,flexWrap:"wrap" }}>
-                    {["Prof. K.K.E. Kukuia\nFounder, LegonMed","[Co-Signatory]\nLegonMed Medical School","[Co-Signatory]\nCourse Director"].map((sig,i)=>(
+                    {["Prof. K.K.E. Kukuia\nFounder, LegonMed","[Co-Signatory]\nLegonMed Pharmacology Institute","[Co-Signatory]\nCourse Director"].map((sig,i)=>(
                       <div key={i} style={{ textAlign:"center" }}>
                         <div style={{ borderTop:"1px solid #e65100",paddingTop:7,fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:"#5a6a8a",whiteSpace:"pre-line" }}>{sig}</div>
                       </div>
@@ -401,7 +401,7 @@ function AutacoidsCourse({ session, registered, onBack, onRegister, onGoHome }) 
       </div>
 
       <footer style={{ background:"#0d1b5e",color:"rgba(255,255,255,.7)",padding:"24px",marginTop:40,textAlign:"center",fontFamily:"'Source Sans 3',sans-serif",fontSize:12 }}>
-        <div style={{ fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:900,color:"#fff",marginBottom:4 }}>Legon<span style={{ color:"#e65100" }}>Med</span> Medical School</div>
+        <div style={{ fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:900,color:"#fff",marginBottom:4 }}>Legon<span style={{ color:"#e65100" }}>Med</span> Pharmacology Institute</div>
         Autacoids: Local Hormones in Health & Disease · © 2025 LegonMed · Evidence: Goodman & Gilman · Katzung · Rang & Dale
       </footer>
     </div>
