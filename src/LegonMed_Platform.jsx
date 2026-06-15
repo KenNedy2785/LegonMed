@@ -2154,6 +2154,23 @@ export default function LegonMed(){
     </>
   );
 
+  if(view==="course"&&activeCourse==="aut") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto', fontFamily: "'Source Sans 3', sans-serif" }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', marginBottom: '10px' }}>Autacoids</h1>
+        <p style={{ color: '#6a6a6a', marginBottom: '30px' }}>Histamine, Serotonin & Local Hormones</p>
+        <div style={{ background: '#faf9f6', padding: '30px', borderRadius: '8px', border: '1px dashed #e6e1da', marginBottom: '20px' }}>
+          <h4>Module Content Under Construction</h4>
+          <p style={{ color: '#8a847c', marginTop: '8px' }}>This system tracking view frame is ready to stream structural instructional pathways.</p>
+        </div>
+        <button onClick={()=>go("pillar",PILLARS[1])} style={{ background: '#7D6608', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
+          ← Back to Pillar 2
+        </button>
+      </div>
+    </>
+  );
+
   if(view==="course"&&activeCourse==="oh") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
