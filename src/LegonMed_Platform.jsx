@@ -3,6 +3,7 @@ import ANPCourse from "./courses/ANPCourse";
 import { useState, useEffect } from "react";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
+import AutacoidsCourse from "./courses/AutacoidsCourse.jsx";
 import PathologyCourse from "./courses/PathologyCourse.jsx";
 import BiochemCourse from "./courses/BiochemCourse.jsx";
 import PhysiologyCourse from "./courses/PhysiologyCourse.jsx";
@@ -184,7 +185,7 @@ const PILLARS=[
       {id:"anat",title:"Anatomy",sub:"The Architecture of Life",status:"live",icon:"\uD83E\uDDB4",dur:"20h",modules:8},
       {id:"phys",title:"Physiology",sub:"The Body in Action",status:"live",icon:"\u26A1",dur:"20h",modules:8},
       {id:"bioc",title:"Biochemistry",sub:"Chemistry of Life",status:"live",icon:"\uD83E\uDDEA",dur:"18h",modules:7},
-      {id:"path",title:"Pathology",sub:"Disease Under the Microscope",status:"soon",icon:"\uD83D\uDD2C",dur:"18h",modules:7},
+      {id:"path",title:"Pathology",sub:"Disease Under the Microscope",status:"live",icon:"\uD83D\uDD2C",dur:"18h",modules:7},
       {id:"pharm2",title:"Pharmacology",sub:"Drugs & Disease",status:"soon",icon:"\uD83D\uDC8A",dur:"16h",modules:6},
       {id:"micro2",title:"Microbiology",sub:"The Invisible World",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
     ]},
@@ -2143,6 +2144,13 @@ export default function LegonMed(){
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <PathologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[1])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+  if(view==="course"&&activeCourse==="aut") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <AutacoidsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
       {showReg&&<RegModal/>}
     </>
   );
