@@ -3,7 +3,6 @@ import ANPCourse from "./courses/ANPCourse";
 import { useState, useEffect } from "react";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
-import AutacoidsCourse from "./courses/AutacoidsCourse.jsx";
 import PathologyCourse from "./courses/PathologyCourse.jsx";
 import BiochemCourse from "./courses/BiochemCourse.jsx";
 import PhysiologyCourse from "./courses/PhysiologyCourse.jsx";
@@ -152,7 +151,7 @@ const PILLARS=[
     {name:"Core Pharmacology",icon:"\uD83E\uDDEA",courses:[
       {id:"gp",title:"General Pharmacology",sub:"The Foundation",status:"live",icon:"\uD83D\uDC8A",dur:"20h",modules:8},
       {id:"anp",title:"Autonomic Pharmacology",sub:"The Nervous System\u2019s Control Panel",status:"live",icon:"\u26A1",dur:"14h",modules:6},
-      {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"soon",icon:"\uD83E\uDDEB",dur:"17h",modules:7},
+      {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"live",icon:"\uD83E\uDDEB",dur:"17h",modules:7},
       {id:"iip",title:"Inflammo- & Immunopharmacology",sub:"Taming the Immune Response",status:"soon",icon:"\uD83D\uDEE1\uFE0F",dur:"38h",modules:17},
       {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"soon",icon:"\u2764\uFE0F",dur:"20h",modules:9},
       {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"soon",icon:"\uD83E\uDED8",dur:"36h",modules:16},
@@ -2144,13 +2143,6 @@ export default function LegonMed(){
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <PathologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[1])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-  if(view==="course"&&activeCourse==="aut") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <AutacoidsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
       {showReg&&<RegModal/>}
     </>
   );
