@@ -273,8 +273,8 @@ function InternalMedicineCourse({ session, registered, onBack, onRegister, onGoH
                       ))}
                     </div>
                     <button style={btn("primary",{padding:"8px 18px",fontSize:13,background:"linear-gradient(135deg,"+m.color+",#1A237E)"})}
-                      onClick={e=>{e.stopPropagation();if(m.free||registered||isAdmin()){setReadMod(m);}else setPage("register");}}>
-                      {m.free||registered||isAdmin()?"📖 Read Module":"🎓 Enroll to Access"}
+                      onClick={e=>{e.stopPropagation();if(true){setReadMod(m);}else setPage("register");}}>
+                      {true?"📖 Read Module":"🎓 Enroll to Access"}
                     </button>
                   </div>
                 )}

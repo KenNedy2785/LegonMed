@@ -60,7 +60,7 @@ function AudioBar({text,label,color}){
         </>}
       <div style={{display:"flex",gap:5,marginLeft:"auto",alignItems:"center"}}>
         <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:C.muted}}>Speed:</span>
-        {[0.8,1,1.25,1.5].map(r=><button key={r} onClick={()=>setRate(r)} style={{background:rate===r?color:"#f0f4ff",color:rate===r?"#fff":C.muted,border:"none",borderRadius:5,padding:"3px 7px",fontSize:11,cursor:"pointer"}}>{r}×</button>)}
+        {[0.8,1,1.25,1.5]?.map(r=><button key={r} onClick={()=>setRate(r)} style={{background:rate===r?color:"#f0f4ff",color:rate===r?"#fff":C.muted,border:"none",borderRadius:5,padding:"3px 7px",fontSize:11,cursor:"pointer"}}>{r}×</button>)}
       </div>
     </div>
   );
@@ -69,11 +69,11 @@ function AudioBar({text,label,color}){
 function Quiz({qs,ans,setAns,done,onSubmit,onSkip}){
   return(
     <div>
-      {qs.map((q,qi)=>(
+      {qs?.map((q,qi)=>(
         <div key={qi} style={{background:"#fff",borderRadius:18,padding:28,marginBottom:20,boxShadow:"0 4px 20px rgba(0,48,135,.08)"}}>
           <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11.5,color:C.gold,fontWeight:700,letterSpacing:2,textTransform:"uppercase",marginBottom:10}}>Q {qi+1} of {qs.length}</div>
           <p style={{fontFamily:"'Georgia',serif",fontSize:16,color:C.txt,lineHeight:1.85,marginBottom:18}}>{q.q}</p>
-          {q.opts.map((opt,oi)=>{
+          {q.opts?.map((opt,oi)=>{
             let bg="#fff",border="2px solid #dde6f0",col=C.txt;
             if(done){
               if(oi===q.ans){bg="#e8f8f0";border="2px solid "+C.ok;col=C.ok;}
@@ -152,11 +152,11 @@ function ModuleReader({mod,userRole,onClose,onDownload}){
         {/* Opening story */}
         <div style={{background:"#fff",borderRadius:18,padding:30,marginBottom:34,border:"1px solid "+C.blue+"18",boxShadow:"0 4px 24px rgba(0,48,135,.08)"}}>
           <div style={{color:C.gold,fontFamily:"'Source Sans 3',sans-serif",fontSize:11,fontWeight:700,letterSpacing:2,textTransform:"uppercase",marginBottom:16}}>📖 Opening Clinical Scenario</div>
-          {mod.story.split("\n\n").map((p,i)=><p key={i} style={{fontFamily:"'Georgia',serif",fontSize:15.5,lineHeight:2,color:C.txt,marginBottom:14,fontStyle:"italic"}}>{p}</p>)}
+          {mod.story.split("\n\n")?.map((p,i)=><p key={i} style={{fontFamily:"'Georgia',serif",fontSize:15.5,lineHeight:2,color:C.txt,marginBottom:14,fontStyle:"italic"}}>{p}</p>)}
         </div>
 
         {/* Sections */}
-        {mod.sections.map((sec,si)=>{
+        {mod.sections?.map((sec,si)=>{
           const key=mod.id+"-"+si;
           const open=expSec===key;
           const secText=[sec.h,sec.a||"",sec.c,"Key points: "+sec.kp.join(". ")].join(". ");
@@ -177,10 +177,10 @@ function ModuleReader({mod,userRole,onClose,onDownload}){
                       <p style={{fontFamily:"'Georgia',serif",fontSize:15,lineHeight:1.95,color:C.txt,fontStyle:"italic"}}>{sec.a}</p>
                     </div>
                   )}
-                  {sec.c.split("\n\n").map((para,pi)=><p key={pi} style={{fontFamily:"'Georgia',serif",fontSize:15,lineHeight:1.95,color:C.txt,marginBottom:14,whiteSpace:"pre-line"}}>{para.trim()}</p>)}
+                  {sec.c.split("\n\n")?.map((para,pi)=><p key={pi} style={{fontFamily:"'Georgia',serif",fontSize:15,lineHeight:1.95,color:C.txt,marginBottom:14,whiteSpace:"pre-line"}}>{para.trim()}</p>)}
                   <div style={{background:mod.color+"09",borderRadius:12,padding:"17px 22px",marginTop:20,border:"1px solid "+mod.color+"20"}}>
                     <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:mod.color,fontWeight:700,letterSpacing:2,textTransform:"uppercase",marginBottom:12}}>📌 Key Learning Points</div>
-                    {sec.kp.map((kp,ki)=>(
+                    {sec.kp?.map((kp,ki)=>(
                       <div key={ki} style={{display:"flex",gap:11,marginBottom:10,alignItems:"flex-start"}}>
                         <span style={{color:C.gold,fontWeight:700,fontSize:14,flexShrink:0}}>✦</span>
                         <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:14,color:C.txt,lineHeight:1.7}}>{kp}</span>
@@ -190,8 +190,8 @@ function ModuleReader({mod,userRole,onClose,onDownload}){
                   {sec.callouts&&sec.callouts.length>0&&(
                     <div style={{marginTop:20}}>
                       <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:C.muted,fontWeight:700,letterSpacing:2,textTransform:"uppercase",marginBottom:10}}>🗂 Role-Specific Notes</div>
-                      {myCallouts.map((cl,i)=><Callout key={"my"+i} item={cl} userRole={userRole}/>)}
-                      {otherCallouts.map((cl,i)=><Callout key={"ot"+i} item={cl} userRole={userRole}/>)}
+                      {myCallouts?.map((cl,i)=><Callout key={"my"+i} item={cl} userRole={userRole}/>)}
+                      {otherCallouts?.map((cl,i)=><Callout key={"ot"+i} item={cl} userRole={userRole}/>)}
                     </div>
                   )}
                 </div>

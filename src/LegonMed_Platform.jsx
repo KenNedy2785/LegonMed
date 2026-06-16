@@ -1,3 +1,4 @@
+import { IM_MODS } from "./data/inmed_data";
 import GPCourse from "./courses/GPCourse";
 import AutacoidsCourse from './courses/AutacoidsCourse';
 import ANPCourse from "./courses/ANPCourse";
@@ -82,7 +83,7 @@ const PILLARS=[
       {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"14h",modules:7},
       {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"soon",icon:"\uD83C\uDF6C",dur:"10h",modules:4},
       {id:"ptl",title:"Preterm Labour",sub:"Born Too Soon",status:"soon",icon:"\uD83D\uDC76",dur:"8h",modules:4},
-      {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"live",icon:"\u26A0\uFE0F",dur:"6h",modules:3},
+      {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"live",icon:"\u26A0\uFE0F",dur:"15h",modules:6},
       {id:"hg",title:"Hyperemesis Gravidarum",sub:"Beyond Morning Sickness",status:"soon",icon:"\uD83E\uDD22",dur:"5h",modules:3},
     ]},
     {name:"Neonatology & Paediatrics",icon:"\uD83D\uDC76",courses:[
@@ -191,7 +192,7 @@ const PILLARS=[
       {id:"phys",title:"Physiology",sub:"The Body in Action",status:"live",icon:"\u26A1",dur:"20h",modules:8},
       {id:"bioc",title:"Biochemistry",sub:"Chemistry of Life",status:"live",icon:"\uD83E\uDDEA",dur:"18h",modules:7},
       {id:"path",title:"Pathology",sub:"Disease Under the Microscope",status:"live",icon:"\uD83D\uDD2C",dur:"18h",modules:7},
-      {id:"pharm2",title:"Pharmacology",sub:"Drugs & Disease",status:"soon",icon:"\uD83D\uDC8A",dur:"16h",modules:6},
+      {id:"pharm2",title:"Pharmacology",sub:"Drugs & Disease",status:"live",icon:"\uD83D\uDC8A",dur:"16h",modules:6},
       {id:"micro2",title:"Microbiology",sub:"The Invisible World",status:"live",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
     ]},
     {name:"Clinical Medicine",icon:"\uD83E\uDE7A",courses:[
@@ -2107,6 +2108,15 @@ export default function LegonMed(){
   );
 
   // ── ROUTING ──
+  if(view==="course"&&activeCourse==="pharm2"){
+    setTimeout(() => { go("pillar", PILLARS[1]); }, 0);
+    return null;
+  }
+  // ── ROUTING ──
+  if(view==="course"&&activeCourse==="pharm2"){
+    setTimeout(() => { go("pillar", PILLARS[1]); }, 0);
+    return null;
+  }
   if(view==="course"&&activeCourse==="anp") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2114,13 +2124,7 @@ export default function LegonMed(){
       {showReg&&<RegModal/>}
     </>
   );
-  if(view==="course"&&activeCourse==="gp") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <GPCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[1])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
+
   if(view==="course"&&activeCourse==="ep") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2128,106 +2132,16 @@ export default function LegonMed(){
       {showReg&&<RegModal/>}
     </>
   );
-  if(view==="course"&&activeCourse==="ms") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <MSSepsisCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-
-  if(view==="course"&&activeCourse==="phys") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <PhysiologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-
-  if(view==="course"&&activeCourse==="bioc") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <BiochemCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-
-  if(view==="course"&&activeCourse==="path") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <PathologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[1])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-  if(view==="course"&&activeCourse==="micr") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <MicrobiologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-  if(view==="course"&&activeCourse==="surg") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <SurgeryCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-  if(view==="course"&&activeCourse==="paed") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <PaediatricsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-  if(view==="course"&&activeCourse==="anat") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <AnatomyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-
-  if(view==="course"&&activeCourse==="aut") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <AutacoidsCourse onBack={()=>go("pillar",PILLARS[1])} onGoHome={()=>go("home")}/>
-    </>
-  );
-
-if(view==="course"&&activeCourse==="micro2") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;0,900;1,400&family=Source+Sans+3:wght=300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <MicrobiologyCourse onBack={()=>go("pillar",PILLARS[2])} onGoHome={()=>go("home")}/>
-    </>
-  );
 
   if(view==="course"&&activeCourse==="im") return(
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,700;0,900;1,400&family=Source+Sans+3:wght=300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <div style={{ padding: '60px 40px', maxWidth: '1200px', margin: '0 auto', fontFamily: "'Source Sans 3', sans-serif" }}>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '36px', marginBottom: '10px' }}>Internal Medicine</h1>
-        <p style={{ color: '#6a6a6a', marginBottom: '30px' }}>Core Clinical Rotations & Practice Modules</p>
-        <div style={{ background: '#faf9f6', padding: '30px', borderRadius: '8px', border: '1px dashed #e6e1da', marginBottom: '20px' }}>
-          <h4>Module Content Under Construction</h4>
-          <p style={{ color: '#8a847c', marginTop: '8px' }}>This system tracking view frame is ready to stream structural instructional pathways.</p>
-        </div>
-        <button onClick={()=>go("pillar",PILLARS[0])} style={{ background: '#114B5F', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
-          ← Back to Pillar 1
-        </button>
-      </div>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <InternalMedicineCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
     </>
   );
 
   if(view==="course"&&activeCourse==="oh") return(
-    <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
-      <OHCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
-      {showReg&&<RegModal/>}
-    </>
-  );
-
-    if(view==="course") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <PECourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
@@ -2308,7 +2222,7 @@ if(view==="course"&&activeCourse==="micro2") return(
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["7","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["16","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>

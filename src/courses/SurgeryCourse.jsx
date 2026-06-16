@@ -70,12 +70,12 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
           </div>
           <div className="su-dnav" style={{ display:"flex", gap:1, alignItems:"center", flexWrap:"wrap", justifyContent:"flex-end" }}>
             <span className="su-nl" style={{ color:"rgba(255,205,210,.8)", marginRight:8, fontSize:12 }} onClick={onBack}>← Medical School</span>
-            {NAV.map(n => <span key={n.id} className={"su-nl"+(page===n.id?" act":"")} onClick={()=>setPage(n.id)}>{n.l}</span>)}
+            {NAV?.map(n => <span key={n.id} className={"su-nl"+(page===n.id?" act":"")} onClick={()=>setPage(n.id)}>{n.l}</span>)}
           </div>
           <button className="su-mob" onClick={()=>setMob(!mob)}>☰</button>
         </div>
         {mob && <div style={{ background:"#1a0505", padding:"14px 20px", borderTop:"1px solid #B71C1C28" }}>
-          {NAV.map(n=><div key={n.id} className="su-nl" style={{ display:"block", marginBottom:8 }} onClick={()=>{ setPage(n.id); setMob(false); }}>{n.l}</div>)}
+          {NAV?.map(n=><div key={n.id} className="su-nl" style={{ display:"block", marginBottom:8 }} onClick={()=>{ setPage(n.id); setMob(false); }}>{n.l}</div>)}
         </div>}
       </nav>
 
@@ -100,7 +100,7 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                   <button style={btn("secondary")} onClick={()=>setPage("register")}>🎓 Enroll Now</button>
                 </div>
                 <div style={{ display:"flex", gap:24, justifyContent:"center", marginTop:44, flexWrap:"wrap" }}>
-                  {[["10","Modules"],["25h","Content"],["70","Lessons"],["5","Professions"],["Free","Module 1"]].map(([n,l])=>(
+                  {[["10","Modules"],["25h","Content"],["70","Lessons"],["5","Professions"],["Free","Module 1"]]?.map(([n,l])=>(
                     <div key={l} style={{ textAlign:"center" }}>
                       <div style={{ fontFamily:"'Playfair Display',serif", fontSize:32, fontWeight:900, color:"#FFCDD2" }}>{n}</div>
                       <div style={{ color:"rgba(255,255,255,.6)", fontSize:11, fontFamily:"'Source Sans 3',sans-serif", letterSpacing:1.5, textTransform:"uppercase" }}>{l}</div>
@@ -116,7 +116,7 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                 <span style={bdg}>Complete Curriculum</span>
                 <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(22px,4vw,38px)", fontWeight:700, color:"#1a1a2e", marginTop:14, marginBottom:32 }}>10 Modules. Knife to Discharge.</h2>
                 <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:16 }}>
-                  {SURG_MODS.map(m=>(
+                  {SURG_MODS?.map(m=>(
                     <div key={m.id} style={{ background:"#fff5f5", borderRadius:14, padding:"20px 16px", borderLeft:"4px solid "+m.color, textAlign:"left", cursor:"pointer", transition:"all .25s", boxShadow:"0 2px 10px rgba(183,28,28,.06)" }}
                       onMouseOver={e=>e.currentTarget.style.transform="translateY(-3px)"}
                       onMouseOut={e=>e.currentTarget.style.transform=""}
@@ -137,7 +137,7 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                 <span style={bdg}>Learning Paths</span>
                 <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(22px,4vw,38px)", fontWeight:700, color:"#1a1a2e", marginTop:14, marginBottom:32 }}>Built for Health Sciences Students</h2>
                 <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))", gap:14 }}>
-                  {Object.entries(SURG_ROLES).map(([k,l])=>(
+                  {Object.entries(SURG_ROLES)?.map(([k,l])=>(
                     <div key={k} onClick={()=>{ setPage("curriculum"); setRoleTab(k); }}
                       style={{ padding:"20px 14px", borderRadius:14, border:"3px solid "+SURG_RC[k], background:"#fff", cursor:"pointer", textAlign:"center", transition:"all .25s" }}
                       onMouseOver={e=>{ e.currentTarget.style.background=SURG_RC[k]; e.currentTarget.style.color="#fff"; }}
@@ -157,13 +157,13 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                 <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(20px,4vw,34px)", fontWeight:700, color:"#1a1a2e", marginTop:14, marginBottom:10 }}>Designed for Students</h2>
                 <p style={{ color:"#5a6a8a", fontFamily:"'Source Sans 3',sans-serif", fontSize:14, marginBottom:28 }}>🇬🇭 Ghana — MoMo · Card · Bank &nbsp;·&nbsp; 🌍 International — All major cards</p>
                 <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:16 }}>
-                  {PLANS.map(p=>(
+                  {PLANS?.map(p=>(
                     <div key={p.id} style={{ background:"#f8f6f0", borderRadius:18, padding:"28px 20px", boxShadow:"0 4px 20px rgba(183,28,28,.08)", textAlign:"center", position:"relative", border:p.featured?"2px solid #FFCDD2":"1px solid #e8edf5" }}>
                       {p.featured && <div style={{ position:"absolute", top:-12, left:"50%", transform:"translateX(-50%)", background:"#FFCDD2", color:"#1a0505", padding:"3px 14px", borderRadius:20, fontSize:11, fontWeight:700, fontFamily:"'Source Sans 3',sans-serif" }}>⭐ MOST POPULAR</div>}
                       <div style={{ fontFamily:"'Playfair Display',serif", fontSize:17, fontWeight:700, color:"#B71C1C", marginBottom:6 }}>{p.label}</div>
                       <div style={{ fontSize:24, fontWeight:900, color:p.featured?"#B71C1C":"#1a1a2e", fontFamily:"'Playfair Display',serif", marginBottom:2 }}>GH₵ {p.ghc}</div>
                       <div style={{ fontSize:12.5, color:"#5a6a8a", marginBottom:12, fontFamily:"'Source Sans 3',sans-serif" }}>${p.usd} International</div>
-                      <ul style={{ listStyle:"none", marginBottom:16, textAlign:"left" }}>{p.features.map(f=><li key={f} style={{ padding:"4px 0", fontSize:13, fontFamily:"'Source Sans 3',sans-serif", borderBottom:"1px solid #f0f0f0" }}>✅ {f}</li>)}</ul>
+                      <ul style={{ listStyle:"none", marginBottom:16, textAlign:"left" }}>{p.features?.map(f=><li key={f} style={{ padding:"4px 0", fontSize:13, fontFamily:"'Source Sans 3',sans-serif", borderBottom:"1px solid #f0f0f0" }}>✅ {f}</li>)}</ul>
                       <button style={btn(p.featured?"primary":"secondary",{ width:"100%" })} onClick={()=>setPage("register")}>Enroll Now</button>
                     </div>
                   ))}
@@ -183,11 +183,11 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
             </div>
             <div style={{ display:"flex", gap:8, flexWrap:"wrap", justifyContent:"center", marginBottom:26 }}>
               <button onClick={()=>setRoleTab("all")} style={{ padding:"7px 14px", borderRadius:30, border:"2px solid #B71C1C", background:roleTab==="all"?"#B71C1C":"#fff", color:roleTab==="all"?"#fff":"#B71C1C", fontFamily:"'Source Sans 3',sans-serif", fontSize:13, fontWeight:600, cursor:"pointer" }}>All</button>
-              {Object.entries(SURG_ROLES).map(([k,l])=>(
+              {Object.entries(SURG_ROLES)?.map(([k,l])=>(
                 <button key={k} onClick={()=>setRoleTab(k)} style={{ padding:"7px 14px", borderRadius:30, border:"2px solid "+SURG_RC[k], background:roleTab===k?SURG_RC[k]:"#fff", color:roleTab===k?"#fff":SURG_RC[k], fontFamily:"'Source Sans 3',sans-serif", fontSize:13, fontWeight:600, cursor:"pointer", transition:"all .2s" }}>{l.split(" ").slice(1,3).join(" ")}</button>
               ))}
             </div>
-            {visibleMods.map(m=>(
+            {visibleMods?.map(m=>(
               <div key={m.id} style={{ background:"#fff", borderRadius:14, padding:"22px 20px", marginBottom:16, borderLeft:"6px solid "+m.color, boxShadow:"0 3px 16px rgba(183,28,28,.07)", transition:"all .25s", cursor:"pointer" }}
                 onMouseOver={e=>e.currentTarget.style.transform="translateX(4px)"}
                 onMouseOut={e=>e.currentTarget.style.transform=""}>
@@ -209,7 +209,7 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                 {expMod===m.id && (
                   <div style={{ marginTop:18, paddingTop:18, borderTop:"1px solid #f0f0f0" }}>
                     <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))", gap:7, marginBottom:16 }}>
-                      {m.sections.map(s=>(
+                      {m.sections?.map(s=>(
                         <div key={s.h} style={{ display:"flex", gap:8, alignItems:"flex-start", padding:"6px 0", borderBottom:"1px solid #f8f8f8" }}>
                           <span style={{ color:m.color, fontWeight:700, flexShrink:0, fontSize:12 }}>▸</span>
                           <span style={{ fontFamily:"'Source Sans 3',sans-serif", fontSize:13, color:"#1a1a2e", lineHeight:1.6 }}>{s.h.replace(/^[^\w\s]+\s*/,"")}</span>
@@ -327,7 +327,7 @@ function SurgeryCourse({ session, registered, onBack, onRegister, onGoHome }) {
                   <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(17px,3vw,26px)", fontWeight:700, color:"#1a1a2e", marginBottom:4 }}>The Art of Cutting</h2>
                   <div style={{ fontFamily:"'Source Sans 3',sans-serif", fontSize:13, color:"#B71C1C", marginBottom:18 }}>A Complete Course in Surgery · LegonMed Medical School</div>
                   <div style={{ display:"flex", justifyContent:"center", gap:32, marginBottom:20, flexWrap:"wrap" }}>
-                    {["Prof. K.K.E. Kukuia\nFounder, LegonMed","[Co-Signatory]\nLegonMed Medical School","[Co-Signatory]\nCourse Director"].map((sig,i)=>(
+                    {["Prof. K.K.E. Kukuia\nFounder, LegonMed","[Co-Signatory]\nLegonMed Medical School","[Co-Signatory]\nCourse Director"]?.map((sig,i)=>(
                       <div key={i} style={{ textAlign:"center" }}>
                         <div style={{ borderTop:"1px solid #FFCDD2", paddingTop:7, fontFamily:"'Source Sans 3',sans-serif", fontSize:11, color:"#5a6a8a", whiteSpace:"pre-line" }}>{sig}</div>
                       </div>

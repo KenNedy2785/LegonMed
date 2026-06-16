@@ -107,7 +107,7 @@ export default function EPCourse({ session, registered, onBack, onRegister, onGo
             Risk factors, diagnosis, medical and surgical management, special situations, and emergency care for one of early pregnancy's most time-critical conditions. Module 1 is free.
           </p>
           <div style={{display:"flex",gap:20,justifyContent:"center",marginTop:30,flexWrap:"wrap"}}>
-            {[["6","Modules"],["15h","Content"],["35","Lessons"],["Free","Module 1"]].map(([n,l])=>(
+            {[["6","Modules"],["15h","Content"],["35","Lessons"],["Free","Module 1"]]?.map(([n,l])=>(
               <div key={l} style={{textAlign:"center"}}>
                 <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:900,color:C.gold}}>{n}</div>
                 <div style={{color:"rgba(255,255,255,.6)",fontSize:11,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
@@ -118,7 +118,7 @@ export default function EPCourse({ session, registered, onBack, onRegister, onGo
       </div>
 
       <div style={{maxWidth:900,margin:"0 auto",padding:"40px 24px"}}>
-        {EP_MODS.map(m=>{
+        {EP_MODS?.map(m=>{
           const locked = !m.free && !registered && !isAdmin();
           return (
             <div key={m.id} style={{background:"#fff",borderRadius:14,padding:"22px 20px",marginBottom:16,borderLeft:"6px solid "+m.color,boxShadow:"0 3px 16px rgba(0,48,135,.07)"}}>
