@@ -80,7 +80,7 @@ const PILLARS=[
       {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"14h",modules:7},
       {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"soon",icon:"\uD83C\uDF6C",dur:"10h",modules:4},
       {id:"ptl",title:"Preterm Labour",sub:"Born Too Soon",status:"soon",icon:"\uD83D\uDC76",dur:"8h",modules:4},
-      {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"soon",icon:"\u26A0\uFE0F",dur:"6h",modules:3},
+      {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"live",icon:"\u26A0\uFE0F",dur:"6h",modules:3},
       {id:"hg",title:"Hyperemesis Gravidarum",sub:"Beyond Morning Sickness",status:"soon",icon:"\uD83E\uDD22",dur:"5h",modules:3},
     ]},
     {name:"Neonatology & Paediatrics",icon:"\uD83D\uDC76",courses:[
