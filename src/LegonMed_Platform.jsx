@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import EPCourse from "./courses/EPCourse.jsx";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
+import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
+import PaediatricsCourse from "./courses/PaediatricsCourse.jsx";
 import SurgeryCourse from "./courses/SurgeryCourse.jsx";
 import MicrobiologyCourse from "./courses/MicrobiologyCourse.jsx";
 import PathologyCourse from "./courses/PathologyCourse.jsx";
@@ -195,7 +197,7 @@ const PILLARS=[
     {name:"Clinical Medicine",icon:"\uD83E\uDE7A",courses:[
       {id:"im",title:"Internal Medicine",sub:"The Complete Physician",status:"live",icon:"\uD83E\uDE7A",dur:"30h",modules:12},
       {id:"surg",title:"Surgery",sub:"The Art of Cutting",status:"live",icon:"\uD83D\uDD2A",dur:"25h",modules:10},
-      {id:"paed",title:"Paediatrics",sub:"Medicine for Children",status:"soon",icon:"\uD83D\uDC76",dur:"20h",modules:8},
+      {id:"paed",title:"Paediatrics",sub:"Medicine for Children",status:"live",icon:"\uD83D\uDC76",dur:"20h",modules:8},
       {id:"og",title:"Obstetrics & Gynaecology",sub:"Women's Health",status:"soon",icon:"\uD83E\uDD30",dur:"20h",modules:8},
       {id:"psy",title:"Psychiatry",sub:"The Medicine of the Mind",status:"soon",icon:"\uD83E\uDDE0",dur:"16h",modules:6},
       {id:"emed",title:"Emergency Medicine",sub:"Critical Decisions",status:"soon",icon:"\uD83D\uDEA8",dur:"16h",modules:6},
@@ -2168,6 +2170,13 @@ export default function LegonMed(){
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <SurgeryCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+  if(view==="course"&&activeCourse==="paed") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <PaediatricsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[3])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
       {showReg&&<RegModal/>}
     </>
   );
