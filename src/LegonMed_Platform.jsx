@@ -8,6 +8,7 @@ import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
 import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
+import CardiovascularPharmacologyCourse from "./courses/CardiovascularPharmacologyCourse.jsx";
 import PaediatricsCourse from "./courses/PaediatricsCourse.jsx";
 import SurgeryCourse from "./courses/SurgeryCourse.jsx";
 import MicrobiologyCourse from "./courses/MicrobiologyCourse.jsx";
@@ -161,7 +162,7 @@ const PILLARS=[
       {id:"anp",title:"Autonomic Pharmacology",sub:"The Nervous System\u2019s Control Panel",status:"live",icon:"\u26A1",dur:"14h",modules:6},
       {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"live",icon:"\uD83E\uDDEB",dur:"17h",modules:7},
       {id:"iip",title:"Inflammo- & Immunopharmacology",sub:"Taming the Immune Response",status:"live",icon:"\uD83D\uDEE1\uFE0F",dur:"38h",modules:17},
-      {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"soon",icon:"\u2764\uFE0F",dur:"20h",modules:9},
+      {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"live",icon:"\u2764\uFE0F",dur:"20h",modules:9},
       {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"soon",icon:"\uD83E\uDED8",dur:"36h",modules:16},
       {id:"rp",title:"Respiratory Pharmacology",sub:"Drugs for Breath",status:"soon",icon:"\uD83C\uDF2C\uFE0F",dur:"10h",modules:4},
       {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"soon",icon:"\uD83E\uDD60",dur:"12h",modules:5},
@@ -2193,6 +2194,14 @@ export default function LegonMed(){
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
       <PaediatricsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="cvp") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <CardiovascularPharmacologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
       {showReg&&<RegModal/>}
     </>
   );
