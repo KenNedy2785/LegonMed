@@ -2133,6 +2133,62 @@ export default function LegonMed(){
     </>
   );
 
+  if(view==="course"&&activeCourse==="anat") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <AnatomyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="phys") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <PhysiologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="bioc") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <BiochemistryCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="path") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <PathologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="micro2") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <MicrobiologyCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[2])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="surg") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <SurgeryCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
+  if(view==="course"&&activeCourse==="paed") return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <PaediatricsCourse session={session} registered={registered} onBack={()=>go("pillar",PILLARS[0])} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+      {showReg&&<RegModal/>}
+    </>
+  );
+
   if(view==="course"&&activeCourse==="im") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
