@@ -69,7 +69,7 @@ function IIPCourse({ session, registered, onBack, onRegister, onGoHome }) {
             </div>
           </div>
           <div className="ii-dnav" style={{ display:"flex", gap:1, alignItems:"center", flexWrap:"wrap", justifyContent:"flex-end" }}>
-            <span className="ii-nl" style={{ color:"rgba(197,202,233,.8)", marginRight:8, fontSize:12 }} onClick={onBack}>← Medical School</span>
+            <span className="ii-nl" style={{ color:"rgba(197,202,233,.8)", marginRight:8, fontSize:12 }} onClick={onBack}>← Pharmacology Institute</span>
             {NAV.map(n => <span key={n.id} className={"ii-nl"+(page===n.id?" act":"")} onClick={() => setPage(n.id)}>{n.l}</span>)}
           </div>
           <button className="ii-mob" onClick={() => setMob(!mob)}>☰</button>
@@ -89,7 +89,7 @@ function IIPCourse({ session, registered, onBack, onRegister, onGoHome }) {
               <div style={{ position:"absolute", bottom:-60, left:-60, width:300, height:300, borderRadius:"50%", background:"#ffffff05", pointerEvents:"none" }} />
               <div style={{ maxWidth:900, margin:"0 auto", position:"relative" }}>
                 <div style={{ display:"flex", justifyContent:"center", marginBottom:18 }}><UGLogo size={80} /></div>
-                <span style={bdg}>📚 LegonMed Medical School · Pharmacology Pillar 2</span>
+                <span style={bdg}>📚 LegonMed Pharmacology Institute · Pillar 2</span>
                 <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(30px,6vw,62px)", fontWeight:900, color:"#fff", lineHeight:1.08, margin:"16px 0 10px" }}>Taming the Immune Response</h1>
                 <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(14px,2.8vw,23px)", fontWeight:400, color:"#C5CAE9", marginBottom:18, fontStyle:"italic" }}>Inflammo- & Immunopharmacology</h2>
                 <p style={{ color:"rgba(255,255,255,.82)", fontSize:"clamp(14px,2vw,17px)", maxWidth:720, margin:"0 auto 30px", lineHeight:1.9, fontFamily:"'Source Sans 3',sans-serif" }}>
