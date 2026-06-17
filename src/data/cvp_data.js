@@ -26,7 +26,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"Many patients are on MULTIPLE cardiovascular drugs — each targeting a DIFFERENT parameter. A patient on a beta-blocker (reduces HR and contractility), an ACE inhibitor (reduces afterload), and a diuretic (reduces preload) is having ALL FOUR pillars modulated simultaneously. When a NEW drug is added or a dose CHANGED, considering which ADDITIONAL parameters will be affected — and whether this COMPOUNDS or OPPOSES the effects of existing medications — is essential pharmacological reasoning."},
           {role:"nurse", type:"clinical", text:"When monitoring a patient on cardiovascular drugs, the FOUR PILLARS give you a framework for WHAT to monitor: HEART RATE (chronotropy drugs), BLOOD PRESSURE (afterload/CO-affecting drugs), FLUID STATUS including weight, oedema, and urine output (preload-affecting drugs like diuretics), and SIGNS OF CONTRACTILITY CHANGES (e.g. worsening dyspnoea, fatigue, or peripheral oedema suggesting declining cardiac output in a patient on negative inotropes)."},
           {role:"labtech", type:"practical", text:"Several cardiovascular drugs require SPECIFIC LABORATORY MONITORING that connects directly to their MECHANISM: digoxin requires SERUM LEVEL MONITORING and POTASSIUM monitoring (hypokalaemia increases digoxin toxicity risk); diuretics require ELECTROLYTE monitoring (sodium, potassium, creatinine/eGFR); anticoagulants (warfarin) require INR; ACE inhibitors/ARBs require monitoring of POTASSIUM and RENAL FUNCTION (creatinine/eGFR). Understanding WHY each test is needed (the mechanism) helps you understand urgency and frequency of monitoring."}
-];
+]
       },
       {
         h:"🗂️ Classification of CVS Drugs — The Pump, Pipes & Fluid Framework",
@@ -45,9 +45,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When a patient asks 'why am I on SO MANY heart medications?' — this framework provides a patient-friendly explanation: 'Your diuretic reduces the VOLUME your heart has to handle; your ACE inhibitor reduces the RESISTANCE your heart has to pump against; your beta-blocker slows your heart RATE so each beat is more efficient; together they address the same problem from DIFFERENT angles.' This kind of mechanistic explanation, delivered accessibly, improves patient understanding and adherence."},
           {role:"nurse", type:"clinical", text:"The pump-pipes-fluid framework helps you anticipate WHICH SIDE EFFECTS to monitor for EACH drug class: PUMP drugs (antiarrhythmics, beta-blockers) → monitor HR and cardiac rhythm; PIPES drugs (vasodilators) → monitor BP and watch for postural hypotension; FLUID drugs (diuretics) → monitor electrolytes, renal function, fluid balance, and weight. This structured approach to monitoring, rather than memorising individual drug side effects in isolation, scales more efficiently across the large number of CVS drugs a patient may be on."},
           {role:"labtech", type:"practical", text:"The FLUID category of CVS drugs generates the MAJORITY of cardiovascular-related laboratory monitoring requests: diuretics (electrolytes, renal function), anticoagulants (INR for warfarin, anti-Xa for heparins/some DOACs in specific contexts), lipid-lowering drugs (lipid panels, LFTs for statins), and anti-anaemia drugs (FBC, iron studies, B12/folate). Understanding that these monitoring requirements are MECHANISTICALLY DRIVEN — not arbitrary — helps prioritise and contextualise results when they arrive as part of complex cardiovascular medication management."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; ESC Guidelines on Cardiovascular Pharmacotherapy; Braunwald's Heart Disease"
   },
   {
@@ -74,7 +74,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When dispensing ANY RAAS drug (ACEi, ARB, or ARNi) to a patient of CHILDBEARING AGE, CONFIRM CONTRACEPTION STATUS — these drugs are TERATOGENIC (FDA Category D/X in pregnancy), causing fetal renal dysgenesis, oligohydramnios, and limb/craniofacial defects. This is a CRITICAL COUNSELLING POINT that should accompany EVERY dispensing of these drugs to patients who could become pregnant, and should be documented in the dispensing record."},
           {role:"nurse", type:"clinical", text:"For patients starting ACEi/ARBs, counsel SPECIFICALLY on the DRY COUGH: it can start WEEKS after initiating therapy, is PERSISTENT (doesn't resolve with cough suppressants), and is the MEDICATION — not a chest infection — if it develops. Patients who STOP their medication due to cough without informing their prescriber may lose mortality-benefiting therapy unnecessarily if not counselled that switching to an ARB (which generally doesn't cause cough) is an available ALTERNATIVE to stopping RAAS therapy altogether."},
           {role:"labtech", type:"practical", text:"The 'renal function check' after ACEi/ARB initiation is a TIME-SENSITIVE clinical safety requirement — a significant creatinine rise that crosses a threshold (typically >30% rise, or eGFR falling below a critical level) should be FLAGGED AND COMMUNICATED PROMPTLY to the clinical team, as it may indicate bilateral renal artery stenosis or an at-risk kidney that requires urgent drug review. These are NOT 'can wait until the routine weekly batch' results in the context of a patient who has JUST started one of these drugs."}
-];
+]
       },
       {
         h:"💉 Calcium Channel Blockers, Thiazides, Beta-Blockers & Newer Agents",
@@ -121,7 +121,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"Amiodarone has critical drug interactions: CYP2C9 inhibition (can DOUBLE warfarin effect — requiring INR monitoring and dose reduction) and P-glycoprotein inhibition (raises digoxin levels). When amiodarone is newly added or a new medication is started in a patient on amiodarone, SYSTEMATIC INTERACTION CHECKING is essential."},
           {role:"nurse", type:"clinical", text:"When administering ADENOSINE for SVT, warn the patient beforehand about the very unpleasant but BRIEF sensation (feeling of doom, intense chest tightness, flushing) lasting about 10-15 seconds. This forewarning dramatically reduces patient distress. Adenosine is given as a RAPID IV BOLUS followed by a FAST FLUSH, with continuous ECG monitoring throughout."},
           {role:"labtech", type:"practical", text:"For patients on AMIODARONE, long-term monitoring requires THYROID FUNCTION TESTS (amiodarone contains ~37% iodine — causes both hypo- and hyperthyroidism), LIVER FUNCTION TESTS (hepatotoxicity), and CHEST X-RAY/PULMONARY FUNCTION (pulmonary toxicity). These should be performed at baseline and every 6 months — a monitoring schedule spanning MULTIPLE organ systems."}
-];
+]
       },
       {
         h:"💊 Key Antiarrhythmic Drugs — Amiodarone, Digoxin, Adenosine & Newer Agents",
@@ -140,9 +140,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"Amiodarone's interaction with WARFARIN is critical: amiodarone inhibits CYP2C9 (metabolising warfarin's S-enantiomer — the MORE ACTIVE form) → REDUCED warfarin clearance → INCREASED anticoagulant effect → ELEVATED INR → BLEEDING RISK. When amiodarone is started, warfarin dose typically needs REDUCTION (often 30-50%) AND INR should be checked MORE FREQUENTLY until a new stable level is achieved. Plan this proactively — not reactively after a dangerously high INR."},
           {role:"nurse", type:"clinical", text:"Patients on LONG-TERM AMIODARONE need education about SUN PROTECTION — amiodarone causes PHOTOSENSITIVITY and blue-grey skin discolouration in sun-exposed areas. Counsel on high-SPF sunscreen and protective clothing from the START of therapy, not after discolouration has occurred. Also monitor for new symptoms (breathlessness, visual changes, jaundice) that may indicate organ toxicity."},
           {role:"labtech", type:"practical", text:"A patient on AMIODARONE with unusual thyroid function test results needs CAREFUL INTERPRETATION — amiodarone interferes with thyroid hormone metabolism in multiple ways and can cause BOTH elevated and suppressed TSH patterns. Flagging these results to an ENDOCRINOLOGIST or cardiologist experienced in amiodarone management is appropriate — automated normal range flagging may not adequately capture clinical significance in this context."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; ESC Guidelines on Atrial Fibrillation 2020; CAST Trial; ESC Guidelines on Ventricular Arrhythmias and SCD"
   },
   {
@@ -169,7 +169,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When a patient with HFrEF is prescribed an MRA (spironolactone) AND an ACEi/ARB, FLAG the HYPERKALAEMIA interaction proactively — both independently raise potassium, and their combination can cause DANGEROUS hyperkalaemia, particularly if renal function is impaired or if the patient is also on NSAIDs, trimethoprim, or potassium supplements. Checking that a POTASSIUM MONITORING PLAN is in place (K+ within 1-2 weeks of any initiation or dose change) before dispensing this combination is an important pharmacy safety check."},
           {role:"nurse", type:"clinical", text:"For patients starting beta-blockers for HFrEF, SET EXPECTATIONS CAREFULLY: they may feel SLIGHTLY WORSE for the first few weeks (negative inotropy acutely) before the BENEFIT of blocked remodelling becomes apparent over months. Patients who don't understand this may STOP the medication during the initial 'feeling worse' phase — BEFORE the long-term benefit has had time to develop. This is one of the most important adherence counselling points in all of cardiology."},
           {role:"labtech", type:"practical", text:"For a patient on the FULL HFrEF regimen (ACEi/ARNi + MRA + SGLT2 inhibitor), the monitoring PACKAGE includes: POTASSIUM and eGFR (risk of hyperkalaemia from ACEi + MRA, and potential renal effects from SGLT2 inhibitors), GLUCOSE (if diabetic, SGLT2 inhibitors lower glucose — hypoglycaemia if also on insulin/sulfonylureas), and periodic BNP/NT-proBNP (a marker of cardiac wall stress, used to monitor HF severity and response to treatment). Understanding this MONITORING PACKAGE as a coherent CLINICAL SAFETY SYSTEM — not just a list of unrelated tests — supports appropriate prioritisation."}
-];
+]
       },
       {
         h:"💉 Diuretics in Heart Failure & HFpEF Management",
@@ -188,9 +188,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"Furosemide's VARIABLE ORAL BIOAVAILABILITY (10-100% across patients and circumstances) is a practically important but frequently underappreciated pharmacokinetic fact: a patient who was well-controlled on oral furosemide at home may become acutely decompensated in hospital because their oral bioavailability has REDUCED (gut oedema in decompensated HF reduces absorption). Switching to IV furosemide in this setting — at an appropriate EQUIVALENT dose — often achieves diuresis where increasing the oral dose further would not, because the ABSORPTION problem is being bypassed."},
           {role:"nurse", type:"clinical", text:"Teaching a heart failure patient to WEIGH THEMSELVES DAILY and to know their 'action weight' (their dry weight plus 2kg = the weight at which they should call their team) is one of the HIGHEST-IMPACT self-management interventions in all of chronic disease management. Studies consistently show that patients who monitor their weight daily and respond to early weight gain have FEWER HOSPITAL ADMISSIONS — this simple, low-technology intervention is directly life-saving, and deserves the same emphasis as any new medication."},
           {role:"labtech", type:"practical", text:"In a patient admitted with ACUTE DECOMPENSATED HF being treated with IV furosemide, ELECTROLYTES (particularly K+, Na+, Mg2+) should be checked FREQUENTLY — often DAILY or even TWICE DAILY in the initial phase of aggressive diuresis — because the rate of electrolyte change can be rapid and the consequences (ventricular arrhythmia from hypokalaemia, confusion/seizures from hyponatraemia) are clinically urgent. These are NOT 'routine morning bloods' in this context — they are SAFETY-CRITICAL, time-sensitive results that should be communicated promptly."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; ESC Heart Failure Guidelines 2021; PARADIGM-HF Trial; DAPA-HF Trial; EMPEROR-Reduced Trial; EMPEROR-Preserved Trial; RALES Trial; SHIFT Trial"
   },
   {
@@ -217,7 +217,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When dispensing GTN sublingual tablets or spray, ALWAYS check whether the patient is ALSO prescribed a PDE5 INHIBITOR (sildenafil, tadalafil, vardenafil, avanafil) — this interaction is ABSOLUTE and LIFE-THREATENING. If BOTH are prescribed: discuss with the prescribing team, as co-prescribing should generally be avoided. ADDITIONALLY: counsel on GTN storage — sublingual tablets lose potency quickly once opened; the container should be kept CLOSED, AWAY FROM LIGHT AND HEAT, and tablets replaced every 8 weeks after opening."},
           {role:"nurse", type:"clinical", text:"For a patient using GTN for an acute angina attack, ALWAYS instruct them to SIT or LIE DOWN before using it — postural hypotension from the venodilatory effect can cause a FALL, which could be more immediately dangerous than the angina itself. The clinical protocol: sit down, take one GTN tablet/spray, wait 5 minutes, if no relief take a second, wait 5 minutes, if no relief take a third — if NO RELIEF after three doses, call emergency services (possible ACS, not stable angina)."},
           {role:"labtech", type:"practical", text:"While anti-anginal drugs themselves don't usually require specific drug-level monitoring, RANOLAZINE causes QT PROLONGATION — patients on ranolazine who are ALSO on other QT-prolonging drugs (antiarrhythmics, certain antibiotics, antipsychotics) should have ECG monitoring (QTc interval) as part of their management. A QTc ABOVE defined safety thresholds (typically >500ms, or >60ms above baseline) should be flagged urgently, as this significantly increases the risk of torsades de pointes."}
-];
+]
       },
       {
         h:"🚨 Acute MI Pharmacology — Thrombolytics, Antiplatelet Loading & Reperfusion",
@@ -236,9 +236,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"The WEIGHT-BASED dosing of tenecteplase is CRITICAL for safe administration — the dose is calculated based on the patient's actual BODY WEIGHT in kg (different weight bands correspond to different doses, typically ranging from 30mg to 50mg in most protocols). An ERROR in weight-based dosing — particularly OVERDOSING — directly increases the risk of intracranial haemorrhage. In emergency settings, a DOUBLE-CHECK of weight-based tenecteplase dosing calculation by a second person (pharmacist + nurse, or two nurses) before administration is a CRITICAL SAFETY STEP."},
           {role:"nurse", type:"clinical", text:"When thrombolytics are being administered, NEUROLOGICAL MONITORING is a priority — any new HEADACHE, CONFUSION, WEAKNESS, VISUAL CHANGES, or SPEECH DIFFICULTY during or after infusion should prompt IMMEDIATE escalation, as these may represent INTRACRANIAL HAEMORRHAGE. This is time-critical — stopping the infusion and arranging URGENT CT HEAD is the priority; do NOT wait to see if symptoms resolve spontaneously. This is one of the most serious potential complications of any drug in clinical use."},
           {role:"labtech", type:"practical", text:"In a patient receiving thrombolytics for STEMI, URGENT BLOOD TESTS serve multiple purposes: CARDIAC TROPONIN (to confirm myocardial damage and baseline for assessing reperfusion response), FBC and COAGULATION STUDIES (baseline before thrombolysis, and if BLEEDING occurs during/after), BLOOD GROUP AND SAVE (in case transfusion is needed for bleeding complications), and RENAL FUNCTION (relevant for LMWH dosing if anticoagulation is ongoing). The RAPID and CORRECT processing of these samples, communicated to the clinical team immediately, directly affects ACS management decisions minute-by-minute."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; ESC Guidelines on Acute Coronary Syndromes 2023; ESC Guidelines on Stable Coronary Artery Disease; AVOID Trial; ACC/AHA STEMI Guidelines"
   },
   {
@@ -265,7 +265,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"DAPT adherence is CRITICAL — stent thrombosis risk with premature discontinuation is highest in the first 30 days post-stenting but persists for 12 months. When dispensing ticagrelor or clopidogrel to a post-ACS/PCI patient, REINFORCE: (1) these MUST be taken for the full 12 months; (2) NEVER STOP without talking to the cardiology team FIRST — even if they feel well; (3) if ANY procedure or surgery is planned, their cardiology team must be informed WELL IN ADVANCE so the medication management can be planned."},
           {role:"nurse", type:"clinical", text:"Ticagrelor-related DYSPNOEA is a COMMONLY MISUNDERSTOOD side effect — patients may present to the ward or clinic with new-onset breathlessness after starting ticagrelor, and the differential diagnosis must INCLUDE: ticagrelor-related dyspnoea (most common cause in this context), heart failure, pulmonary embolism, and respiratory infection. Ticagrelor dyspnoea is typically: NON-EXERTIONAL, occurs in the first weeks of therapy, does NOT impair oxygen saturations, and generally RESOLVES without stopping the drug — distinguishing these features from HF or PE is clinically essential."},
           {role:"labtech", type:"practical", text:"PLATELET FUNCTION TESTING (e.g. VerifyNow assay, or light transmission aggregometry) can be used in SPECIALISED settings to assess the DEGREE of platelet inhibition achieved by antiplatelet therapy — relevant in patients with suspected clopidogrel resistance (CYP2C19 poor metabolisers), patients with recurrent ischaemic events on DAPT, or to assess residual platelet function before surgery. While not routine in all settings, awareness that platelet function can be MEASURED (not just inferred) supports understanding of why certain patients may have inadequate antiplatelet protection despite taking their prescribed medication."}
-];
+]
       },
       {
         h:"🔬 GPIIb/IIIa Inhibitors, Dipyridamole, Vorapaxar & Antiplatelet Safety",
@@ -284,9 +284,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"For a post-ACS patient on DAPT who needs a DENTAL PROCEDURE, the guidance is generally: CONTINUE both antiplatelet drugs — the dental team should use LOCAL MEASURES to control bleeding (local haemostatic agents, pressure, sutures), rather than stopping antiplatelet therapy, because the STENT THROMBOSIS risk of stopping outweighs the DENTAL BLEEDING risk of continuing in the vast majority of dental procedures. This is a COMMON COUNSELLING SCENARIO that both pharmacists and dentists should be familiar with — and where clear communication between the dentist and the cardiology team is important."},
           {role:"nurse", type:"clinical", text:"When a patient on DAPT reports ANY minor bleeding (gum bleeding, easy bruising, prolonged bleeding from minor cuts), acknowledge their concern but EXPLAIN that this is an EXPECTED, MECHANISTIC EFFECT of their antiplatelet medications — and that STOPPING the medications for minor bleeding can be MORE DANGEROUS than the bleeding itself (stent thrombosis), particularly in the first year post-ACS. Teach patients WHEN to seek urgent care (heavy GI bleeding, blood in urine, headache suggesting intracranial bleed) versus when to manage at home with pressure."},
           {role:"labtech", type:"practical", text:"When a patient on abciximab has a PLATELETS result flagged as CRITICALLY LOW (e.g. <50,000), this should be IMMEDIATELY communicated to the clinical team — abciximab-induced thrombocytopenia can drop the platelet count VERY RAPIDLY, and the clinical team needs to know URGENTLY to consider stopping the infusion and assessing bleeding risk. This is a TIME-CRITICAL result that should NOT wait for a routine reporting cycle, particularly in a patient who is actively undergoing PCI or in the immediate post-PCI period."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; ESC ACS Guidelines 2023; PLATO Trial; TRITON-TIMI 38 Trial; CHAMPION PHOENIX Trial"
   },
   {
@@ -313,7 +313,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"Warfarin has HUNDREDS of drug interactions — but the MOST CLINICALLY IMPORTANT are: AMIODARONE (CYP2C9 inhibitor — can DOUBLE warfarin effect, Module 3); ANTIBIOTICS (some inhibit gut flora producing vitamin K AND some inhibit CYP metabolism); AZOLE ANTIFUNGALS; RIFAMPICIN (potent CYP INDUCER — dramatically REDUCES warfarin effect). When ANY new medication is added to a patient on warfarin, INTERACTION CHECKING is mandatory, and the patient should be counselled to have an INR CHECK within 1-2 weeks, and to report any unusual bleeding OR thrombotic symptoms."},
           {role:"nurse", type:"clinical", text:"For patients on WARFARIN who report changes in diet (e.g. starting a new diet high in leafy green vegetables — rich in vitamin K), this can significantly REDUCE the INR (increased dietary vitamin K 'overcomes' the warfarin blockade more). CONVERSELY, illness-related REDUCTION IN FOOD INTAKE can INCREASE the INR (less dietary vitamin K → warfarin effect more 'unopposed'). Counsel patients on CONSISTENCY of dietary vitamin K — they don't need to AVOID spinach and kale, but should eat consistent amounts rather than dramatically varying their intake week to week."},
           {role:"labtech", type:"practical", text:"The APTT (for UFH monitoring) and INR (for warfarin monitoring) are TIME-SENSITIVE results in acutely anticoagulated patients — a supratherapeutic APTT in a patient on UFH infusion (e.g. APTT >120 seconds when target is 60-100) should be flagged IMMEDIATELY to the clinical team so the infusion rate can be reduced before haemorrhagic complications occur. Similarly, an INR >5 in an outpatient warfarin clinic (especially if the patient has symptoms of bleeding) requires URGENT communication, not just inclusion in a routine report batch."}
-];
+]
       },
       {
         h:"💊 Direct Oral Anticoagulants (DOACs) & Reversal Agents",
@@ -332,9 +332,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When dispensing RIVAROXABAN for AF or VTE, ALWAYS counsel that it should be taken WITH THE MAIN MEAL OF THE DAY — bioavailability of the 20mg dose (used for AF and VTE treatment) is SIGNIFICANTLY REDUCED if taken WITHOUT FOOD (approximately 66% absorption fasted vs ~100% fed). This is a PRACTICALLY IMPORTANT counselling point — a patient who takes their rivaroxaban on an empty stomach may have SUBTHERAPEUTIC drug levels and therefore inadequate anticoagulation, increasing their stroke or VTE recurrence risk."},
           {role:"nurse", type:"clinical", text:"For patients converting FROM WARFARIN TO A DOAC, BRIDGE the transition CAREFULLY — DOACs should generally be started when INR falls to a SPECIFIC RANGE (e.g. INR <2.0 for most DOACs — but the EXACT INR threshold varies by DOAC and indication, and local protocols should be followed). Starting a DOAC while the INR is still therapeutic can lead to EXCESSIVE anticoagulation and BLEEDING — this is a transition-of-care safety issue that requires explicit documentation and communication between inpatient and outpatient teams."},
           {role:"labtech", type:"practical", text:"STANDARD COAGULATION TESTS (PT/INR, APTT) are UNRELIABLE for assessing the DEGREE of anticoagulation with DOACs — PT may be mildly prolonged by rivaroxaban/edoxaban, and APTT by dabigatran, but these changes do NOT reliably quantify drug levels. If a clinical team needs to KNOW whether a patient has significant residual DOAC effect (e.g. before emergency surgery), SPECIFIC assays are needed: ANTI-Xa ASSAY calibrated for the specific Factor Xa inhibitor (rivaroxaban, apixaban), or DILUTED THROMBIN TIME (dTT) or ECARIN CLOTTING TIME (ECT) for dabigatran. Awareness of which assay to request and why supports appropriate laboratory communication in DOAC-related emergencies."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; ESC AF Guidelines 2020; ESC VTE Guidelines; RE-LY Trial; ROCKET-AF Trial; ARISTOTLE Trial"
   },
   {
@@ -361,7 +361,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"DESMOPRESSIN (DDAVP) is available in MULTIPLE FORMULATIONS for different indications: IV or subcutaneous for BLEEDING/surgical indications (stimulating vWF/FVIII release); INTRANASAL for DIABETES INSIPIDUS; low-dose ORAL for NOCTURNAL ENURESIS. When dispensing or prescribing DDAVP, CONFIRM THE INDICATION AND ROUTE — a dose appropriate for nocturnal enuresis (low oral dose) is VERY DIFFERENT from a dose used for perioperative haemostasis (IV, in a hospital setting with sodium monitoring). Route confusion with DDAVP can cause either UNDERDOSING for a bleeding indication or OVERTREATMENT with hyponatraemia risk."},
           {role:"nurse", type:"clinical", text:"When DDAVP is given for a BLEEDING INDICATION (especially in CHILDREN), monitor for HYPONATRAEMIA — this may manifest as HEADACHE, CONFUSION, NAUSEA, or in severe cases, SEIZURES. Monitor serum sodium within hours of administration with repeated doses, RESTRICT FLUID INTAKE as directed, and report any neurological changes immediately. This is particularly relevant in paediatric haematology settings where DDAVP may be given for vWD or mild Haemophilia A prior to minor surgical or dental procedures."},
           {role:"labtech", type:"practical", text:"For a patient with suspected VON WILLEBRAND DISEASE presenting for evaluation, the LABORATORY WORKUP is COMPLEX and MULTI-TEST: vWF ANTIGEN (quantity of vWF protein), vWF ACTIVITY (also called ristocetin cofactor activity — measures functional capacity), FACTOR VIII LEVEL (often reduced in vWD as vWF is its carrier), BLOOD GROUP (Group O has naturally lower vWF levels — a physiological variable that must be considered in interpretation), and MULTIMER ANALYSIS (for subtyping). Results can be VARIABLE (levels fluctuate with stress, exercise, oestrogens) — a single NORMAL result does NOT exclude vWD, and interpretation requires haematology expertise."}
-];
+]
       },
       {
         h:"🔬 Factor Concentrates, Blood Products & Haemophilia Management",
@@ -380,9 +380,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"FACTOR VIII CONCENTRATE dosing is calculated using the formula: DOSE (IU) = BODY WEIGHT (kg) × DESIRED RISE IN FACTOR VIII (%) × 0.5 (for Factor VIII — the '0.5' reflects that each IU/kg raises FVIII by ~2%). For FACTOR IX (Haemophilia B), the formula is similar but the coefficient is different (~1.0 for plasma-derived, 0.5-1.0 for recombinant depending on the product — check product-specific pharmacokinetics). Errors in dosing calculation can result in UNDERDOSING (inadequate haemostasis) or OVERDOSING (thrombotic risk) — pharmacists play a critical role in verifying these calculations, particularly for children where dosing errors have greater proportional impact."},
           {role:"nurse", type:"clinical", text:"Many haemophilia patients self-infuse their own factor concentrates at home — patients (and often their parents for paediatric patients) are trained to RECONSTITUTE the lyophilised (freeze-dried) concentrate and ADMINISTER it IV. When a haemophilia patient presents to hospital, RESPECTING THEIR EXPERTISE in their own condition is important — they often know their USUAL DOSE, their VENOUS ACCESS (which veins work, which don't), and their OWN BLEEDING PATTERNS better than any new clinician they encounter. Building on this expertise rather than overriding it leads to better outcomes and care experiences."},
           {role:"labtech", type:"practical", text:"In a patient receiving MASSIVE TRANSFUSION (multiple units of packed red cells in rapid succession), MONITORING the 'TRAUMA TRIAD' requires FREQUENT, RAPID LABORATORY RESULTS: TEMPERATURE (hypothermia — not a lab test but critically interdependent), ACIDOSIS (blood gas pH, base excess), and COAGULOPATHY (INR, fibrinogen, APTT, and ideally VISCOELASTIC TESTING such as ROTEM or TEG if available — provides a real-time whole-blood coagulation profile guiding WHICH blood product to give, rather than waiting for individual factor levels). In massive haemorrhage, results from viscoelastic testing can be available in 10-15 minutes and directly drive goal-directed blood product therapy — a modern advance in haemorrhage management."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; CRASH-2 Trial; WOMAN Trial; World Federation of Hemophilia Guidelines; UK Haemophilia Centre Doctors Organisation Guidelines; WHO Essential Medicines List"
   },
   {
@@ -409,7 +409,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When dispensing a statin for a patient ALSO on AMLODIPINE, note that amlodipine is a MILD CYP3A4 INHIBITOR — there are FDA warnings about SIMVASTATIN doses exceeding 20mg when taken with amlodipine. This is LESS clinically significant than the diltiazem/verapamil interaction but still warrants awareness, particularly at higher simvastatin doses. If both amlodipine AND a statin are needed, ATORVASTATIN (also CYP3A4 substrate but more clinically forgiving than simvastatin) or ROSUVASTATIN are generally appropriate — CHECKING DOSE LIMITS and interactions at each dispensing for patients on multiple cardiovascular medications is part of comprehensive pharmaceutical care."},
           {role:"nurse", type:"clinical", text:"When a patient DECLINES statin therapy due to FEAR of side effects (particularly muscle pain) — a VERY COMMON scenario — rather than simply accepting the refusal, EXPLORE THE CONCERN specifically: have they actually experienced muscle pain on a statin before, or are they worried about it happening? If they've not yet tried a statin, explaining the NOCEBO phenomenon — that fear of side effects can cause the PERCEPTION of them — and offering to start at a LOW DOSE with close monitoring, may help patients engage with a treatment that could significantly extend their healthy life."},
           {role:"labtech", type:"practical", text:"CREATINE KINASE (CK) measurement is the key laboratory test when STATIN-INDUCED MYOPATHY is suspected — it should be CHECK at BASELINE (before starting a statin in high-risk patients, e.g. those on CYP3A4 inhibitors or with renal impairment) AND if SYMPTOMATIC MUSCLE COMPLAINTS develop. A CK ELEVATION >10 TIMES the upper limit of normal (particularly with symptoms) suggests significant myopathy; >40 times suggests impending rhabdomyolysis requiring URGENT management (hydration, stopping the statin, monitoring renal function/urine myoglobin). A NORMAL CK in a patient reporting muscle pain does NOT diagnose myopathy — symptoms without CK elevation are more consistent with nocebo or musculoskeletal causes."}
-];
+]
       },
       {
         h:"💊 Non-Statin Lipid-Lowering Drugs — Ezetimibe, PCSK9 Inhibitors, Fibrates & Newer Agents",
@@ -428,9 +428,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"BILE ACID SEQUESTRANTS (cholestyramine, colesevelam) can SIGNIFICANTLY REDUCE THE ABSORPTION of other drugs taken at the same time — including WARFARIN, DIGOXIN, THYROID HORMONES, and various antibiotics. Always counsel patients on bile acid sequestrants to take OTHER MEDICATIONS AT LEAST 1-4 HOURS BEFORE (or 4-6 hours AFTER) the resin to allow adequate absorption. This is a practical, frequently overlooked counselling point that can have clinical consequences if other drugs are chronically under-absorbed."},
           {role:"nurse", type:"clinical", text:"For patients STARTING a PCSK9 inhibitor (subcutaneous injection every 2-4 weeks), patient TRAINING on SELF-INJECTION is essential before discharge — including the autoinjector device function, injection sites (abdomen, thigh, upper arm), rotation of sites, and STORAGE (most require REFRIGERATION but can be left at room temperature for a defined period before use). Patients in RESOURCE-LIMITED SETTINGS with limited refrigeration access may face practical barriers to PCSK9 inhibitor use that should be discussed proactively — finding solutions to storage barriers prevents medication wastage and maintains efficacy."},
           {role:"labtech", type:"practical", text:"A FULL FASTING LIPID PANEL includes: TOTAL CHOLESTEROL, LDL CHOLESTEROL, HDL CHOLESTEROL, and TRIGLYCERIDES — with LDL often CALCULATED (Friedewald equation: LDL = Total Chol - HDL - TG/2.2 in mmol/L) rather than directly measured. The Friedewald equation becomes UNRELIABLE when TRIGLYCERIDES ARE VERY HIGH (>4.5 mmol/L) — in this case, DIRECT LDL measurement should be requested. Understanding this limitation helps explain why 'LDL cannot be calculated' appears on some lipid panel reports — it's a MATHEMATICAL LIMITATION, not a laboratory error, and DIRECT LDL or NON-HDL CHOLESTEROL (= Total Chol - HDL, unaffected by TG) should be used instead."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; ESC/EAS Dyslipidaemia Guidelines 2019; FOURIER Trial; ODYSSEY OUTCOMES Trial; IMPROVE-IT Trial; REDUCE-IT Trial; SAMSON Trial; ORION Trials"
   },
   {
@@ -457,7 +457,7 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"IV FERRIC CARBOXYMALTOSE has a SPECIFIC, UNDERAPPRECIATED side effect: HYPOPHOSPHATAEMIA, occurring in up to 30-75% of patients after infusion due to FGF23-mediated phosphaturia. In MOST patients this is mild and transient. But in patients at RISK (e.g. those with malnutrition, refeeding syndromes, or pre-existing low phosphate), it can be CLINICALLY SIGNIFICANT — causing muscle weakness, respiratory muscle dysfunction, and bone pain. CHECK PHOSPHATE before IV iron in at-risk patients and plan appropriate monitoring post-infusion."},
           {role:"nurse", type:"clinical", text:"When administering IV iron (any preparation), HAVE RESUSCITATION FACILITIES AVAILABLE and MONITOR THE PATIENT for the first 30 minutes of infusion (the period of highest anaphylaxis risk). Signs of an infusion reaction (flushing, chest tightness, hypotension, itching) should prompt STOPPING or SLOWING the infusion and reassessment. Mild infusion reactions (flushing, mild urticaria) may be managed by slowing the infusion after appropriate assessment; SEVERE reactions (bronchospasm, hypotension, anaphylaxis) require immediate ADRENALINE and STANDARD ANAPHYLAXIS MANAGEMENT — the same principles as any drug-related anaphylaxis."},
           {role:"labtech", type:"practical", text:"The laboratory DIFFERENTIATION of iron deficiency anaemia vs anaemia of chronic disease (ACD) — BOTH of which can appear as NORMOCYTIC or MICROCYTIC anaemia — is clinically important because the management differs: iron supplementation helps IRON DEFICIENCY but is NOT the solution for ACD. Key distinguishing tests: SERUM FERRITIN (low in iron deficiency, normal or HIGH in ACD — ferritin is an ACUTE PHASE PROTEIN raised in inflammation regardless of iron status), TRANSFERRIN SATURATION (low in both, but more profoundly in iron deficiency), SOLUBLE TRANSFERRIN RECEPTOR (raised in iron deficiency, normal in ACD — not affected by inflammation). In patients with COEXISTING INFLAMMATION, ferritin may be falsely NORMAL despite true iron deficiency — soluble transferrin receptor or transferrin saturation help identify true iron deficiency in this context."}
-];
+]
       },
       {
         h:"💉 Erythropoiesis-Stimulating Agents, Hydroxyurea & Blood Transfusion Principles",
@@ -476,9 +476,9 @@ export const CVP_MODS = [
           {role:"pharmacist", type:"clinical", text:"When dispensing HYDROXYUREA to a woman of reproductive age with sickle cell disease, EFFECTIVE CONTRACEPTION counselling is MANDATORY — hydroxyurea is TERATOGENIC (reduces DNA synthesis in rapidly dividing cells, including the developing fetus). This should be discussed AT EVERY DISPENSING, not just at initiation, and documented. Women who wish to become pregnant should discuss STOPPING hydroxyurea with their haematologist BEFORE conception — though the timing and management requires specialist guidance balancing SCD disease control in pregnancy against teratogenic risk."},
           {role:"nurse", type:"clinical", text:"When a patient develops SYMPTOMS during a blood transfusion (fever, rigors, back pain, hypotension, decreased urine output, rash, difficulty breathing) — STOP THE TRANSFUSION IMMEDIATELY and call for medical assessment. Do NOT resume the transfusion until a doctor has assessed. This applies to ALL symptoms during transfusion — distinguishing the various types of transfusion reaction (haemolytic, febrile, TACO, TRALI, allergic) requires medical assessment and often cannot be reliably done at the bedside without further investigation. The initial management for ALL severe transfusion reactions is the SAME: STOP THE BLOOD, maintain IV access with normal saline, and call for help."},
           {role:"labtech", type:"practical", text:"PRE-TRANSFUSION TESTING — GROUP AND SAVE (or CROSSMATCH) — is one of the most SAFETY-CRITICAL tests in routine laboratory medicine. ABO mismatch in transfusion can be FATAL, and the majority of ABO-incompatible transfusions result from SAMPLING ERRORS (wrong patient's blood in the tube) or LABELLING ERRORS rather than laboratory analytical errors. POSITIVE PATIENT IDENTIFICATION at the time of sample collection (asking the patient to state their name and date of birth, checking wristband, using barcoded systems where available) is the SINGLE MOST IMPORTANT step in preventing fatal transfusion errors — a laboratory safety principle that directly connects to bedside clinical practice."}
-];
+]
       }
-];,
+],
     ev:"Goodman & Gilman's Pharmacological Basis of Therapeutics; Katzung's Basic and Clinical Pharmacology; Rang & Dale's Pharmacology; WHO Guidelines on Management of Anaemia; British Society for Haematology Guidelines; CHOIR Trial; TREAT Trial; TRICC Trial; MStar Trial"
   }
 ];;
