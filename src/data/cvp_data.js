@@ -616,3 +616,81 @@ export const CVP_POST_Q_M10 = [
   {q:"A 24-year-old pregnant woman with iron deficiency anaemia (Hb 9.1 g/dL, ferritin 3 mcg/L) cannot tolerate oral ferrous sulphate despite trying multiple formulations. She is at 28 weeks gestation. The most appropriate next step is:",
    opts:["Continue to insist on oral iron - IV iron is contraindicated in pregnancy","IV iron (e.g. ferric carboxymaltose) is appropriate in this situation - intolerance of oral iron with significant anaemia in pregnancy is a recognised indication for IV iron; this is generally considered safe after the first trimester and avoids the ongoing risks of untreated iron deficiency anaemia in pregnancy","Blood transfusion is the only safe option in pregnancy","Accept the low haemoglobin as unavoidable in pregnancy"],ans:1},
 ];
+
+export const CVP_PRE_Q_M1 = [
+  {q:"Cardiac output is defined as:",
+   opts:["Blood pressure divided by heart rate","Heart rate multiplied by stroke volume","Stroke volume divided by afterload","Preload plus afterload"],ans:1},
+  {q:"Which parameter describes the resistance against which the ventricle must pump?",
+   opts:["Preload","Contractility","Afterload","Heart rate"],ans:2},
+  {q:"Drugs that act on the 'pipes' (blood vessels) primarily reduce blood pressure by:",
+   opts:["Increasing heart rate","Reducing systemic vascular resistance (afterload)","Increasing preload","Blocking sodium channels in the heart"],ans:1},
+  {q:"The distinction between dihydropyridine and non-dihydropyridine CCBs is clinically important because:",
+   opts:["They are identical in all respects","Dihydropyridines primarily vasodilate (pipes); non-dihydropyridines primarily slow cardiac rate/conduction (pump) - combining non-DHP CCBs with beta-blockers can cause complete heart block","Only non-dihydropyridines are used clinically","Dihydropyridines only affect the kidneys"],ans:1},
+  {q:"According to the Blood Pressure equation (BP = CO x SVR), antihypertensive drugs can lower BP by:",
+   opts:["Increasing CO only","Reducing CO only (e.g. beta-blockers) OR reducing SVR only (e.g. ACEi) OR both","Only through diuresis","Only through direct cardiac effects"],ans:1},
+];
+
+export const CVP_POST_Q_M1 = [
+  {q:"A patient with heart failure (reduced ejection fraction) is prescribed an ACE inhibitor. Which parameters does this primarily improve?",
+   opts:["Heart rate only","Afterload (vasodilation reduces resistance) and preload (reduced aldosterone reduces volume overload) - both reducing cardiac work","Contractility only","Only heart rate reduction"],ans:1},
+  {q:"A patient on amlodipine develops ankle swelling. A colleague suggests adding furosemide. The most pharmacologically accurate response is:",
+   opts:["Furosemide is always correct for ankle swelling","Amlodipine oedema is from local vasodilation/capillary pressure change, NOT fluid overload - furosemide will not resolve it and adds electrolyte risks","Adding more amlodipine will resolve the oedema","This requires immediate hospital admission"],ans:1},
+  {q:"A patient with heart failure receives a diuretic, ACE inhibitor, and beta-blocker. The best pump-pipes-fluid explanation is:",
+   opts:["This combination is always incorrect","Each targets a different aspect: diuretic reduces preload (fluid), ACEi reduces afterload and preload (pipes + fluid), beta-blocker reduces rate/contractility (pump)","These drugs all work identically","This is triple anticoagulation therapy"],ans:1},
+  {q:"Ivabradine reduces heart rate without affecting contractility because it specifically targets:",
+   opts:["Beta-1 receptors like standard beta-blockers","The funny current (If) in the SA node only","Calcium channels throughout the heart","Sodium channels in the ventricles"],ans:1},
+  {q:"When a new medication is added to a patient on multiple cardiovascular drugs, the most important pharmacological consideration is:",
+   opts:["The colour of the new tablet","Which parameters the new drug affects and whether these compound or oppose existing medications on cardiac output and blood pressure","Only whether the patient can afford it","Whether the drug is brand name or generic"],ans:1},
+];
+
+export const CVP_PRE_Q_M2 = [
+  {q:"ACE inhibitor cough is caused by:",
+   opts:["Angiotensin II accumulation","Bradykinin accumulation due to reduced ACE-mediated degradation","Direct lung damage","Reflex bronchospasm from vasodilation"],ans:1},
+  {q:"ACE inhibitors are contraindicated in bilateral renal artery stenosis because:",
+   opts:["They are always contraindicated in any kidney disease","Angiotensin II maintains glomerular filtration pressure in this condition - ACE inhibition can precipitate acute kidney injury","They cause hypertension in this condition","They have no effect on the kidneys"],ans:1},
+  {q:"In Afro-Caribbean patients with uncomplicated hypertension, which drug classes tend to be MORE effective as initial monotherapy?",
+   opts:["ACE inhibitors and ARBs","CCBs and thiazides (tend to be more effective due to typically lower renin activity)","Beta-blockers","All classes are equally effective in all populations"],ans:1},
+  {q:"Thiazide diuretics can precipitate gout because they cause:",
+   opts:["Hypokalaemia","Hyperuricaemia (reduced uric acid excretion)","Hypercalcaemia","Hypernatraemia"],ans:1},
+  {q:"Which statement about beta-blockers as antihypertensives reflects current guideline evolution?",
+   opts:["Beta-blockers are the preferred first-line agent for all hypertension","Beta-blockers are now considered less preferred as first-line agents for uncomplicated hypertension, being inferior to ACEi/ARBs/CCBs/thiazides in reducing stroke risk specifically","Beta-blockers should never be used in hypertension","Beta-blockers are only used in hypertension if all other classes fail"],ans:1},
+];
+
+export const CVP_POST_Q_M2 = [
+  {q:"A patient on lisinopril has a 20% creatinine rise 2 weeks after starting. She feels well. The most appropriate action is:",
+   opts:["Immediately stop the ACE inhibitor","A modest rise (up to ~30%) is expected and acceptable with ACE inhibitor initiation, reflecting reduced intraglomerular pressure which is renoprotective long-term - continue with monitoring","Double the ACE inhibitor dose","Add an ARB immediately"],ans:1},
+  {q:"A patient on warfarin is newly started on amiodarone. Regarding warfarin management:",
+   opts:["No changes to warfarin monitoring are needed","Amiodarone inhibits CYP2C9, increasing warfarin effect - the dose will likely need REDUCTION and INR monitoring should be MORE FREQUENT","Warfarin should be immediately stopped","Amiodarone has no interactions with warfarin"],ans:1},
+  {q:"Sacubitril/valsartan must NOT be combined with ACE inhibitors because:",
+   opts:["They have opposing blood pressure effects","Neprilysin and ACE both degrade bradykinin - combining both inhibitors compounds bradykinin elevation, significantly increasing angioedema risk","They are identical drugs","Sacubitril is an ACE inhibitor itself"],ans:1},
+  {q:"A patient with hypertension and gout asks which antihypertensive to AVOID. The most appropriate advice is:",
+   opts:["Avoid all antihypertensives in gout","Avoid thiazide diuretics, which can precipitate gout via hyperuricaemia - losartan (mild uricosuric effect) or amlodipine may be preferable","Avoid ACE inhibitors only","Avoid beta-blockers specifically"],ans:1},
+  {q:"Digoxin toxicity risk is dramatically increased by hypokalaemia because:",
+   opts:["Low potassium increases digoxin absorption","Potassium and digoxin compete for the same Na/K-ATPase binding site - low potassium leaves more sites available for digoxin binding, increasing its effect at the same blood level","Hypokalaemia reduces digoxin renal clearance","Potassium and digoxin have no pharmacological interaction"],ans:1},
+];
+
+export const CVP_PRE_Q_M3 = [
+  {q:"Class Ic agents (flecainide, propafenone) are contraindicated in structural heart disease because:",
+   opts:["They have no antiarrhythmic effects in these patients","The CAST trial showed they increase mortality in structural heart disease despite suppressing ectopics","They cause hypotension only in structural disease","They are universally the safest antiarrhythmic class"],ans:1},
+  {q:"Adenosine is contraindicated in asthma because:",
+   opts:["It causes hypertension","It can cause severe bronchospasm via A2B receptors in airway smooth muscle","It causes tachycardia","It is an ACE inhibitor"],ans:1},
+  {q:"The funny current (If) in the SA node is specifically targeted by:",
+   opts:["Amiodarone","Ivabradine","Digoxin","Adenosine"],ans:1},
+  {q:"Digoxin toxicity risk is dramatically increased by hypokalaemia because:",
+   opts:["Low potassium increases digoxin absorption","Potassium and digoxin compete for the same Na/K-ATPase binding site - low potassium leaves more sites available for digoxin binding","Hypokalaemia reduces digoxin renal clearance","They have no pharmacological interaction"],ans:1},
+  {q:"Amiodarone's extremely long half-life (40-55 days) means:",
+   opts:["It can be given as a single annual dose","After stopping amiodarone, its effects and interactions persist for MONTHS - relevant when managing drug interactions even after discontinuation","Its effects terminate immediately upon stopping","Long half-life means it has no drug interactions"],ans:1},
+];
+
+export const CVP_POST_Q_M3 = [
+  {q:"A patient in sustained VT is given amiodarone IV. She is also on warfarin. The most important consideration for the next 48 hours is:",
+   opts:["No action needed - amiodarone does not affect warfarin","Amiodarone inhibits CYP2C9, increasing warfarin effect - INR monitoring should be planned and warfarin dose reduction anticipated","Stop warfarin immediately","Add a second anticoagulant"],ans:1},
+  {q:"A patient on long-term amiodarone develops new breathlessness and dry cough. Chest X-ray shows bilateral infiltrates. The most appropriate immediate consideration is:",
+   opts:["This is almost certainly a viral infection - treat symptomatically","Amiodarone pulmonary toxicity must be investigated urgently (HRCT, pulmonary function tests) - new respiratory symptoms in a patient on amiodarone should be treated as this diagnosis until proven otherwise","Continue amiodarone and recheck in 3 months","This is normal in any patient on cardiac medication"],ans:1},
+  {q:"A patient on digoxin for AF rate control also takes bendroflumethiazide. She presents with nausea, bradycardia, and yellow-green visual disturbances. Potassium is 2.6 mmol/L. The explanation is:",
+   opts:["These findings are unrelated to either medication","The thiazide caused hypokalaemia, increasing digoxin binding to Na/K-ATPase causing toxicity - a preventable cause of digoxin toxicity requiring urgent management","Digoxin toxicity cannot occur with normal digoxin doses","Only IV digoxin causes toxicity"],ans:1},
+  {q:"A patient with WPW syndrome and AF is suggested adenosine for rate control. The most appropriate response is:",
+   opts:["Adenosine is always safe in any AF","Adenosine is CONTRAINDICATED in WPW with AF - it can block the AV node while leaving the accessory pathway unaffected, potentially increasing conduction via the accessory pathway and precipitating VF","Adenosine is first-line for all tachycardias","WPW syndrome makes AF impossible"],ans:1},
+  {q:"A patient started on ivabradine for heart failure reports brief flashes of light when moving from dark to light environments. The most appropriate response is:",
+   opts:["Immediately discontinue and refer to ophthalmology","These are phosphenes - a recognised mild visual side effect of ivabradine due to If current inhibition in retinal cells; generally harmless and often improve with time - reassure and document","This indicates the drug is not working","No action is needed"],ans:1},
+];
