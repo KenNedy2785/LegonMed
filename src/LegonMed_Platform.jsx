@@ -10,7 +10,6 @@ import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
 import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
-import CardiovascularPharmacologyCourse from "./courses/CardiovascularPharmacologyCourse.jsx";
 import PaediatricsCourse from "./courses/PaediatricsCourse.jsx";
 import SurgeryCourse from "./courses/SurgeryCourse.jsx";
 import MicrobiologyCourse from "./courses/MicrobiologyCourse.jsx";
