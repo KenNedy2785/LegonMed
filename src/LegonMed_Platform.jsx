@@ -3,6 +3,7 @@ import GPCourse from "./courses/GPCourse";
 import AutacoidsCourse from './courses/AutacoidsCourse';
 import ANPCourse from "./courses/ANPCourse";
 import CVPCourse from "./courses/CVPCourse.jsx";
+import GITPCourse from "./courses/GITPCourse.jsx";
 import { useState, useEffect } from "react";
 import EPCourse from "./courses/EPCourse.jsx";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
@@ -167,7 +168,7 @@ const PILLARS=[
       {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"live",icon:"\u2764\uFE0F",dur:"24h",modules:10},
       {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"soon",icon:"\uD83E\uDED8",dur:"36h",modules:16},
       {id:"rp",title:"Respiratory Pharmacology",sub:"Drugs for Breath",status:"live",icon:"\uD83C\uDF2C\uFE0F",dur:"10h",modules:4},
-      {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"soon",icon:"\uD83E\uDD60",dur:"12h",modules:5},
+      {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"live",icon:"\uD83E\uDD60",dur:"12h",modules:5},
       {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"live",icon:"\u2697\uFE0F",dur:"10h",modules:4},
       {id:"np",title:"Neuropharmacology",sub:"Drugs & the Brain",status:"soon",icon:"\uD83E\uDDE0",dur:"24h",modules:10},
       {id:"chemo",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
@@ -2121,6 +2122,9 @@ export default function LegonMed(){
     setTimeout(() => { go("pillar", PILLARS[1]); }, 0);
     return null;
   }
+  if(view==="course" && activeCourse==="gitp") return(
+    <GITPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
   if(view==="course"&&activeCourse==="cvp") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2214,6 +2218,9 @@ export default function LegonMed(){
     </>
   );
 
+  if(view==="course" && activeCourse==="gitp") return(
+    <GITPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
   if(view==="course"&&activeCourse==="cvp") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
