@@ -2122,6 +2122,12 @@ export default function LegonMed(){
     setTimeout(() => { go("pillar", PILLARS[1]); }, 0);
     return null;
   }
+  if(view==="course"&&activeCourse==="gp") return(
+    <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
+  if(view==="course"&&activeCourse==="aut") return(
+    <AutacoidsCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
   if(view==="course" && activeCourse==="gitp") return(
     <GITPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
   );
@@ -2218,6 +2224,12 @@ export default function LegonMed(){
     </>
   );
 
+  if(view==="course"&&activeCourse==="gp") return(
+    <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
+  if(view==="course"&&activeCourse==="aut") return(
+    <AutacoidsCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
+  );
   if(view==="course" && activeCourse==="gitp") return(
     <GITPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
   );
@@ -2318,7 +2330,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["16","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["21","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
