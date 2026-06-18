@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import EPCourse from "./courses/EPCourse.jsx";
 import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
+import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
 import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
@@ -167,7 +168,7 @@ const PILLARS=[
       {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"soon",icon:"\uD83E\uDED8",dur:"36h",modules:16},
       {id:"rp",title:"Respiratory Pharmacology",sub:"Drugs for Breath",status:"live",icon:"\uD83C\uDF2C\uFE0F",dur:"10h",modules:4},
       {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"soon",icon:"\uD83E\uDD60",dur:"12h",modules:5},
-      {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"soon",icon:"\u2697\uFE0F",dur:"10h",modules:4},
+      {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"live",icon:"\u2697\uFE0F",dur:"10h",modules:4},
       {id:"np",title:"Neuropharmacology",sub:"Drugs & the Brain",status:"soon",icon:"\uD83E\uDDE0",dur:"24h",modules:10},
       {id:"chemo",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
       {id:"cpk",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",status:"soon",icon:"\uD83D\uDCC8",dur:"10h",modules:4},
