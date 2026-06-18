@@ -373,3 +373,5 @@ export const EP_POST_Q_M5 = [
   {q:"A patient on long-term high-dose denosumab for breast cancer bone metastases has their oncologist decide to stop denosumab as the cancer is in complete remission. The pharmacist's most critical counselling point is:",
    opts:["No special advice needed — denosumab effects wear off slowly over years","A bisphosphonate (e.g. zoledronic acid) must be given at the time the next denosumab dose would have been due — stopping denosumab abruptly causes rapid bone resorption rebound with risk of multiple vertebral fractures; this transition is a patient safety requirement","The patient should start teriparatide immediately after denosumab","Stopping denosumab in remission has no bone consequences"],ans:1},
 ];
+export const EP_PRE_Q_M6 = {};
+export const EP_POST_Q_M6 = {};
