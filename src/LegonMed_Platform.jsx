@@ -2236,9 +2236,9 @@ export default function LegonMed(){
       <RenalPharmCourse
         session={session}
         registered={registered}
-        onBack={handleBack}
-        onRegister={handleRegister}
-        onGoHome={handleGoHome}
+        onBack={() => go("home")}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
       />
     );
 
