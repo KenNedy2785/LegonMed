@@ -9,6 +9,8 @@ import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
+import RenalPharmCourse from "./courses/RenalPharmCourse";
+import NPCourse from "./courses/NPCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
 import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
 import PaediatricsCourse from "./courses/PaediatricsCourse.jsx";
@@ -165,7 +167,7 @@ const PILLARS=[
       {id:"aut",title:"Autacoids",sub:"Histamine, Serotonin & Local Hormones",status:"live",icon:"\uD83E\uDDEB",dur:"17h",modules:7},
       {id:"iip",title:"Inflammo- & Immunopharmacology",sub:"Taming the Immune Response",status:"live",icon:"\uD83D\uDEE1\uFE0F",dur:"38h",modules:17},
       {id:"cvp",title:"Cardiovascular Pharmacology",sub:"Drugs for the Heart",status:"live",icon:"\u2764\uFE0F",dur:"24h",modules:10},
-      {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"soon",icon:"\uD83E\uDED8",dur:"36h",modules:16},
+      {id:"renp",title:"Renal Pharmacology",sub:"Drugs & the Kidney",status:"live",icon:"\uD83E\uDED8",dur:"36h",modules:16},
       {id:"rp",title:"Respiratory Pharmacology",sub:"Drugs for Breath",status:"live",icon:"\uD83C\uDF2C\uFE0F",dur:"10h",modules:4},
       {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"live",icon:"\uD83E\uDD60",dur:"12h",modules:5},
       {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"live",icon:"\u2697\uFE0F",dur:"10h",modules:4},
@@ -2229,6 +2231,16 @@ export default function LegonMed(){
       {showReg&&<RegModal/>}
     </>
   );
+  if (view === "course" && activeCourse === "renp")
+    return (
+      <RenalPharmCourse
+        session={session}
+        registered={registered}
+        onBack={handleBack}
+        onRegister={handleRegister}
+        onGoHome={handleGoHome}
+      />
+    );
 
   if(view==="course"&&activeCourse==="gp") return(
     <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
