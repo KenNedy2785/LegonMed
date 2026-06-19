@@ -1,9 +1,7 @@
 import { IM_MODS } from "./data/inmed_data";
 import GPCourse from "./courses/GPCourse";
 import AutacoidsCourse from './courses/AutacoidsCourse';
-import ANPCourse from "./courses/ANPCourse";
 import CVPCourse from "./courses/CVPCourse.jsx";
-import NPCourse from "./courses/NPCourse.jsx";
 import GITPCourse from "./courses/GITPCourse.jsx";
 import { useState, useEffect } from "react";
 import EPCourse from "./courses/EPCourse.jsx";
