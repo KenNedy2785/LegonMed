@@ -4970,3 +4970,131 @@ export const RENP_POST_Q_M16 = [
     ans: 1
   }
 ];
+
+// ============================================================
+// COURSE-LEVEL EXPORTS — appended by patch
+// RENP_ROLES / RENP_RC (role labels+colors) and RENP_PRE_Q /
+// RENP_POST_Q (single course-level pre/post test, 5 Qs each)
+// ============================================================
+
+export const RENP_ROLES = {
+  doctor: "👨‍⚕️ Doctor / Clinician",
+  nurse: "🩺 Nurse / Midwife",
+  pharmacist: "💊 Pharmacist",
+  labtech: "🔬 Lab Scientist",
+  student: "🎓 Student",
+};
+
+export const RENP_RC = {
+  doctor: "#003087",
+  nurse: "#0d5e6e",
+  pharmacist: "#6E2C00",
+  labtech: "#1a5276",
+  student: "#5b2d8e",
+};
+
+export const RENP_PRE_Q = [
+  {
+    q: "Why is mannitol absolutely contraindicated in a patient with anuria?",
+    opts: [
+      "Mannitol has nephrotoxic metabolites that worsen tubular injury in anuria",
+      "Mannitol must be filtered at the glomerulus to exert its diuretic effect; in anuria it cannot be filtered, accumulates in the vasculature, draws fluid from interstitium into the circulation, and causes acute pulmonary oedema",
+      "Mannitol is converted to glucose in anuric patients causing dangerous hyperglycaemia",
+      "Mannitol crystals block the renal tubules worsening the anuria"
+    ],
+    ans: 1
+  },
+  {
+    q: "A patient starts lisinopril 5 mg OD for diabetic nephropathy. Two weeks later, creatinine has risen from 96 to 122 μmol/L (27% increase). UACR has fallen from 68 to 44 mg/mmol. What is the correct interpretation?",
+    opts: [
+      "Stop lisinopril — acute kidney injury from ACEi nephrotoxicity has occurred",
+      "Continue lisinopril — the creatinine rise (≤30%) reflects reduced intraglomerular pressure (expected therapeutic effect); the UACR reduction of 35% confirms renoprotection is occurring",
+      "Reduce lisinopril dose to 2.5 mg — the creatinine rise indicates the dose is too high",
+      "Add an ARB to provide greater renoprotection despite the creatinine rise"
+    ],
+    ans: 1
+  },
+  {
+    q: "What is the primary renal mechanism by which SGLT2 inhibitors provide renoprotection, independent of glucose-lowering?",
+    opts: [
+      "SGLT2 inhibition reduces renal glucose toxicity, preventing diabetic glomerulosclerosis",
+      "SGLT2 inhibition increases NaCl delivery to the macula densa, activating tubuloglomerular feedback causing afferent constriction and reducing intraglomerular hyperfiltration pressure",
+      "SGLT2 inhibition reduces podocyte VEGF expression, preventing proteinuria",
+      "SGLT2 inhibition causes systemic volume depletion reducing cardiac output and renal perfusion pressure"
+    ],
+    ans: 1
+  },
+  {
+    q: "A 78-year-old woman weighs 48 kg and has serum creatinine of 110 μmol/L (1.24 mg/dL). Using Cockcroft-Gault, her estimated CrCl is approximately:",
+    opts: [
+      "55 mL/min — mild impairment, no significant dose adjustments needed",
+      "19 mL/min — severe impairment; multiple drugs will require dose adjustment or avoidance",
+      "38 mL/min — moderate impairment; monitor closely",
+      "72 mL/min — within acceptable range for standard dosing"
+    ],
+    ans: 1
+  },
+  {
+    q: "A patient with K+ 7.1 mEq/L and sinusoidal ECG pattern is admitted. IV calcium gluconate is administered. What is the correct understanding of calcium gluconate's effect on potassium?",
+    opts: [
+      "Calcium gluconate lowers serum potassium by promoting renal K+ excretion",
+      "Calcium gluconate does NOT lower serum potassium — it stabilises the cardiac membrane by restoring the electrical gradient across myocardial cells, preventing arrhythmia; separate agents (insulin/dextrose, salbutamol) are required to actually shift K+ into cells",
+      "Calcium gluconate shifts potassium into cells by stimulating Na+/K+ ATPase",
+      "Calcium gluconate chelates potassium ions in the plasma reducing free K+ concentration"
+    ],
+    ans: 1
+  }
+];
+
+export const RENP_POST_Q = [
+  {
+    q: "A patient with eGFR 38 mL/min has a UTI confirmed on MSU culture. Nitrofurantoin is prescribed. What is the most appropriate response?",
+    opts: [
+      "Dispense nitrofurantoin at reduced dose — 50 mg BD is safe at eGFR 38",
+      "Do not dispense nitrofurantoin — it is contraindicated below eGFR 45 (both ineffective due to inadequate urinary concentration AND causes peripheral neuropathy from systemic accumulation); prescribe cefalexin 500 mg BD or trimethoprim 200 mg BD instead",
+      "Nitrofurantoin 100 mg BD is acceptable — eGFR 38 is within the mild impairment range",
+      "Switch to IV nitrofurantoin — oral bioavailability is reduced in CKD"
+    ],
+    ans: 1
+  },
+  {
+    q: "A patient on ibuprofen 400 mg TDS for knee arthritis, lisinopril 10 mg OD for hypertension, and furosemide 40 mg OD for mild ankle oedema presents with creatinine of 387 μmol/L (was 92 three weeks ago) and oliguria. What combination caused this AKI?",
+    opts: [
+      "Furosemide and lisinopril together — both reduce blood pressure causing renal underperfusion",
+      "The Triple Whammy: NSAIDs block prostaglandin-mediated afferent dilation; ACEi blocks angiotensin-mediated efferent constriction; diuretic reduces circulating volume — all three autoregulatory mechanisms maintaining GFR are removed simultaneously",
+      "Ibuprofen-induced crystal nephropathy — NSAIDs precipitate in acidic urine",
+      "Lisinopril-induced bilateral renal artery stenosis was unmasked by adding ibuprofen"
+    ],
+    ans: 1
+  },
+  {
+    q: "A patient in septic shock with AKI is started on 0.9% normal saline for resuscitation. The SMART trial demonstrated that balanced crystalloids (Hartmann's) are superior. What is the mechanism of harm from large-volume 0.9% saline?",
+    opts: [
+      "Normal saline causes hypernatraemia, which directly damages renal tubular cells",
+      "Supraphysiological chloride load (154 mmol/L vs plasma 103 mmol/L) causes hyperchloraemia, which activates tubuloglomerular feedback causing afferent vasoconstriction and worsening AKI",
+      "Normal saline's lack of bicarbonate worsens the metabolic acidosis of AKI",
+      "Normal saline causes dilutional hypoalbuminaemia, reducing oncotic pressure in glomerular capillaries"
+    ],
+    ans: 1
+  },
+  {
+    q: "A renal transplant patient on tacrolimus 4 mg BD (trough 9 ng/mL) is started on rifampicin for confirmed pulmonary TB. What immediate action is required?",
+    opts: [
+      "No dose change needed — rifampicin and tacrolimus do not interact",
+      "Dramatically increase tacrolimus dose (often 2–5× the current dose) and monitor levels every 2–3 days urgently; rifampicin is a potent CYP3A4 inducer that reduces tacrolimus levels to sub-therapeutic within days, causing acute allograft rejection",
+      "Switch rifampicin to isoniazid alone — rifampicin is contraindicated in transplant patients",
+      "Stop tacrolimus and switch to a non-CYP3A4-dependent immunosuppressant immediately"
+    ],
+    ans: 1
+  },
+  {
+    q: "A patient with hepatorenal syndrome type 1 (HRS-AKI) is admitted with rapidly rising creatinine and tense ascites. What is the evidence-based pharmacological treatment?",
+    opts: [
+      "IV furosemide at high doses to treat the ascites driving the AKI",
+      "Terlipressin (V1 receptor agonist causing splanchnic vasoconstriction → increased effective circulating volume → increased renal perfusion) + albumin (volume expansion + anti-inflammatory); CONFIRM trial: significantly increased HRS reversal vs placebo",
+      "ACE inhibitor to reduce the elevated angiotensin II driving renal vasoconstriction in cirrhosis",
+      "Dopamine infusion to cause renal vasodilation and increase urine output"
+    ],
+    ans: 1
+  }
+];
