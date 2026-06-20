@@ -5098,8 +5098,3 @@ export const RENP_POST_Q = [
     ans: 1
   }
 ];
-
-
-if (RENP_MODS.length === 3) {
-  RENP_MODS.push(...RENP_MODS_4_6, ...RENP_MODS_7_9, ...RENP_MODS_10_12, ...RENP_MODS_13_16);
-}

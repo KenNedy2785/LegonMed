@@ -9,6 +9,7 @@ import MSSepsisCourse from "./courses/MSSepsisCourse.jsx";
 import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
+import CHEMOCourse from "./courses/CHEMOCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
@@ -2234,6 +2235,16 @@ export default function LegonMed(){
   if (view === "course" && activeCourse === "renp")
     return (
       <RenalPharmCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("home")}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
+  if (view === "course" && activeCourse === "chemo")
+    return (
+      <CHEMOCourse
         session={session}
         registered={registered}
         onBack={() => go("home")}
