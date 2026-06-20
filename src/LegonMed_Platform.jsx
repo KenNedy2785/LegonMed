@@ -172,7 +172,7 @@ const PILLARS=[
       {id:"gitp",title:"GIT Pharmacology",sub:"Drugs of the Gut",status:"live",icon:"\uD83E\uDD60",dur:"12h",modules:5},
       {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"live",icon:"\u2697\uFE0F",dur:"10h",modules:4},
       {id:"np",title:"Neuropharmacology",sub:"Drugs & the Brain",status:"live",icon:"\uD83E\uDDE0",dur:"24h",modules:11},
-      {id:"chemo",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",status:"soon",icon:"\uD83E\uDDA0",dur:"16h",modules:6},
+      {id:"chemo",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",status:"live",icon:"\uD83E\uDDA0",dur:"20h",modules:9},
       {id:"cpk",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",status:"soon",icon:"\uD83D\uDCC8",dur:"10h",modules:4},
       {id:"tox",title:"Toxicology",sub:"When Drugs Harm",status:"soon",icon:"\u2620\uFE0F",dur:"16h",modules:6},
     ]},
