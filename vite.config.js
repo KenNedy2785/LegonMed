@@ -6,5 +6,17 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 2000,
-  },
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+          if (id.includes('src/courses/')) {
+            return 'courses';
+          }
+        }
+      }
+    }
+  }
 })
