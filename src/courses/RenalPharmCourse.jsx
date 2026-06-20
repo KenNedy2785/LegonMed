@@ -33,7 +33,7 @@ function RenalPharmCourse({ session, registered, onBack, onRegister, onGoHome })
     { id:"inst", label:"Institutional (30 seats)", ghc:5000, usd:500, features:["30 Licences","Admin Dashboard","Group Certificates","Priority Support"] },
   ];
 
-  const visibleMods = roleTab === "all" ? RENP_MODS : RENP_MODS.filter(m => m.aud.includes(roleTab));
+  const visibleMods = roleTab === "all" ? RENP_MODS : RENP_MODS.filter(m => !m.aud || m.aud.includes(roleTab));
 
   function submitPre() { let s = 0; RENP_PRE_Q.forEach((q,i) => { if (preAns[i] === q.ans) s++; }); setPreScore(s); setPreDone(true); }
   function submitPost() { let s = 0; RENP_POST_Q.forEach((q,i) => { if (postAns[i] === q.ans) s++; }); setPostScore(s); setPostDone(true); if (session) DB.push("completions", { ...session, postScore:s, preScore, course:"renp" }); }
