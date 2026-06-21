@@ -10,6 +10,7 @@ import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import CHEMOCourse from "./courses/CHEMOCourse.jsx";
+import CPKCourse from "./courses/CPKCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
@@ -174,7 +175,7 @@ const PILLARS=[
       {id:"ep",title:"Endocrine Pharmacology",sub:"Hormones as Medicine",status:"live",icon:"\u2697\uFE0F",dur:"10h",modules:4},
       {id:"np",title:"Neuropharmacology",sub:"Drugs & the Brain",status:"live",icon:"\uD83E\uDDE0",dur:"24h",modules:11},
       {id:"chemo",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",status:"live",icon:"\uD83E\uDDA0",dur:"20h",modules:9},
-      {id:"cpk",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",status:"soon",icon:"\uD83D\uDCC8",dur:"10h",modules:4},
+      {id:"cpk",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",status:"live",icon:"\uD83D\uDCC8",dur:"15h",modules:6},
       {id:"tox",title:"Toxicology",sub:"When Drugs Harm",status:"soon",icon:"\u2620\uFE0F",dur:"16h",modules:6},
     ]},
     {name:"Advanced Pharmacology",icon:"\uD83D\uDD2C",courses:[
@@ -2238,6 +2239,16 @@ export default function LegonMed(){
         session={session}
         registered={registered}
         onBack={() => go("home")}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
+  if (view === "course" && activeCourse === "cpk")
+    return (
+      <CPKCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("pillar", PILLARS[1])}
         onRegister={() => setShowReg(true)}
         onGoHome={() => go("home")}
       />
