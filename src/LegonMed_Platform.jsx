@@ -182,7 +182,7 @@ const PILLARS=[
     ]},
     {name:"Advanced Pharmacology",icon:"\uD83D\uDD2C",courses:[
       {id:"dd",title:"Drug Discovery",sub:"From Lab to Lead",status:"live",icon:"\uD83D\uDD2D",dur:"12h",modules:5},
-      {id:"ddv",title:"Drug Development",sub:"Clinical Trials to Approval",status:"soon",icon:"\uD83D\uDCCB",dur:"12h",modules:5},
+      {id:"ddv",title:"Drug Development",sub:"Clinical Trials to Approval",status:"live",icon:"\uD83D\uDCCB",dur:"12h",modules:5},
       {id:"pgx",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",status:"soon",icon:"\uD83E\uDDEC",dur:"10h",modules:4},
       {id:"prm",title:"Precision Medicine",sub:"Right Drug, Right Patient",status:"soon",icon:"\uD83C\uDFAF",dur:"10h",modules:4},
       {id:"aip",title:"AI in Pharmacology",sub:"The Future of Drug Science",status:"soon",icon:"\uD83E\uDD16",dur:"8h",modules:4},
@@ -2157,7 +2157,7 @@ export default function LegonMed(){
       {showReg&&<RegModal/>}
     </>
   );
-  
+
   if(view==="course" && activeCourse==="ddv") return(
     <>
       <style>{`@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap");*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
