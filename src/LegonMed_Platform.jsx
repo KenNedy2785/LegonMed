@@ -15,6 +15,7 @@ import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
 import IIPCourse from "./courses/IIPCourse.jsx";
 import DDCourse from "./courses/DDCourse.jsx";
+import DDVCourse from "./courses/DDVCourse.jsx";
 import InternalMedicineCourse from "./courses/InternalMedicineCourse.jsx";
 import PaediatricsCourse from "./courses/PaediatricsCourse.jsx";
 import SurgeryCourse from "./courses/SurgeryCourse.jsx";
@@ -2157,6 +2158,20 @@ export default function LegonMed(){
     </>
   );
   
+  if(view==="course" && activeCourse==="ddv") return(
+    <>
+      <style>{`@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap");*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
+      <DDVCourse 
+        session={session} 
+        registered={registered} 
+        onBack={()=>go("pillar",PILLARS[2])} 
+        onRegister={()=>setShowReg(true)} 
+        onGoHome={()=>go("home")}
+      />
+      {showReg&&<RegModal/>}
+    </>
+  );
+
   if(view==="course"&&activeCourse==="anp") return(
     <>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
