@@ -1448,7 +1448,7 @@ function NotifyPage({onBack}){
         <div style={{textAlign:"center",marginBottom:32}}>
           <span style={bdg}>Stay Updated</span>
           <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,40px)",fontWeight:900,color:C.dark,marginTop:14,marginBottom:10}}>Be the First to Know</h1>
-          <p style={{color:C.muted,fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:500,margin:"0 auto"}}>LegonMed is growing. New courses across all 9 pillars — with early-bird pricing for subscribers.</p>
+          <p style={{color:C.muted,fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:500,margin:"0 auto"}}>LegonMed is growing. New courses across all 12 pillars — with early-bird pricing for subscribers.</p>
         </div>
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(130px,1fr))",gap:10,marginBottom:28}}>
           {PILLARS.map(p=>(
@@ -1563,7 +1563,7 @@ function AdminPage({onBack}){
       {/* Dashboard tab */}
       {tab==="dashboard"&&(
         <div style={{background:"#fff",borderRadius:18,padding:24,boxShadow:"0 4px 24px rgba(0,48,135,.08)"}}>
-          <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:18,color:C.blue,marginBottom:14}}>Platform Overview — All 9 Pillars</h3>
+          <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:18,color:C.blue,marginBottom:14}}>Platform Overview — All 12 Pillars</h3>
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:12}}>
             {PILLARS.map(p=>(
               <div key={p.id} style={{padding:"12px 14px",borderRadius:10,background:C.bg,borderLeft:"4px solid "+p.color}}>
@@ -2321,7 +2321,7 @@ export default function LegonMed(){
             <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,lineHeight:1.85}}>An independent academic platform conceived by Prof. Kennedy Kwami Edem Kukuia, University of Ghana Medical School — fostering healthcare education across Africa and the world.</p>
           </div>
           <div>
-            <div style={{color:C.gold,fontFamily:"'Source Sans 3',sans-serif",fontSize:10.5,fontWeight:700,letterSpacing:2.5,textTransform:"uppercase",marginBottom:12}}>The 9 Pillars</div>
+            <div style={{color:C.gold,fontFamily:"'Source Sans 3',sans-serif",fontSize:10.5,fontWeight:700,letterSpacing:2.5,textTransform:"uppercase",marginBottom:12}}>The 12 Pillars</div>
             {PILLARS.map(p=><div key={p.id} style={{cursor:"pointer",marginBottom:6,fontFamily:"'Source Sans 3',sans-serif",fontSize:13,transition:"color .2s"}} onClick={()=>go("pillar",p)} onMouseOver={e=>e.target.style.color=C.gold} onMouseOut={e=>e.target.style.color="rgba(255,255,255,.7)"}>{p.icon} {p.name}</div>)}
           </div>
           <div>
@@ -2647,12 +2647,12 @@ export default function LegonMed(){
           </div>
         </div>
 
-        {/* 9 PILLARS */}
+        {/* 12 PILLARS */}
         <div id="pillars" style={{background:"#fff",padding:"68px 24px"}}>
           <div style={{maxWidth:1200,margin:"0 auto"}}>
             <div style={{textAlign:"center",marginBottom:48}}>
               <span style={bdg}>The Platform</span>
-              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,5vw,48px)",fontWeight:900,color:C.dark,marginTop:14,marginBottom:12}}>9 Pillars. One Ecosystem.</h2>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,5vw,48px)",fontWeight:900,color:C.dark,marginTop:14,marginBottom:12}}>12 Pillars. One Ecosystem.</h2>
               <p style={{color:C.muted,fontFamily:"'Source Sans 3',sans-serif",fontSize:15.5,maxWidth:640,margin:"0 auto",lineHeight:1.85}}>Every dimension of healthcare education — from medical school to AI tutor to competency passport — in a single intelligent platform.</p>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(295px,1fr))",gap:20}}>
