@@ -10,6 +10,7 @@ import AnatomyCourse from "./courses/AnatomyCourse.jsx";
 import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import CHEMOCourse from "./courses/CHEMOCourse.jsx";
+import PGXCourse from "./courses/PGXCourse.jsx";
 import CPKCourse from "./courses/CPKCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
@@ -183,7 +184,7 @@ const PILLARS=[
     {name:"Advanced Pharmacology",icon:"\uD83D\uDD2C",courses:[
       {id:"dd",title:"Drug Discovery",sub:"From Lab to Lead",status:"live",icon:"\uD83D\uDD2D",dur:"12h",modules:5},
       {id:"ddv",title:"Drug Development",sub:"Clinical Trials to Approval",status:"live",icon:"\uD83D\uDCCB",dur:"12h",modules:5},
-      {id:"pgx",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",status:"soon",icon:"\uD83E\uDDEC",dur:"10h",modules:4},
+      {id:"pgx",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",status:"live",icon:"\uD83E\uDDEC",dur:"10h",modules:4},
       {id:"prm",title:"Precision Medicine",sub:"Right Drug, Right Patient",status:"soon",icon:"\uD83C\uDFAF",dur:"10h",modules:4},
       {id:"aip",title:"AI in Pharmacology",sub:"The Future of Drug Science",status:"soon",icon:"\uD83E\uDD16",dur:"8h",modules:4},
     ]},
@@ -320,6 +321,227 @@ const PILLARS=[
     {id:"cpd_lead",title:"Clinical Leadership",sub:"Lead Your Team",status:"soon",icon:"\uD83D\uDC51",dur:"6h",modules:3},
     {id:"cpd_dig",title:"Digital Health & AI in Practice",sub:"The Future of Medicine",status:"soon",icon:"\uD83E\uDD16",dur:"4h",modules:2},
    ]}]},
+  {id:"pps",num:"10",icon:"℞",name:"Pharmacy & Pharmaceutical Sciences Institute",tagline:"From the Bench to the Counter — Every Career in Pharmacy.",color:"#0F7B4C",type:"education",
+   desc:"Six foundational pharmaceutical science departments and five professional practice tracks, mirroring Ghana's actual pharmacy training and career pathways — from physical pharmacy and pharmacognosy through to community practice, industrial manufacturing, regulatory affairs, and Pharmacy Council licensure.",
+   categories:[
+    {name:"Pharmacological Sciences",icon:"💊",courses:[
+      {id:"pharm_link",title:"Pharmacology Courses",sub:"Hosted in the LegonMed Pharmacology Institute",status:"link",icon:"💊",dur:"self-paced",modules:0,linkPillar:1},
+    ]},
+    {name:"Pharmaceutics & Pharmaceutical Technology",icon:"💊",courses:[
+      {id:"rx_pharma1",title:"Pharmaceutics I",sub:"Dosage Forms & Physical Pharmacy",status:"soon",icon:"💊",dur:"10h",modules:5},
+      {id:"rx_microb",title:"Pharmaceutical Microbiology",sub:"Microbes, Medicines & Manufacturing",status:"soon",icon:"🦠",dur:"8h",modules:4},
+      {id:"rx_indtech",title:"Industrial Pharmacy & Technology",sub:"From Formula to Factory",status:"soon",icon:"🏭",dur:"10h",modules:5},
+      {id:"rx_biopk",title:"Biopharmaceutics & Pharmacokinetics",sub:"Foundations for Pharmacists",status:"soon",icon:"📊",dur:"8h",modules:4},
+      {id:"rx_sterile",title:"Sterile Compounding & Aseptic Technique",sub:"IV Admixture & Sterilisation",status:"soon",icon:"💉",dur:"6h",modules:3},
+    ]},
+    {name:"Pharmaceutical & Medicinal Chemistry",icon:"⚗️",courses:[
+      {id:"rx_orgchem",title:"Pharmaceutical Organic Chemistry",sub:"The Molecules Behind Medicines",status:"soon",icon:"⚗️",dur:"10h",modules:5},
+      {id:"rx_meds",title:"Medicinal Chemistry & Drug Design",sub:"Structure Meets Function",status:"soon",icon:"🧬",dur:"10h",modules:5},
+      {id:"rx_analchem",title:"Pharmaceutical Analytical Chemistry",sub:"Measuring What Matters",status:"soon",icon:"🔬",dur:"8h",modules:4},
+      {id:"rx_qc",title:"Pharmaceutical Quality Control & Analysis",sub:"Trust, Tested",status:"soon",icon:"✅",dur:"8h",modules:4},
+    ]},
+    {name:"Pharmacognosy & Natural Products",icon:"🌿",courses:[
+      {id:"rx_pharmacog1",title:"Pharmacognosy I",sub:"Medicinal Plants & Crude Drugs",status:"soon",icon:"🌿",dur:"10h",modules:5},
+      {id:"rx_phyto",title:"Phytochemistry",sub:"Isolating Nature's Medicines",status:"soon",icon:"🍃",dur:"8h",modules:4},
+      {id:"rx_herbal",title:"Herbal Medicine Standardisation",sub:"Quality in Traditional Medicine",status:"soon",icon:"🌱",dur:"6h",modules:3},
+      {id:"rx_ethno",title:"Ethnopharmacology in West Africa",sub:"Indigenous Knowledge, Modern Science",status:"soon",icon:"🌍",dur:"6h",modules:3},
+    ]},
+    {name:"Pharmacy Practice & Law",icon:"⚖️",courses:[
+      {id:"rx_pracgh",title:"Pharmacy Organisation & Practice in Ghana",sub:"The Profession at Home",status:"soon",icon:"🇬🇭",dur:"6h",modules:3},
+      {id:"rx_dispense",title:"Dispensing Pharmacy & Patient Counselling",sub:"The Art of the Encounter",status:"soon",icon:"💊",dur:"8h",modules:4},
+      {id:"rx_carepl",title:"Pharmaceutical Care Planning",sub:"Beyond the Prescription",status:"soon",icon:"📝",dur:"8h",modules:4},
+      {id:"rx_law",title:"Pharmacy Law, Ethics & Jurisprudence",sub:"Practising Within the Law",status:"soon",icon:"⚖️",dur:"6h",modules:3},
+      {id:"rx_econ",title:"Pharmacoeconomics & Health Systems",sub:"The Cost of Care",status:"soon",icon:"💰",dur:"6h",modules:3},
+    ]},
+    {name:"Community Pharmacy Career Track",icon:"🏪",courses:[
+      {id:"rx_commops",title:"Community Pharmacy Operations",sub:"Running the Neighbourhood Pharmacy",status:"soon",icon:"🏪",dur:"8h",modules:4},
+      {id:"rx_otc",title:"OTC Therapeutics & Self-Care",sub:"Counselling Without a Prescription",status:"soon",icon:"🛒",dur:"6h",modules:3},
+      {id:"rx_immun",title:"Immunisation Services & POC Testing",sub:"The Pharmacist as Vaccinator",status:"soon",icon:"💉",dur:"5h",modules:3},
+    ]},
+    {name:"Hospital & Clinical Pharmacy Career Track",icon:"🏥",courses:[
+      {id:"rx_hospsys",title:"Hospital Pharmacy Systems",sub:"Medication Distribution at Scale",status:"soon",icon:"🏥",dur:"8h",modules:4},
+      {id:"rx_clinpharm",title:"Clinical Pharmacy & Pharmaceutical Care",sub:"At the Bedside",status:"soon",icon:"🩺",dur:"10h",modules:5},
+      {id:"rx_specclin",title:"Specialised Clinical Pharmacy",sub:"Oncology, Critical Care & Infectious Disease",status:"soon",icon:"🎯",dur:"12h",modules:6},
+      {id:"rx_amsteward",title:"Antimicrobial Stewardship for Pharmacists",sub:"Guarding the Last Line",status:"soon",icon:"🦠",dur:"8h",modules:4},
+    ]},
+    {name:"Industrial Pharmacy & Manufacturing Career Track",icon:"🏭",courses:[
+      {id:"rx_gmp",title:"Pharmaceutical Manufacturing & GMP",sub:"Building It Right",status:"soon",icon:"🏭",dur:"8h",modules:4},
+      {id:"rx_prodval",title:"Production Management & Validation",sub:"Proving the Process Works",status:"soon",icon:"✅",dur:"6h",modules:3},
+    ]},
+    {name:"Regulatory Affairs & Quality Career Track",icon:"📋",courses:[
+      {id:"rx_regaffairs",title:"Regulatory Affairs & Drug Registration",sub:"Getting to Market",status:"soon",icon:"📋",dur:"8h",modules:4},
+      {id:"rx_pv",title:"Pharmacovigilance & Drug Safety",sub:"Watching After Launch",status:"soon",icon:"🔍",dur:"6h",modules:3},
+      {id:"rx_gdp",title:"Good Distribution Practice & Supply Chain",sub:"From Factory to Patient",status:"soon",icon:"🚚",dur:"6h",modules:3},
+    ]},
+    {name:"Pharmacy Leadership & Licensure",icon:"🎓",courses:[
+      {id:"rx_bizmgmt",title:"Pharmacy Business Management",sub:"Entrepreneurship in Pharmacy",status:"soon",icon:"💼",dur:"8h",modules:4},
+      {id:"rx_informatics",title:"Pharmacy Informatics & Digital Health",sub:"Tech-Enabled Practice",status:"soon",icon:"💻",dur:"6h",modules:3},
+      {id:"rx_pcgexam",title:"Pharmacy Council of Ghana Licensing Exam Prep",sub:"Pre-Registration to Practice",status:"soon",icon:"🎓",dur:"10h",modules:5},
+      {id:"rx_cpd",title:"Mandatory CPD for Practising Pharmacists",sub:"Lifelong Learning, By Law",status:"soon",icon:"📚",dur:"6h",modules:3},
+    ]},
+   ]
+  },
+  {id:"nmi",num:"11",icon:"🩺",name:"LegonMed Nursing & Midwifery Institute",tagline:"Caring Is a Science. Master Both.",color:"#0277BD",type:"education",
+   desc:"A comprehensive nursing and midwifery school built around the Ghana NMC licensing cadres, the Ghana College of Nurses and Midwives fellowship specialties, the full NCLEX-RN Client Needs framework, and the ICM core competencies — from foundational nursing science through to advanced specialist and leadership practice.",
+   categories:[
+    {name:"Foundations of Nursing Science",icon:"📖",courses:[
+      {id:"nm_anatomy",title:"Anatomy & Physiology for Nurses",sub:"Know the Body You Care For",status:"soon",icon:"🫀",dur:"14h",modules:7},
+      {id:"nm_fund",title:"Fundamentals of Nursing & the Nursing Process",sub:"Assessment, Diagnosis, Planning, Implementation, Evaluation",status:"soon",icon:"📋",dur:"10h",modules:5},
+      {id:"nm_health_assess",title:"Health Assessment & Physical Examination",sub:"Hands, Eyes & Clinical Judgement",status:"soon",icon:"🩺",dur:"10h",modules:5},
+      {id:"nm_micro",title:"Microbiology & Infection Control for Nurses",sub:"Understanding the Invisible Enemy",status:"soon",icon:"🦠",dur:"8h",modules:4},
+      {id:"nm_nutrition",title:"Nutrition & Fluid Balance in Nursing",sub:"Feeding Recovery",status:"soon",icon:"🍎",dur:"6h",modules:3},
+      {id:"nm_psych",title:"Psychology & Communication in Nursing",sub:"The Therapeutic Relationship",status:"soon",icon:"🧠",dur:"6h",modules:3},
+      {id:"nm_ethics",title:"Nursing Ethics, Law & Professional Practice",sub:"Duty, Rights & Accountability",status:"soon",icon:"⚖️",dur:"6h",modules:3},
+    ]},
+    {name:"Nursing Pharmacology & Calculations",icon:"💊",courses:[
+      {id:"nm_pharmacol",title:"Nursing Pharmacology",sub:"Drugs, Actions & Safe Administration",status:"soon",icon:"💊",dur:"12h",modules:6},
+      {id:"nm_calc",title:"Drug Dosage Calculations for Nurses",sub:"No Errors, No Excuses",status:"soon",icon:"🧮",dur:"8h",modules:4},
+      {id:"nm_iv",title:"Intravenous Therapy & Parenteral Medications",sub:"Lines, Fluids & Calculations",status:"soon",icon:"💉",dur:"6h",modules:3},
+      {id:"nm_transfuse",title:"Blood Transfusion Nursing",sub:"Safe Administration & Reaction Management",status:"soon",icon:"🩸",dur:"5h",modules:3},
+    ]},
+    {name:"Medical-Surgical Nursing",icon:"🏥",courses:[
+      {id:"nm_medsurg1",title:"Medical-Surgical Nursing I",sub:"Cardiovascular, Respiratory & Renal Systems",status:"soon",icon:"❤️",dur:"14h",modules:7},
+      {id:"nm_medsurg2",title:"Medical-Surgical Nursing II",sub:"Endocrine, GI, Musculoskeletal & Neurological Systems",status:"soon",icon:"🧠",dur:"14h",modules:7},
+      {id:"nm_wound",title:"Wound Care & Pressure Ulcer Management",sub:"Healing From the Outside In",status:"soon",icon:"🩹",dur:"6h",modules:3},
+      {id:"nm_pain",title:"Pain Assessment & Management",sub:"The Fifth Vital Sign",status:"soon",icon:"⚡",dur:"6h",modules:3},
+      {id:"nm_onco_nurs",title:"Oncology Nursing",sub:"Caring Through the Storm",status:"soon",icon:"🎗️",dur:"10h",modules:5},
+      {id:"nm_renal_nurs",title:"Renal & Dialysis Nursing",sub:"Kidneys, Catheters & CRRT",status:"soon",icon:"🫘",dur:"8h",modules:4},
+    ]},
+    {name:"Critical Care, Emergency & Perioperative Nursing",icon:"🚨",courses:[
+      {id:"nm_icu",title:"ICU Nursing Fundamentals",sub:"Monitoring, Ventilation & Critical Decisions",status:"soon",icon:"🏥",dur:"12h",modules:6},
+      {id:"nm_emerg",title:"Emergency & Trauma Nursing",sub:"The First Hour",status:"soon",icon:"🚨",dur:"10h",modules:5},
+      {id:"nm_periop",title:"Perioperative Nursing",sub:"Before, During & After the Knife",status:"soon",icon:"🔪",dur:"8h",modules:4},
+      {id:"nm_triage",title:"Triage & Mass Casualty Response",sub:"Sorting to Save the Most",status:"soon",icon:"🏷️",dur:"6h",modules:3},
+      {id:"nm_resus",title:"Resuscitation & Life Support for Nurses",sub:"BLS, ACLS & Paediatric Support",status:"soon",icon:"💓",dur:"8h",modules:4},
+    ]},
+    {name:"Midwifery & Maternal-Newborn Care",icon:"🤰",courses:[
+      {id:"nm_antenatal",title:"Antenatal Care & Normal Pregnancy",sub:"Protecting Two Lives",status:"soon",icon:"🤰",dur:"10h",modules:5},
+      {id:"nm_labour",title:"Normal Labour, Delivery & Essential Newborn Care",sub:"The Birth",status:"soon",icon:"👶",dur:"10h",modules:5},
+      {id:"nm_highrisk",title:"High-Risk Obstetric & Midwifery Care",sub:"When Pregnancy Becomes Dangerous",status:"soon",icon:"⚠️",dur:"12h",modules:6},
+      {id:"nm_postpartum",title:"Postpartum & Newborn Nursing Care",sub:"After the Birth",status:"soon",icon:"🍼",dur:"8h",modules:4},
+      {id:"nm_neonatal",title:"Neonatal Nursing",sub:"The Smallest Patients",status:"soon",icon:"🌡️",dur:"8h",modules:4},
+      {id:"nm_famplan",title:"Family Planning & Reproductive Health",sub:"Choice, Counselling & Contraception",status:"soon",icon:"💑",dur:"6h",modules:3},
+    ]},
+    {name:"Paediatric Nursing",icon:"👶",courses:[
+      {id:"nm_paed1",title:"Paediatric Nursing Fundamentals",sub:"Children Are Not Small Adults",status:"soon",icon:"👶",dur:"10h",modules:5},
+      {id:"nm_paed2",title:"Paediatric Medical-Surgical Nursing",sub:"Common Childhood Conditions",status:"soon",icon:"🏥",dur:"10h",modules:5},
+      {id:"nm_paed_emerg",title:"Paediatric Emergency Nursing",sub:"When a Child Is Critical",status:"soon",icon:"🚨",dur:"8h",modules:4},
+      {id:"nm_school",title:"School Health Nursing",sub:"Health Beyond the Ward",status:"soon",icon:"🏫",dur:"5h",modules:3},
+    ]},
+    {name:"Mental Health & Psychiatric Nursing",icon:"🧠",courses:[
+      {id:"nm_psych_nurs",title:"Psychiatric & Mental Health Nursing",sub:"Mind, Medication & Therapeutic Milieu",status:"soon",icon:"🧠",dur:"12h",modules:6},
+      {id:"nm_cmh",title:"Community Mental Health & Rehabilitation Nursing",sub:"Care Beyond the Hospital",status:"soon",icon:"🏘️",dur:"8h",modules:4},
+      {id:"nm_addiction",title:"Addictions Nursing",sub:"Dependence, Withdrawal & Recovery",status:"soon",icon:"🔄",dur:"6h",modules:3},
+      {id:"nm_child_mh",title:"Child & Adolescent Mental Health Nursing",sub:"Young Minds in Crisis",status:"soon",icon:"🧒",dur:"6h",modules:3},
+    ]},
+    {name:"Community, Public Health & Specialised Nursing",icon:"🌍",courses:[
+      {id:"nm_comm",title:"Community Health Nursing",sub:"Health for Populations, Not Just Patients",status:"soon",icon:"🌍",dur:"10h",modules:5},
+      {id:"nm_infect",title:"Infectious Disease Nursing",sub:"TB, HIV, Malaria & Emerging Threats",status:"soon",icon:"🦠",dur:"10h",modules:5},
+      {id:"nm_palliative",title:"Palliative & End-of-Life Care Nursing",sub:"Dignity in Dying",status:"soon",icon:"🕊️",dur:"8h",modules:4},
+      {id:"nm_ophthal",title:"Ophthalmic Nursing",sub:"Vision, Assessment & Eye Care",status:"soon",icon:"👁️",dur:"6h",modules:3},
+      {id:"nm_ortho",title:"Orthopaedic Nursing",sub:"Bones, Joints & Rehabilitation",status:"soon",icon:"🦴",dur:"6h",modules:3},
+      {id:"nm_neuro",title:"Neuroscience Nursing",sub:"Brain, Spine & Stroke Care",status:"soon",icon:"🧠",dur:"8h",modules:4},
+      {id:"nm_haem",title:"Haematology & Oncology Nursing",sub:"Blood, Cancer & Bone Marrow",status:"soon",icon:"🩸",dur:"8h",modules:4},
+    ]},
+    {name:"Nursing Leadership, Education & Research",icon:"🎓",courses:[
+      {id:"nm_leadership",title:"Nursing Leadership & Management",sub:"Lead the Ward, Lead the Profession",status:"soon",icon:"👑",dur:"8h",modules:4},
+      {id:"nm_delegation",title:"Delegation, Supervision & Team Nursing",sub:"Working Smarter Together",status:"soon",icon:"🤝",dur:"5h",modules:3},
+      {id:"nm_educator",title:"Nurse Educator & Clinical Trainer",sub:"Teaching the Next Generation",status:"soon",icon:"🎓",dur:"8h",modules:4},
+      {id:"nm_ebp",title:"Evidence-Based Practice & Nursing Research",sub:"From Journal to Bedside",status:"soon",icon:"📊",dur:"6h",modules:3},
+      {id:"nm_informatics",title:"Nursing Informatics & Digital Health",sub:"Tech-Enabled Nursing",status:"soon",icon:"💻",dur:"5h",modules:3},
+    ]},
+    {name:"Licensing Examination Preparation",icon:"🏆",courses:[
+      {id:"nm_nmc_gh",title:"Ghana NMC Licensing Examination Prep",sub:"Ready for Registration",status:"soon",icon:"🇬🇭",dur:"12h",modules:6},
+      {id:"nm_nclex",title:"NCLEX-RN Full Review",sub:"All 8 Client Needs Categories — Zero Gaps",status:"soon",icon:"🏆",dur:"20h",modules:8},
+      {id:"nm_osce",title:"OSCE & Clinical Skills Preparation",sub:"Stations, Scenarios & Structured Practice",status:"soon",icon:"🩺",dur:"8h",modules:4},
+      {id:"nm_uk_oet",title:"OET & UK NMC CBT Preparation",sub:"For Nurses Pursuing UK Registration",status:"soon",icon:"🇬🇧",dur:"10h",modules:5},
+    ]},
+   ]
+  },
+  {id:"ahi",num:"12",icon:"🔬",name:"LegonMed Allied Health Institute",tagline:"Every Profession. Every System. Every Patient.",color:"#4A148C",type:"education",
+   desc:"A discipline-by-discipline allied health school covering every profession regulated by Ghana's Allied Health Professions Council — plus Speech & Language Therapy as an emerging global standard discipline. Built for undergraduate students, practising allied health professionals, and those preparing for licensure.",
+   categories:[
+    {name:"Physiotherapy",icon:"🦵",courses:[
+      {id:"ah_pt_fund",title:"Foundations of Physiotherapy Practice",sub:"Assessment, Diagnosis & Clinical Reasoning",status:"soon",icon:"🦵",dur:"10h",modules:5},
+      {id:"ah_pt_msk",title:"Musculoskeletal Physiotherapy",sub:"Joints, Tendons & Sports Injuries",status:"soon",icon:"🦴",dur:"12h",modules:6},
+      {id:"ah_pt_neuro",title:"Neurological Rehabilitation",sub:"Stroke, TBI & Spinal Cord Injury",status:"soon",icon:"🧠",dur:"10h",modules:5},
+      {id:"ah_pt_cardio",title:"Cardiopulmonary Physiotherapy",sub:"Breathing, Exercise & Cardiac Rehab",status:"soon",icon:"❤️",dur:"8h",modules:4},
+      {id:"ah_pt_paed",title:"Paediatric Physiotherapy",sub:"Development, Movement & Child Rehab",status:"soon",icon:"👶",dur:"8h",modules:4},
+      {id:"ah_pt_womens",title:"Women's Health Physiotherapy",sub:"Pelvic Floor, Obstetric & Gynaecological Care",status:"soon",icon:"🤰",dur:"6h",modules:3},
+    ]},
+    {name:"Occupational Therapy",icon:"🖐️",courses:[
+      {id:"ah_ot_fund",title:"Foundations of Occupational Therapy",sub:"Occupation, Function & Meaningful Living",status:"soon",icon:"🖐️",dur:"10h",modules:5},
+      {id:"ah_ot_phys",title:"Physical Rehabilitation & ADL",sub:"Activities of Daily Living & Adaptive Equipment",status:"soon",icon:"♿",dur:"10h",modules:5},
+      {id:"ah_ot_mh",title:"Mental Health Occupational Therapy",sub:"Recovery Through Meaningful Activity",status:"soon",icon:"🧠",dur:"8h",modules:4},
+      {id:"ah_ot_paed",title:"Paediatric Occupational Therapy",sub:"Development, Sensory Integration & School Function",status:"soon",icon:"👶",dur:"8h",modules:4},
+      {id:"ah_ot_geriat",title:"Geriatric Occupational Therapy",sub:"Ageing, Falls & Independent Living",status:"soon",icon:"👴",dur:"6h",modules:3},
+    ]},
+    {name:"Dietetics & Clinical Nutrition",icon:"🥗",courses:[
+      {id:"ah_diet_fund",title:"Foundations of Human Nutrition",sub:"Macronutrients, Micronutrients & Metabolism",status:"soon",icon:"🥗",dur:"10h",modules:5},
+      {id:"ah_diet_mnt",title:"Medical Nutrition Therapy",sub:"Diabetes, Renal, Liver & Oncology Nutrition",status:"soon",icon:"🍽️",dur:"12h",modules:6},
+      {id:"ah_diet_comm",title:"Community & Public Health Nutrition",sub:"Malnutrition, Food Security & Programmes",status:"soon",icon:"🌍",dur:"8h",modules:4},
+      {id:"ah_diet_paed",title:"Paediatric & Maternal Nutrition",sub:"Growth, Feeding & the First 1000 Days",status:"soon",icon:"👶",dur:"8h",modules:4},
+      {id:"ah_diet_sport",title:"Sports Nutrition",sub:"Performance, Recovery & Body Composition",status:"soon",icon:"🏃",dur:"6h",modules:3},
+    ]},
+    {name:"Diagnostic Radiography & Medical Imaging",icon:"🩻",courses:[
+      {id:"ah_rad_fund",title:"Radiographic Positioning & Technique",sub:"Getting the Image Right",status:"soon",icon:"🩻",dur:"10h",modules:5},
+      {id:"ah_rad_physics",title:"Radiation Physics & Radiobiology",sub:"Understanding What X-Rays Do",status:"soon",icon:"⚛️",dur:"8h",modules:4},
+      {id:"ah_rad_safety",title:"Radiation Protection & Safety",sub:"Dose, Distance & Shielding",status:"soon",icon:"🛡️",dur:"6h",modules:3},
+      {id:"ah_rad_ct",title:"CT & MRI Fundamentals",sub:"Cross-Sectional Imaging Explained",status:"soon",icon:"🔬",dur:"8h",modules:4},
+      {id:"ah_rad_sono",title:"Ultrasound & Sonography Fundamentals",sub:"Real-Time Imaging in Clinical Practice",status:"soon",icon:"📡",dur:"8h",modules:4},
+      {id:"ah_rad_image",title:"Image Interpretation & Radiographic Pathology",sub:"Reading What You Produce",status:"soon",icon:"🖥️",dur:"8h",modules:4},
+    ]},
+    {name:"Therapy Radiography & Radiation Oncology",icon:"☢️",courses:[
+      {id:"ah_trad_fund",title:"Foundations of Radiation Therapy",sub:"Principles of Radiotherapy",status:"soon",icon:"☢️",dur:"10h",modules:5},
+      {id:"ah_trad_planning",title:"Radiotherapy Treatment Planning",sub:"Targeting Tumours, Protecting Tissue",status:"soon",icon:"🎯",dur:"10h",modules:5},
+      {id:"ah_trad_care",title:"Radiotherapy Patient Care",sub:"Side Effects, Skin Care & Support",status:"soon",icon:"🩹",dur:"6h",modules:3},
+    ]},
+    {name:"Respiratory Therapy",icon:"🫁",courses:[
+      {id:"ah_resp_fund",title:"Foundations of Respiratory Care",sub:"Anatomy, Physiology & Respiratory Failure",status:"soon",icon:"🫁",dur:"10h",modules:5},
+      {id:"ah_resp_vent",title:"Mechanical Ventilation & Airway Management",sub:"ICU Respiratory Care",status:"soon",icon:"🏥",dur:"10h",modules:5},
+      {id:"ah_resp_pft",title:"Pulmonary Function Testing & Diagnostics",sub:"Spirometry, ABGs & Interpretation",status:"soon",icon:"📊",dur:"6h",modules:3},
+      {id:"ah_resp_paed",title:"Neonatal & Paediatric Respiratory Care",sub:"Tiny Airways, High Stakes",status:"soon",icon:"👶",dur:"8h",modules:4},
+      {id:"ah_resp_rehab",title:"Pulmonary Rehabilitation",sub:"COPD, Asthma & Breathing Exercise",status:"soon",icon:"🏃",dur:"6h",modules:3},
+    ]},
+    {name:"Medical Laboratory Science",icon:"🧪",courses:[
+      {id:"ah_mls_chem",title:"Clinical Chemistry",sub:"Biochemical Tests & Reference Ranges",status:"soon",icon:"⚗️",dur:"12h",modules:6},
+      {id:"ah_mls_haem",title:"Haematology & Blood Banking",sub:"CBC, Coagulation & Transfusion Science",status:"soon",icon:"🩸",dur:"12h",modules:6},
+      {id:"ah_mls_micro",title:"Medical Microbiology & Parasitology",sub:"Culture, Sensitivity & Tropical Pathogens",status:"soon",icon:"🦠",dur:"12h",modules:6},
+      {id:"ah_mls_histo",title:"Histopathology & Cytology Techniques",sub:"Processing, Staining & Reporting",status:"soon",icon:"🔬",dur:"10h",modules:5},
+      {id:"ah_mls_immuno",title:"Immunology & Serology",sub:"Antibodies, Assays & Autoimmune Testing",status:"soon",icon:"🧬",dur:"8h",modules:4},
+      {id:"ah_mls_qc",title:"Laboratory Quality Management & Accreditation",sub:"ISO 15189 & SLIPTA Standards",status:"soon",icon:"✅",dur:"6h",modules:3},
+    ]},
+    {name:"Optometry",icon:"👁️",courses:[
+      {id:"ah_opt_fund",title:"Foundations of Optometry & Visual Science",sub:"Optics, Refraction & the Eye",status:"soon",icon:"👁️",dur:"10h",modules:5},
+      {id:"ah_opt_clin",title:"Clinical Optometry & Contact Lenses",sub:"Examination, Prescription & Fitting",status:"soon",icon:"👓",dur:"10h",modules:5},
+      {id:"ah_opt_paed",title:"Paediatric Optometry",sub:"Amblyopia, Strabismus & Children's Vision",status:"soon",icon:"👶",dur:"6h",modules:3},
+      {id:"ah_opt_low",title:"Low Vision Rehabilitation",sub:"Maximising Remaining Sight",status:"soon",icon:"🔍",dur:"6h",modules:3},
+    ]},
+    {name:"Prosthetics & Orthotics",icon:"🦾",courses:[
+      {id:"ah_po_fund",title:"Foundations of Prosthetics & Orthotics",sub:"Biomechanics, Materials & Rehabilitation",status:"soon",icon:"🦾",dur:"10h",modules:5},
+      {id:"ah_po_lower",title:"Lower Limb Prosthetics & Orthotics",sub:"Amputation, Gait & Device Fitting",status:"soon",icon:"🦵",dur:"10h",modules:5},
+      {id:"ah_po_upper",title:"Upper Limb Prosthetics & Orthotics",sub:"Function, Fitting & Activities of Daily Living",status:"soon",icon:"🦾",dur:"8h",modules:4},
+      {id:"ah_po_spinal",title:"Spinal Orthotics & Paediatric Devices",sub:"Scoliosis, Cerebral Palsy & Custom Devices",status:"soon",icon:"🦴",dur:"8h",modules:4},
+    ]},
+    {name:"Medical Physics",icon:"⚛️",courses:[
+      {id:"ah_mp_fund",title:"Foundations of Medical Physics",sub:"Radiation, Imaging & Dosimetry",status:"soon",icon:"⚛️",dur:"10h",modules:5},
+      {id:"ah_mp_radio",title:"Radiological Physics & Quality Assurance",sub:"Equipment Performance & Safety Standards",status:"soon",icon:"🔬",dur:"8h",modules:4},
+      {id:"ah_mp_nuclear",title:"Nuclear Medicine Physics",sub:"Radiopharmaceuticals, PET & SPECT",status:"soon",icon:"☢️",dur:"8h",modules:4},
+    ]},
+    {name:"Speech & Language Therapy",icon:"🗣️",courses:[
+      {id:"ah_slt_fund",title:"Foundations of Speech-Language Pathology",sub:"Communication, Language & the Brain",status:"soon",icon:"🗣️",dur:"10h",modules:5},
+      {id:"ah_slt_paed",title:"Paediatric Speech & Language Disorders",sub:"Delayed Language, Autism & Articulation",status:"soon",icon:"👶",dur:"10h",modules:5},
+      {id:"ah_slt_adult",title:"Adult Communication & Swallowing Disorders",sub:"Aphasia, Dysarthria & Dysphagia",status:"soon",icon:"🧠",dur:"10h",modules:5},
+      {id:"ah_slt_voice",title:"Voice & Fluency Disorders",sub:"Dysphonia, Stuttering & Resonance",status:"soon",icon:"🎙️",dur:"6h",modules:3},
+    ]},
+    {name:"Allied Health Leadership & Licensure",icon:"🎓",courses:[
+      {id:"ah_lead",title:"Allied Health Leadership & Management",sub:"Lead Your Profession",status:"soon",icon:"👑",dur:"8h",modules:4},
+      {id:"ah_research",title:"Research Methods for Allied Health",sub:"Evidence-Based Allied Health Practice",status:"soon",icon:"📊",dur:"6h",modules:3},
+      {id:"ah_ahpc_exam",title:"AHPC Licensing Examination Preparation",sub:"Ghana Allied Health Council Readiness",status:"soon",icon:"🇬🇭",dur:"10h",modules:5},
+      {id:"ah_informatics",title:"Health Informatics for Allied Health",sub:"Digital Tools in Allied Health Practice",status:"soon",icon:"💻",dur:"5h",modules:3},
+    ]},
+   ]
+  },
 ];
 
 
@@ -1121,7 +1343,7 @@ function PECourse({session,registered,onBack,onRegister,onGoHome}){
 
 
 // ─────────────── PILLAR PAGE ───────────────
-function PillarPage({pillar,onBack,onEnterCourse,onNotify,scrolled}){
+function PillarPage({pillar,onBack,onEnterCourse,onEnterPillar,onNotify,scrolled}){
   return(
     <div style={{background:C.off,minHeight:"100vh"}}>
       {/* Hero */}
@@ -1179,7 +1401,7 @@ function PillarPage({pillar,onBack,onEnterCourse,onNotify,scrolled}){
                 const isLive=c.status==="live";
                 return(
                   <div key={c.id} style={{background:"#fff",borderRadius:14,padding:"18px 16px",boxShadow:"0 2px 14px rgba(0,48,135,.07)",border:isLive?"2px solid "+pillar.color:"1px solid #e8edf5",transition:"all .25s",cursor:isLive?"pointer":"default",position:"relative"}}
-                    onMouseOver={e=>{if(isLive)e.currentTarget.style.transform="translateY(-3px)";}} onMouseOut={e=>{e.currentTarget.style.transform="";}}>
+                    onMouseOver={e=>{if(isLive||c.status==="link")e.currentTarget.style.transform="translateY(-3px)";}} onMouseOut={e=>{e.currentTarget.style.transform="";}}>
                     {isLive&&<div style={{position:"absolute",top:-10,right:14,background:C.ok,color:"#fff",padding:"3px 11px",borderRadius:20,fontSize:11,fontWeight:700,fontFamily:"'Source Sans 3',sans-serif"}}>● LIVE</div>}
                     {c.featured&&<div style={{position:"absolute",top:-10,left:14,background:C.gold,color:C.dark,padding:"3px 11px",borderRadius:20,fontSize:11,fontWeight:700,fontFamily:"'Source Sans 3',sans-serif"}}>⭐ FLAGSHIP</div>}
                     <div style={{display:"flex",gap:10,alignItems:"flex-start",marginBottom:10}}>
@@ -1195,9 +1417,11 @@ function PillarPage({pillar,onBack,onEnterCourse,onNotify,scrolled}){
                         {c.modules>0&&<span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:C.muted}}>📚 {c.modules} modules</span>}
                       </div>
                     )}
-                    {isLive
-                      ?<button style={btn("primary",{width:"100%",padding:"9px 14px",fontSize:13})} onClick={()=>onEnterCourse(c.id)}>Enter Course →</button>
-                      :<button style={{...btn("secondary",{width:"100%",padding:"8px 14px",fontSize:13}),opacity:.85}} onClick={onNotify}>🔔 Notify Me</button>}
+                    {c.status==="link"
+                      ?<button style={btn("primary",{width:"100%",padding:"9px 14px",fontSize:13,background:"linear-gradient(135deg,#0F7B4C,#0a5c38)"})} onClick={()=>onEnterPillar&&onEnterPillar(PILLARS[c.linkPillar])}>Go to Institute →</button>
+                      :isLive
+                        ?<button style={btn("primary",{width:"100%",padding:"9px 14px",fontSize:13})} onClick={()=>onEnterCourse(c.id)}>Enter Course →</button>
+                        :<button style={{...btn("secondary",{width:"100%",padding:"8px 14px",fontSize:13}),opacity:.85}} onClick={onNotify}>🔔 Notify Me</button>}
                   </div>
                 );
               })}
@@ -2287,6 +2511,16 @@ export default function LegonMed(){
         onGoHome={() => go("home")}
       />
     );
+  if (view === "course" && activeCourse === "pgx")
+    return (
+      <PGXCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("pillar", PILLARS[1])}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
 
   if(view==="course"&&activeCourse==="gp") return(
     <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
@@ -2329,6 +2563,7 @@ export default function LegonMed(){
         <PillarPage pillar={activePillar} scrolled={scrolled}
           onBack={()=>go("home")}
           onEnterCourse={(id)=>go("course",null,id)}
+          onEnterPillar={(p)=>go("pillar",p)}
           onNotify={()=>go("notify")}/>
       </div>
       <Footer/>
