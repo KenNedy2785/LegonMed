@@ -11,6 +11,7 @@ import EndocrineCourse from "./courses/EndocrineCourse.jsx";
 import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import CHEMOCourse from "./courses/CHEMOCourse.jsx";
 import PGXCourse from "./courses/PGXCourse.jsx";
+import AIPCourse from "./courses/AIPCourse.jsx";
 import CPKCourse from "./courses/CPKCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
@@ -186,7 +187,7 @@ const PILLARS=[
       {id:"ddv",title:"Drug Development",sub:"Clinical Trials to Approval",status:"live",icon:"\uD83D\uDCCB",dur:"12h",modules:5},
       {id:"pgx",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",status:"live",icon:"\uD83E\uDDEC",dur:"10h",modules:4},
       {id:"prm",title:"Precision Medicine",sub:"Right Drug, Right Patient",status:"soon",icon:"\uD83C\uDFAF",dur:"10h",modules:4},
-      {id:"aip",title:"AI in Pharmacology",sub:"The Future of Drug Science",status:"soon",icon:"\uD83E\uDD16",dur:"8h",modules:4},
+      {id:"aip",title:"AI in Pharmacology",sub:"The Future of Drug Science",status:"live",icon:"\uD83E\uDD16",dur:"8h",modules:4},
     ]},
     {name:"Flagship Programmes",icon:"\uD83C\uDFC6",courses:[
       {id:"mp",title:"Mastering Pharmacology",sub:"Complete Fellowship Programme",status:"soon",icon:"\uD83C\uDFC6",dur:"60h",modules:20,featured:true},
@@ -2521,6 +2522,16 @@ export default function LegonMed(){
         onGoHome={() => go("home")}
       />
     );
+  if (view === "course" && activeCourse === "aip")
+    return (
+      <AIPCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("pillar", PILLARS[1])}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
 
   if(view==="course"&&activeCourse==="gp") return(
     <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
@@ -2629,7 +2640,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["9","Pillars"],["100+","Courses Planned"],["5","Professions"],["21","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["21","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
