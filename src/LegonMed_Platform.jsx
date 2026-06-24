@@ -2269,6 +2269,8 @@ export default function LegonMed(){
             </span>
           ))}
           <span style={{width:1,height:28,background:"rgba(255,255,255,.15)",margin:"0 6px"}}/>
+          <span onClick={()=>go("origyn")} style={{cursor:"pointer",padding:"6px 13px",borderRadius:6,fontFamily:"'Source Sans 3',sans-serif",fontSize:13,fontWeight:700,color:C.gold,border:"1px solid "+C.gold+"44",letterSpacing:".5px",transition:"all .2s"}} onMouseOver={e=>{e.currentTarget.style.background="rgba(200,169,81,.14)";}} onMouseOut={e=>{e.currentTarget.style.background="transparent";}}>ORIGYN</span>
+          <span style={{width:1,height:28,background:"rgba(255,255,255,.15)",margin:"0 6px"}}/>
           <span onClick={()=>go("notify")} style={{cursor:"pointer",padding:"6px 12px",borderRadius:6,fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"rgba(255,255,255,.8)",transition:"all .2s"}} onMouseOver={e=>e.currentTarget.style.color=C.gold} onMouseOut={e=>e.currentTarget.style.color="rgba(255,255,255,.8)"}>🔔</span>
           <span onClick={()=>go("admin")} style={{cursor:"pointer",padding:"6px 12px",borderRadius:6,fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"rgba(255,255,255,.8)",transition:"all .2s"}} onMouseOver={e=>e.currentTarget.style.color=C.gold} onMouseOut={e=>e.currentTarget.style.color="rgba(255,255,255,.8)"}>⚙</span>
           {session
@@ -2566,6 +2568,244 @@ export default function LegonMed(){
     </>
   );
 
+  // ── ORIGYN MARKETPLACE ──
+  if(view==="origyn") return(
+    <div style={{fontFamily:"'Georgia',serif",background:"#0a0a0a",minHeight:"100vh",color:"#fff"}}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+        *{box-sizing:border-box;margin:0;padding:0}
+        .og-nl{cursor:pointer;padding:7px 13px;border-radius:6px;transition:all .2s;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:rgba(255,255,255,.75)}
+        .og-nl:hover{color:#C9A84C;background:rgba(201,168,76,.12)}
+        .og-card{background:#141414;border-radius:16px;border:1px solid #2a2a2a;transition:all .28s;cursor:pointer;overflow:hidden;}
+        .og-card:hover{border-color:#C9A84C44;transform:translateY(-4px);box-shadow:0 16px 40px rgba(201,168,76,.12);}
+        .og-btn{background:linear-gradient(135deg,#C9A84C,#a8873a);color:#0a0a0a;border:none;border-radius:8px;padding:10px 22px;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;}
+        .og-btn:hover{opacity:.88;}
+        .og-btn-outline{background:transparent;color:#C9A84C;border:1.5px solid #C9A84C;border-radius:8px;padding:9px 20px;font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
+        .og-btn-outline:hover{background:rgba(201,168,76,.1);}
+        .og-inp{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:10px 14px;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:14px;width:100%;outline:none;}
+        .og-inp:focus{border-color:#C9A84C;}
+        .og-tag{background:rgba(201,168,76,.12);color:#C9A84C;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;font-family:'Source Sans 3',sans-serif;letter-spacing:.5px;}
+      `}</style>
+
+      {/* ORIGYN NAV */}
+      <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:1000,background:"#0a0a0aee",backdropFilter:"blur(16px)",borderBottom:"1px solid #C9A84C22",height:64,display:"flex",alignItems:"center",padding:"0 24px"}}>
+        <div style={{maxWidth:1300,margin:"0 auto",width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+          <div style={{display:"flex",alignItems:"center",gap:16}}>
+            <span onClick={()=>go("home")} style={{cursor:"pointer",color:"rgba(255,255,255,.5)",fontFamily:"'Source Sans 3',sans-serif",fontSize:12}}>← LegonMed</span>
+            <div style={{width:1,height:20,background:"#333"}}/>
+            <div style={{cursor:"pointer"}} onClick={()=>go("origyn")}>
+              <span style={{fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:900,color:"#C9A84C",letterSpacing:"-0.5px"}}>ORIGYN</span>
+              <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:9,color:"rgba(201,168,76,.6)",letterSpacing:"3px",textTransform:"uppercase",display:"block",marginTop:-3}}>by LegonMed</span>
+            </div>
+          </div>
+          <div style={{display:"flex",gap:6,alignItems:"center"}}>
+            <span className="og-nl" onClick={()=>go("origyn")}>Marketplace</span>
+            {isAdmin()&&<span className="og-nl" onClick={()=>go("origyn-admin")}>Admin Console</span>}
+            <div style={{width:1,height:20,background:"#333",margin:"0 6px"}}/>
+            {session
+              ?<span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"#C9A84C"}}>👤 {session.name.split(" ")[0]}</span>
+              :<button className="og-btn" onClick={()=>setShowReg(true)}>Join Free</button>}
+          </div>
+        </div>
+      </nav>
+
+      <div style={{paddingTop:64}}>
+        {/* HERO */}
+        <div style={{padding:"88px 24px 72px",textAlign:"center",background:"linear-gradient(160deg,#0a0a0a 0%,#111008 50%,#0a0a0a 100%)",borderBottom:"1px solid #1a1a1a",position:"relative",overflow:"hidden"}}>
+          <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%)",pointerEvents:"none"}}/>
+          <div style={{maxWidth:800,margin:"0 auto",position:"relative"}}>
+            <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,letterSpacing:"4px",textTransform:"uppercase",color:"rgba(201,168,76,.6)",marginBottom:16}}>The Health Innovation Marketplace</div>
+            <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(42px,8vw,86px)",fontWeight:900,color:"#C9A84C",lineHeight:.95,marginBottom:16,letterSpacing:"-2px"}}>ORIGYN</h1>
+            <p style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(15px,2.5vw,22px)",color:"rgba(255,255,255,.7)",fontStyle:"italic",marginBottom:14}}>Where health professionals sell what they know.</p>
+            <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:"clamp(13px,1.8vw,16px)",color:"rgba(255,255,255,.5)",maxWidth:580,margin:"0 auto 36px",lineHeight:1.9}}>Courses. Clinical guides. Research tools. Exam prep. Protocols. Templates. If you built it and it helps healthcare — sell it here. Verified creators. Real professionals. Trusted products.</p>
+            <div style={{display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap"}}>
+              <button className="og-btn" style={{fontSize:15,padding:"14px 32px"}} onClick={()=>go("origyn-apply")}>Become a Creator →</button>
+              <button className="og-btn-outline" style={{fontSize:14,padding:"13px 26px"}}>Browse Marketplace ↓</button>
+            </div>
+            <div style={{display:"flex",gap:32,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
+              {[["8%","Creator commission — lowest in Africa"],["Free","To browse and preview"],["GH₵150","Creator subscription/month"],["Instant","Payout on sale"]].map(([n,l])=>(
+                <div key={l} style={{textAlign:"center"}}>
+                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(22px,3vw,32px)",fontWeight:900,color:"#C9A84C"}}>{n}</div>
+                  <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:"rgba(255,255,255,.4)",marginTop:3,maxWidth:120}}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CATEGORIES */}
+        <div style={{padding:"52px 24px",background:"#0d0d0d"}}>
+          <div style={{maxWidth:1100,margin:"0 auto"}}>
+            <div style={{display:"flex",gap:10,flexWrap:"wrap",justifyContent:"center",marginBottom:40}}>
+              {["All","Courses","Clinical Guides","Exam Prep","Research Tools","Protocols & Templates","Calculators","Case Studies"].map(cat=>(
+                <button key={cat} className="og-btn-outline" style={{fontSize:12,padding:"7px 16px"}}>{cat}</button>
+              ))}
+            </div>
+
+            {/* SAMPLE LISTINGS — placeholder cards */}
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:18}}>
+              {[
+                {title:"ECG Interpretation Masterclass",creator:"Dr. Kofi Asante, MD FWACP",tag:"Course",price:"GH₵ 120",preview:"12 modules · 8h · Certificate included",icon:"❤️",rating:"4.9",sales:"247"},
+                {title:"OSCE Clinical Skills Pack",creator:"Dr. Ama Serwaa, MBChB",tag:"Exam Prep",price:"GH₵ 85",preview:"200 OSCE stations · PDF + Video",icon:"🩺",rating:"4.8",sales:"183"},
+                {title:"Ghana Drug Formulary 2025",creator:"Pharm. Kwame Ofori, MPharm",tag:"Clinical Guide",price:"GH₵ 60",preview:"Complete current formulary · Searchable PDF",icon:"💊",rating:"4.9",sales:"412"},
+                {title:"Neonatal Resuscitation Protocol",creator:"Dr. Efua Mensah, FGCP",tag:"Protocol",price:"GH₵ 45",preview:"NLS-aligned · Ghanaian context · Print-ready",icon:"👶",rating:"5.0",sales:"98"},
+                {title:"Medical Statistics for Clinicians",creator:"Prof. Yaw Darko, PhD",tag:"Course",price:"GH₵ 150",preview:"10 modules · SPSS & R · Research-ready",icon:"📊",rating:"4.7",sales:"156"},
+                {title:"Community Health Assessment Toolkit",creator:"Dr. Abena Boateng, MPH",tag:"Research Tool",price:"GH₵ 75",preview:"Survey tools · Data collection forms · Analysis guide",icon:"🌍",rating:"4.8",sales:"89"},
+              ].map((p,i)=>(
+                <div key={i} className="og-card">
+                  <div style={{padding:"20px 18px 0"}}>
+                    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12}}>
+                      <span style={{fontSize:32}}>{p.icon}</span>
+                      <span className="og-tag">{p.tag}</span>
+                    </div>
+                    <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:700,color:"#fff",marginBottom:6,lineHeight:1.3}}>{p.title}</h3>
+                    <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.45)",marginBottom:8}}>{p.creator}</div>
+                    <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.5)",marginBottom:14,lineHeight:1.6}}>{p.preview}</div>
+                    <div style={{display:"flex",gap:10,alignItems:"center",marginBottom:16}}>
+                      <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"#C9A84C"}}>⭐ {p.rating}</span>
+                      <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.3)"}}>· {p.sales} sales</span>
+                    </div>
+                  </div>
+                  <div style={{padding:"14px 18px",borderTop:"1px solid #1e1e1e",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                    <span style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:900,color:"#C9A84C"}}>{p.price}</span>
+                    <button className="og-btn" style={{padding:"8px 18px",fontSize:12}}>Preview →</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{textAlign:"center",marginTop:36}}>
+              <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:14,color:"rgba(255,255,255,.3)",marginBottom:16}}>These are sample listings. ORIGYN launches soon — be among the first creators.</p>
+              <button className="og-btn" style={{fontSize:14,padding:"13px 32px"}} onClick={()=>go("origyn-apply")}>Apply to Sell on ORIGYN →</button>
+            </div>
+          </div>
+        </div>
+
+        {/* HOW IT WORKS */}
+        <div style={{padding:"68px 24px",background:"#0a0a0a",borderTop:"1px solid #1a1a1a"}}>
+          <div style={{maxWidth:960,margin:"0 auto",textAlign:"center"}}>
+            <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,letterSpacing:"3px",textTransform:"uppercase",color:"rgba(201,168,76,.5)",marginBottom:12}}>For Creators</div>
+            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,42px)",fontWeight:900,color:"#fff",marginBottom:48}}>Sell What You Know. Keep What You Earn.</h2>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:24,marginBottom:52}}>
+              {[
+                {step:"01",icon:"✅",title:"Apply & Get Verified",desc:"Submit your credentials. We verify every creator — buyers know exactly who made what they're buying."},
+                {step:"02",icon:"📦",title:"Upload Your Product",desc:"Course, guide, tool, template, dataset — any digital health product. You set the price. We host it."},
+                {step:"03",icon:"💰",title:"Earn on Every Sale",desc:"We take 8% (5% for LegonMed members). You keep the rest. Paystack direct to your account."},
+                {step:"04",icon:"📈",title:"Grow Your Reach",desc:"Access LegonMed's community of health professionals across Africa and the diaspora."},
+              ].map((s,i)=>(
+                <div key={i} style={{textAlign:"left",padding:"24px 20px",background:"#111",borderRadius:14,border:"1px solid #1e1e1e"}}>
+                  <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:10,color:"rgba(201,168,76,.4)",letterSpacing:"2px",marginBottom:12}}>STEP {s.step}</div>
+                  <div style={{fontSize:28,marginBottom:10}}>{s.icon}</div>
+                  <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:700,color:"#C9A84C",marginBottom:8}}>{s.title}</h3>
+                  <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13,color:"rgba(255,255,255,.5)",lineHeight:1.7}}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* PRICING TABLE */}
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:16,marginBottom:44}}>
+              {[
+                {plan:"External Creator",price:"GH₵ 150/mo",sub:"or GH₵ 1,200/yr",listing:"GH₵ 30 per product",commission:"8% per sale",color:"#1a1a1a",border:"#2a2a2a",featured:false},
+                {plan:"LegonMed Member",price:"GH₵ 150/mo",sub:"3 months FREE to start",listing:"First 2 listings FREE",commission:"5% per sale",color:"#14110a",border:"#C9A84C44",featured:true},
+              ].map((p,i)=>(
+                <div key={i} style={{background:p.color,borderRadius:16,padding:"28px 22px",border:"1.5px solid "+p.border,position:"relative",textAlign:"left"}}>
+                  {p.featured&&<div style={{position:"absolute",top:-12,left:"50%",transform:"translateX(-50%)",background:"#C9A84C",color:"#0a0a0a",padding:"3px 16px",borderRadius:20,fontSize:11,fontWeight:700,fontFamily:"'Source Sans 3',sans-serif",whiteSpace:"nowrap"}}>⭐ LEGONMED MEMBER BENEFIT</div>}
+                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,color:"#C9A84C",marginBottom:6}}>{p.plan}</div>
+                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:900,color:"#fff",marginBottom:2}}>{p.price}</div>
+                  <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.4)",marginBottom:18}}>{p.sub}</div>
+                  {[["Listing fee",p.listing],["Commission",p.commission],["Profile page","Included"],["Paystack payout","Instant on sale"]].map(([k,v])=>(
+                    <div key={k} style={{display:"flex",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid #1e1e1e",fontFamily:"'Source Sans 3',sans-serif",fontSize:13}}>
+                      <span style={{color:"rgba(255,255,255,.45)"}}>{k}</span>
+                      <span style={{color:"#C9A84C",fontWeight:600}}>{v}</span>
+                    </div>
+                  ))}
+                  <button className="og-btn" style={{width:"100%",marginTop:20,padding:"12px",fontSize:14}} onClick={()=>go("origyn-apply")}>Get Started →</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div style={{padding:"72px 24px",textAlign:"center",background:"linear-gradient(135deg,#0f0c02,#1a1400)",borderTop:"1px solid #C9A84C22"}}>
+          <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,44px)",fontWeight:900,color:"#C9A84C",marginBottom:12}}>Your Knowledge Has Value.</h2>
+          <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:16,color:"rgba(255,255,255,.5)",maxWidth:520,margin:"0 auto 32px",lineHeight:1.9}}>Every clinical guide you have written. Every course you have built. Every tool your team uses. Someone else needs it — and ORIGYN is where they find it.</p>
+          <button className="og-btn" style={{fontSize:15,padding:"15px 40px"}} onClick={()=>go("origyn-apply")}>Apply to Become a Creator</button>
+        </div>
+      </div>
+    </div>
+  );
+
+  // ── ORIGYN CREATOR APPLICATION ──
+  if(view==="origyn-apply") return(
+    <div style={{fontFamily:"'Georgia',serif",background:"#0a0a0a",minHeight:"100vh",color:"#fff"}}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}.og-inp2{background:#141414;border:1px solid #2a2a2a;border-radius:8px;padding:11px 14px;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:14px;width:100%;outline:none;margin-bottom:14px;}.og-inp2:focus{border-color:#C9A84C;}`}</style>
+      <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:1000,background:"#0a0a0aee",backdropFilter:"blur(16px)",borderBottom:"1px solid #C9A84C22",height:64,display:"flex",alignItems:"center",padding:"0 24px"}}>
+        <div style={{maxWidth:1300,margin:"0 auto",width:"100%",display:"flex",alignItems:"center",gap:16}}>
+          <span onClick={()=>go("origyn")} style={{cursor:"pointer",color:"rgba(255,255,255,.5)",fontFamily:"'Source Sans 3',sans-serif",fontSize:12}}>← ORIGYN</span>
+          <span style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:900,color:"#C9A84C"}}>Creator Application</span>
+        </div>
+      </nav>
+      <div style={{paddingTop:64,maxWidth:600,margin:"0 auto",padding:"80px 24px"}}>
+        <div style={{textAlign:"center",marginBottom:40}}>
+          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(28px,5vw,44px)",fontWeight:900,color:"#C9A84C",marginBottom:10}}>Apply to Sell on ORIGYN</h1>
+          <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:15,color:"rgba(255,255,255,.5)",lineHeight:1.8}}>We verify every creator. Tell us about yourself and what you want to sell.</p>
+        </div>
+        <div style={{background:"#111",borderRadius:18,padding:"32px 28px",border:"1px solid #1e1e1e"}}>
+          {[["Full name","text","Dr. Kofi Mensah"],["Professional title & specialty","text","e.g. Consultant Obstetrician, KATH"],["Institution / Workplace","text","e.g. Korle Bu Teaching Hospital"],["Email address","email","your@email.com"],["Ghana Medical Council / Professional licence number","text","GMC-XXXXX"],["What do you want to sell on ORIGYN?","text","e.g. ECG interpretation course, clinical protocols..."],].map(([label,type,ph])=>(
+            <div key={label}>
+              <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.4)",marginBottom:5,letterSpacing:".3px"}}>{label}</div>
+              <input type={type} placeholder={ph} className="og-inp2"/>
+            </div>
+          ))}
+          <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.4)",marginBottom:5}}>Select creator plan</div>
+          <select className="og-inp2" style={{marginBottom:20}}>
+            <option value="member">LegonMed Member — GH₵ 150/mo (5% commission, 3 months FREE)</option>
+            <option value="external">External Creator — GH₵ 150/mo (8% commission)</option>
+          </select>
+          <div style={{background:"#0f0f0f",borderRadius:10,padding:"14px 16px",border:"1px solid #C9A84C22",marginBottom:20}}>
+            <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.4)",lineHeight:1.7}}>By applying, you confirm that all products you list on ORIGYN are your original work, that you hold the professional credentials stated above, and that you agree to ORIGYN's creator terms. Applications are reviewed within 3–5 business days.</p>
+          </div>
+          <button style={{background:"linear-gradient(135deg,#C9A84C,#a8873a)",color:"#0a0a0a",border:"none",borderRadius:10,padding:"14px",width:"100%",fontFamily:"'Source Sans 3',sans-serif",fontWeight:700,fontSize:15,cursor:"pointer"}}
+            onClick={()=>{if(session){DB.push("origyn_applications",{...session,ts:new Date().toISOString()});alert("Application submitted! We will review and contact you within 3-5 business days.");}else{setShowReg(true);}}}>
+            Submit Application →
+          </button>
+        </div>
+      </div>
+      {showReg&&<RegModal/>}
+    </div>
+  );
+
+  // ── ORIGYN ADMIN CONSOLE ──
+  if(view==="origyn-admin"&&isAdmin()) return(
+    <div style={{fontFamily:"'Georgia',serif",background:"#0a0a0a",minHeight:"100vh",color:"#fff"}}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}`}</style>
+      <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:1000,background:"#0a0a0aee",backdropFilter:"blur(16px)",borderBottom:"1px solid #C9A84C22",height:64,display:"flex",alignItems:"center",padding:"0 24px"}}>
+        <div style={{maxWidth:1300,margin:"0 auto",width:"100%",display:"flex",alignItems:"center",gap:16}}>
+          <span onClick={()=>go("origyn")} style={{cursor:"pointer",color:"rgba(255,255,255,.5)",fontFamily:"'Source Sans 3',sans-serif",fontSize:12}}>← ORIGYN</span>
+          <span style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:900,color:"#C9A84C"}}>Admin Console</span>
+        </div>
+      </nav>
+      <div style={{paddingTop:80,maxWidth:1100,margin:"0 auto",padding:"80px 24px"}}>
+        <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:36,fontWeight:900,color:"#C9A84C",marginBottom:32}}>ORIGYN Admin</h1>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:16,marginBottom:40}}>
+          {[["Pending Applications","0","🕐"],["Active Creators","0","✅"],["Total Products","0","📦"],["Total Sales","GH₵ 0","💰"],["Platform Revenue (8%)","GH₵ 0","📈"],["Member Revenue (5%)","GH₵ 0","⭐"]].map(([l,v,ic])=>(
+            <div key={l} style={{background:"#111",borderRadius:12,padding:"20px 18px",border:"1px solid #1e1e1e"}}>
+              <div style={{fontSize:24,marginBottom:8}}>{ic}</div>
+              <div style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:900,color:"#C9A84C",marginBottom:4}}>{v}</div>
+              <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12,color:"rgba(255,255,255,.4)"}}>{l}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{background:"#111",borderRadius:14,padding:"24px",border:"1px solid #1e1e1e",textAlign:"center"}}>
+          <div style={{fontSize:32,marginBottom:12}}>🚀</div>
+          <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:22,color:"#C9A84C",marginBottom:8}}>ORIGYN is Ready</h2>
+          <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:14,color:"rgba(255,255,255,.4)",lineHeight:1.7}}>Creator applications, product listings, and sales will appear here once ORIGYN opens to the public. The platform infrastructure is live and ready to receive its first creators.</p>
+        </div>
+      </div>
+    </div>
+  );
+
   if(view==="pillar"&&activePillar) return(
     <div style={{fontFamily:"'Georgia',serif",background:C.off,minHeight:"100vh"}}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}button:disabled{opacity:.45;cursor:not-allowed}`}</style>
@@ -2640,7 +2880,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["21","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["28","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
@@ -2692,37 +2932,42 @@ export default function LegonMed(){
           </div>
         </div>
 
-        {/* SPOTLIGHT — LIVE COURSE */}
+        {/* SPOTLIGHT — LIVE COURSES ACROSS PILLARS */}
         <div style={{background:`linear-gradient(135deg,${C.dark},${C.blue})`,padding:"68px 24px"}}>
           <div style={{maxWidth:1100,margin:"0 auto"}}>
-            <div style={{textAlign:"center",marginBottom:38}}>
-              <span style={bdg}>Now Live · Clinical Medicine Institute</span>
-              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,44px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>Storm in the Womb</h2>
-              <p style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(14px,2.5vw,21px)",color:C.gold,fontStyle:"italic",marginBottom:14}}>A Master Course on Preeclampsia & Eclampsia</p>
-              <p style={{color:"rgba(255,255,255,.78)",fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:620,margin:"0 auto 28px",lineHeight:1.9}}>Evidence-based. Adventure storytelling. Role-specific teaching for all 5 professions. Module 1 is completely free.</p>
-              <div style={{display:"flex",gap:18,justifyContent:"center",marginBottom:32,flexWrap:"wrap"}}>
-                {[["7","Modules"],["19h+","Content"],["Free","Module 1"],["5","Professions"]].map(([n,l])=>(
-                  <div key={l} style={{textAlign:"center"}}><div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(22px,3vw,32px)",fontWeight:900,color:C.gold}}>{n}</div><div style={{color:"rgba(255,255,255,.55)",fontSize:10,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.2,textTransform:"uppercase"}}>{l}</div></div>
-                ))}
-              </div>
-              <div style={{display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap"}}>
-                <button style={btn("primary",{fontSize:15,padding:"14px 34px"})} onClick={()=>go("course")}>🎓 Enter Course — Free →</button>
-                <button style={btn("secondary",{fontSize:14})} onClick={()=>go("pillar",PILLARS[0])}>View All Clinical Courses</button>
-              </div>
+            <div style={{textAlign:"center",marginBottom:44}}>
+              <span style={bdg}>Now Live · 28 Courses Across 12 Institutes</span>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,44px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>Start Learning Today. Free.</h2>
+              <p style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(14px,2.5vw,20px)",color:C.gold,fontStyle:"italic",marginBottom:14}}>Every course. Every profession. Module 1 always free.</p>
+              <p style={{color:"rgba(255,255,255,.78)",fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:640,margin:"0 auto 32px",lineHeight:1.9}}>From Clinical Medicine to Pharmacogenomics to AI in Drug Science — LegonMed now offers 28 live courses built for medical students, pharmacists, nurses, residents, and allied health professionals across Africa and the world.</p>
             </div>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(210px,1fr))",gap:12}}>
-              {MODS.map(m=>(
-                <div key={m.id} style={{background:"rgba(255,255,255,.07)",borderRadius:12,padding:"16px 14px",border:"1px solid rgba(200,169,81,.18)",cursor:"pointer",transition:"all .22s"}}
-                  onMouseOver={e=>{e.currentTarget.style.background="rgba(255,255,255,.13)";}} onMouseOut={e=>{e.currentTarget.style.background="rgba(255,255,255,.07)";}}
-                  onClick={()=>go("course")}>
-                  <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:6}}>
-                    <span style={{fontSize:18}}>{m.icon}</span>
-                    <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:10.5,color:C.gold,fontWeight:700,letterSpacing:1.5,textTransform:"uppercase"}}>Mod {m.num} {m.free?"· FREE":""}</span>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:14}}>
+              {[
+                {icon:"🤰",title:"Preeclampsia & Eclampsia",sub:"Storm in the Womb",pillar:0,tag:"Clinical Medicine"},
+                {icon:"🩸",title:"Obstetric Haemorrhage",sub:"When Blood Won't Stop",pillar:0,tag:"Clinical Medicine"},
+                {icon:"🦠",title:"Maternal Sepsis",sub:"The Silent Invasion",pillar:0,tag:"Clinical Medicine"},
+                {icon:"🧬",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",pillar:1,tag:"Pharmacology"},
+                {icon:"📈",title:"Clinical Pharmacokinetics",sub:"How Drugs Move",pillar:1,tag:"Pharmacology"},
+                {icon:"🤖",title:"AI in Pharmacology",sub:"The Future of Drug Science",pillar:1,tag:"Pharmacology"},
+                {icon:"🧪",title:"Chemotherapeutic Agents",sub:"Fighting Infection & Cancer",pillar:1,tag:"Pharmacology"},
+                {icon:"📋",title:"Drug Development",sub:"Clinical Trials to Approval",pillar:2,tag:"Drug Science"},
+              ].map((c,i)=>(
+                <div key={i} style={{background:"rgba(255,255,255,.07)",borderRadius:12,padding:"18px 15px",border:"1px solid rgba(200,169,81,.18)",cursor:"pointer",transition:"all .22s"}}
+                  onMouseOver={e=>{e.currentTarget.style.background="rgba(255,255,255,.13)";e.currentTarget.style.transform="translateY(-3px)";}}
+                  onMouseOut={e=>{e.currentTarget.style.background="rgba(255,255,255,.07)";e.currentTarget.style.transform="";}}
+                  onClick={()=>go("pillar",PILLARS[c.pillar])}>
+                  <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:7}}>
+                    <span style={{fontSize:20}}>{c.icon}</span>
+                    <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:10,color:C.gold,fontWeight:700,letterSpacing:1.5,textTransform:"uppercase"}}>{c.tag}</span>
                   </div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:700,color:"#fff",marginBottom:3}}>{m.title}</div>
-                  <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11.5,color:"rgba(255,255,255,.58)"}}>{m.sub}</div>
+                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:14,fontWeight:700,color:"#fff",marginBottom:3}}>{c.title}</div>
+                  <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11.5,color:"rgba(255,255,255,.58)",marginBottom:10}}>{c.sub}</div>
+                  <span style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:11,color:C.gold,fontWeight:700}}>Free Module 1 →</span>
                 </div>
               ))}
+            </div>
+            <div style={{textAlign:"center",marginTop:36}}>
+              <button style={btn("primary",{fontSize:15,padding:"14px 36px"})} onClick={()=>document.getElementById("pillars").scrollIntoView({behavior:"smooth"})}>Browse All 12 Institutes ↓</button>
             </div>
           </div>
         </div>
@@ -2753,10 +2998,10 @@ export default function LegonMed(){
           <div style={{maxWidth:1100,margin:"0 auto"}}>
             <div style={{textAlign:"center",marginBottom:40}}>
               <span style={bdg}>Why This Matters</span>
-              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,40px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>The Burden We Are Fighting</h2>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,40px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>Why LegonMed Exists</h2>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:16}}>
-              {[["1 in 11 min","A woman dies from preeclampsia globally","WHO 2023"],["16%","Of maternal deaths in sub-Saharan Africa are PE-related","Lancet Global Health 2022"],["62%","Reduction in preterm PE with aspirin 150mg nocte","ASPRE Trial, NEJM 2017"],["4×","Increased lifetime hypertension risk after PE pregnancy","ESC 2024"],["<10%","Of sub-Saharan Africa has access to appropriate medical education","UNESCO 2023"],["1B+","People in Africa who need better-trained healthcare professionals","WHO 2024"]].map(([n,l,s])=>(
+              {[["1B+","People in Africa who need better-trained healthcare professionals","WHO 2024"],["<10%","Of sub-Saharan Africa has access to quality medical education","UNESCO 2023"],["28","Live courses across medicine, pharmacology, and health sciences","LegonMed 2025"],["5","Health professions served — medicine, pharmacy, nursing, allied health, residents","LegonMed 2025"],["12","Institutes covering every dimension of healthcare education","LegonMed 2025"],["Free","Module 1 of every course — no barriers to starting","LegonMed 2025"]].map(([n,l,s])=>(
                 <div key={n} style={{background:"rgba(255,255,255,.06)",borderRadius:14,padding:"22px 18px",border:"1px solid rgba(200,169,81,.18)",textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,3.5vw,36px)",fontWeight:900,color:C.gold,marginBottom:8}}>{n}</div>
                   <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13.5,color:"rgba(255,255,255,.82)",lineHeight:1.7,marginBottom:7}}>{l}</p>
@@ -2772,7 +3017,7 @@ export default function LegonMed(){
           <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(20px,4vw,40px)",fontWeight:900,color:C.dark,marginBottom:10}}>The Future of African Healthcare Education Starts Here</h2>
           <p style={{color:C.dark,fontSize:15.5,marginBottom:28,fontFamily:"'Source Sans 3',sans-serif",opacity:.85,maxWidth:580,margin:"0 auto 28px",lineHeight:1.85}}>Join healthcare professionals and students across Africa and beyond. Module 1 is free. Forever.</p>
           <div style={{display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap"}}>
-            <button style={btn("primary",{background:C.dark,color:C.gold,fontSize:15,padding:"15px 40px"})} onClick={()=>go("course")}>🎓 Start Learning Free Today</button>
+            <button style={btn("primary",{background:C.dark,color:C.gold,fontSize:15,padding:"15px 40px"})} onClick={()=>document.getElementById("pillars").scrollIntoView({behavior:"smooth"})}>🎓 Explore All Courses →</button>
             <button style={{...btn("secondary",{fontSize:14,padding:"14px 26px"}),color:C.dark,borderColor:C.dark}} onClick={()=>go("notify")}>🔔 Stay Updated</button>
           </div>
         </div>
