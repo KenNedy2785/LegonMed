@@ -12,6 +12,7 @@ import RespiratoryPharmCourse from "./courses/RespiratoryPharmCourse.jsx";
 import CHEMOCourse from "./courses/CHEMOCourse.jsx";
 import PGXCourse from "./courses/PGXCourse.jsx";
 import AIPCourse from "./courses/AIPCourse.jsx";
+import PRMCourse from "./courses/PRMCourse.jsx";
 import CPKCourse from "./courses/CPKCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
@@ -186,7 +187,7 @@ const PILLARS=[
       {id:"dd",title:"Drug Discovery",sub:"From Lab to Lead",status:"live",icon:"\uD83D\uDD2D",dur:"12h",modules:5},
       {id:"ddv",title:"Drug Development",sub:"Clinical Trials to Approval",status:"live",icon:"\uD83D\uDCCB",dur:"12h",modules:5},
       {id:"pgx",title:"Pharmacogenomics",sub:"Your Genes, Your Drugs",status:"live",icon:"\uD83E\uDDEC",dur:"10h",modules:4},
-      {id:"prm",title:"Precision Medicine",sub:"Right Drug, Right Patient",status:"soon",icon:"\uD83C\uDFAF",dur:"10h",modules:4},
+      {id:"prm",title:"Precision Medicine",sub:"Right Drug, Right Patient",status:"live",icon:"\uD83C\uDFAF",dur:"10h",modules:4},
       {id:"aip",title:"AI in Pharmacology",sub:"The Future of Drug Science",status:"live",icon:"\uD83E\uDD16",dur:"8h",modules:4},
     ]},
     {name:"Flagship Programmes",icon:"\uD83C\uDFC6",courses:[
@@ -2534,6 +2535,16 @@ export default function LegonMed(){
         onGoHome={() => go("home")}
       />
     );
+  if (view === "course" && activeCourse === "prm")
+    return (
+      <PRMCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("pillar", PILLARS[1])}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
 
   if(view==="course"&&activeCourse==="gp") return(
     <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
@@ -2880,7 +2891,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["28","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["30","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
@@ -3001,7 +3012,7 @@ export default function LegonMed(){
               <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,40px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>Why LegonMed Exists</h2>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(230px,1fr))",gap:16}}>
-              {[["1B+","People in Africa who need better-trained healthcare professionals","WHO 2024"],["<10%","Of sub-Saharan Africa has access to quality medical education","UNESCO 2023"],["28","Live courses across medicine, pharmacology, and health sciences","LegonMed 2025"],["5","Health professions served — medicine, pharmacy, nursing, allied health, residents","LegonMed 2025"],["12","Institutes covering every dimension of healthcare education","LegonMed 2025"],["Free","Module 1 of every course — no barriers to starting","LegonMed 2025"]].map(([n,l,s])=>(
+              {[["1B+","People in Africa who need better-trained healthcare professionals","WHO 2024"],["<10%","Of sub-Saharan Africa has access to quality medical education","UNESCO 2023"],["30","Live courses across medicine, pharmacology, and health sciences","LegonMed 2025"],["5","Health professions served — medicine, pharmacy, nursing, allied health, residents","LegonMed 2025"],["12","Institutes covering every dimension of healthcare education","LegonMed 2025"],["Free","Module 1 of every course — no barriers to starting","LegonMed 2025"]].map(([n,l,s])=>(
                 <div key={n} style={{background:"rgba(255,255,255,.06)",borderRadius:14,padding:"22px 18px",border:"1px solid rgba(200,169,81,.18)",textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,3.5vw,36px)",fontWeight:900,color:C.gold,marginBottom:8}}>{n}</div>
                   <p style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:13.5,color:"rgba(255,255,255,.82)",lineHeight:1.7,marginBottom:7}}>{l}</p>
