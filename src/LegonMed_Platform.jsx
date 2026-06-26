@@ -13,6 +13,7 @@ import CHEMOCourse from "./courses/CHEMOCourse.jsx";
 import PGXCourse from "./courses/PGXCourse.jsx";
 import AIPCourse from "./courses/AIPCourse.jsx";
 import PRMCourse from "./courses/PRMCourse.jsx";
+import GDCourse from "./courses/GDCourse.jsx";
 import CPKCourse from "./courses/CPKCourse.jsx";
 import RenalPharmCourse from "./courses/RenalPharmCourse";
 import NPCourse from "./courses/NPCourse.jsx";
@@ -71,7 +72,7 @@ const C = {
   txt:"#1a1a2e",muted:"#5a6a8a",ok:"#0a7c4a",err:"#c0392b",bg:"#f0f4ff",
 };
 const RC={doctor:"#003087",nurse:"#0d5e6e",pharmacist:"#6E2C00",labtech:"#1a5276",student:"#5b2d8e"};
-const RL={doctor:"\u{1F468}\u200D\u2695\uFE0F Doctor / Clinician",nurse:"\u{1F469}\u200D\u2695\uFE0F Nurse / Midwife",pharmacist:"\uD83D\uDC8A Pharmacist",labtech:"\uD83D\uDD2C Lab Scientist",student:"\uD83C\uDF93 Student"};
+const RL={doctor:"\u{1F468}\u200D\u2695\uFE0F Doctor / Clinician",nurse:"\u{1F469}\u200D\u2695\uFE0F Nurse / Midwife",pharmacist:"\uD83D\uDC8A Pharmacist",labtech:"\uD83D\uDD2C Allied Health Scientist",student:"\uD83C\uDF93 Student"};
 const ADMIN_PW="legonmed@UGMS2025!";
 
 const UGLogo=({size=60})=>(
@@ -94,7 +95,7 @@ const PILLARS=[
       {id:"pe",title:"Preeclampsia & Eclampsia",sub:"Storm in the Womb",status:"live",icon:"\uD83E\uDDEC",dur:"19h+",modules:7},
       {id:"oh",title:"Obstetric Haemorrhage",sub:"When Blood Won't Stop",status:"live",icon:"\uD83E\uDE78",dur:"12h",modules:5},
       {id:"ms",title:"Maternal Sepsis",sub:"The Silent Invasion",status:"live",icon:"\uD83E\uDDA0",dur:"14h",modules:7},
-      {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"soon",icon:"\uD83C\uDF6C",dur:"10h",modules:4},
+      {id:"gd",title:"Gestational Diabetes",sub:"Sweet But Dangerous",status:"live",icon:"\uD83C\uDF6C",dur:"10h",modules:6},
       {id:"ptl",title:"Preterm Labour",sub:"Born Too Soon",status:"soon",icon:"\uD83D\uDC76",dur:"8h",modules:4},
       {id:"ep",title:"Ectopic Pregnancy",sub:"Out of Place",status:"live",icon:"\u26A0\uFE0F",dur:"15h",modules:6},
       {id:"hg",title:"Hyperemesis Gravidarum",sub:"Beyond Morning Sickness",status:"soon",icon:"\uD83E\uDD22",dur:"5h",modules:3},
@@ -383,7 +384,7 @@ const PILLARS=[
     ]},
    ]
   },
-  {id:"nmi",num:"11",icon:"🩺",name:"LegonMed Nursing & Midwifery Institute",tagline:"Caring Is a Science. Master Both.",color:"#0277BD",type:"education",
+  {id:"nmi",num:"11",icon:"🩺",name:"Nursing & Midwifery Institute",tagline:"Caring Is a Science. Master Both.",color:"#0277BD",type:"education",
    desc:"A comprehensive nursing and midwifery school built around the Ghana NMC licensing cadres, the Ghana College of Nurses and Midwives fellowship specialties, the full NCLEX-RN Client Needs framework, and the ICM core competencies — from foundational nursing science through to advanced specialist and leadership practice.",
    categories:[
     {name:"Foundations of Nursing Science",icon:"📖",courses:[
@@ -460,7 +461,7 @@ const PILLARS=[
     ]},
    ]
   },
-  {id:"ahi",num:"12",icon:"🔬",name:"LegonMed Allied Health Institute",tagline:"Every Profession. Every System. Every Patient.",color:"#4A148C",type:"education",
+  {id:"ahi",num:"12",icon:"🔬",name:"Allied Health Institute",tagline:"Every Profession. Every System. Every Patient.",color:"#4A148C",type:"education",
    desc:"A discipline-by-discipline allied health school covering every profession regulated by Ghana's Allied Health Professions Council — plus Speech & Language Therapy as an emerging global standard discipline. Built for undergraduate students, practising allied health professionals, and those preparing for licensure.",
    categories:[
     {name:"Physiotherapy",icon:"🦵",courses:[
@@ -2545,6 +2546,16 @@ export default function LegonMed(){
         onGoHome={() => go("home")}
       />
     );
+  if (view === "course" && activeCourse === "gd")
+    return (
+      <GDCourse
+        session={session}
+        registered={registered}
+        onBack={() => go("pillar", PILLARS[0])}
+        onRegister={() => setShowReg(true)}
+        onGoHome={() => go("home")}
+      />
+    );
 
   if(view==="course"&&activeCourse==="gp") return(
     <GPCourse session={session} registered={registered} onBack={()=>go("home")} onRegister={()=>setShowReg(true)} onGoHome={()=>go("home")}/>
@@ -2880,7 +2891,7 @@ export default function LegonMed(){
               The World's Leading Healthcare Education Ecosystem
             </p>
             <p style={{color:"rgba(255,255,255,.82)",fontSize:"clamp(14px,2vw,17.5px)",maxWidth:720,margin:"0 auto 38px",lineHeight:1.9,fontFamily:"'Source Sans 3',sans-serif"}}>
-              Medical school. Pharmacology institute. Clinical simulator. AI tutor. Skills lab. Research hub. Competency passport. CPD. All in one platform — built in Africa, for the world.
+              Medical School. Pharmacy & Pharmaceutical Sciences. Pharmacology Institute. Nursing & Midwifery Institute. Allied Health Institute. Clinical Simulator. AI Tutor. Skills Lab. Research Hub. Competency Passport. CPD. All in one platform — built in Africa, for the world.
             </p>
             <div style={{display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
               <button style={btn("primary",{fontSize:16,padding:"16px 38px"})} className="pulse" onClick={()=>go("course")}>
@@ -2891,7 +2902,7 @@ export default function LegonMed(){
               </button>
             </div>
             <div style={{display:"flex",gap:28,justifyContent:"center",marginTop:52,flexWrap:"wrap"}}>
-              {[["12","Pillars"],["100+","Courses Planned"],["5","Professions"],["30","Live Now"],["Free","To Start"]].map(([n,l])=>(
+              {[["12","Pillars"],["200+","Courses Planned"],["5","Professions"],["30","Live Now"],["Free","To Start"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center"}}>
                   <div style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(26px,4vw,42px)",fontWeight:900,color:C.gold}}>{n}</div>
                   <div style={{color:"rgba(255,255,255,.6)",fontSize:10.5,fontFamily:"'Source Sans 3',sans-serif",letterSpacing:1.5,textTransform:"uppercase"}}>{l}</div>
@@ -2904,7 +2915,7 @@ export default function LegonMed(){
         {/* MISSION STRIP */}
         <div style={{background:`linear-gradient(135deg,${C.blue}08,${C.gold}06)`,borderTop:"3px solid "+C.gold,borderBottom:"1px solid "+C.blue+"18",padding:"22px"}}>
           <div style={{maxWidth:880,margin:"0 auto",textAlign:"center"}}>
-            <p style={{fontFamily:"'Georgia',serif",fontSize:"clamp(13px,2vw,16px)",color:C.txt,lineHeight:2.05,fontStyle:"italic"}}>"LegonMed will not be another online course platform. It will combine the strengths of traditional universities, medical schools, simulation centres, AI tutors, competency-based education systems, and professional credentialing into a single intelligent platform."</p>
+            <p style={{fontFamily:"'Georgia',serif",fontSize:"clamp(13px,2vw,16px)",color:C.txt,lineHeight:2.05,fontStyle:"italic"}}>"LegonMed is not merely reimagining health profession education; it is redefining how the world prepares healthcare professionals. By uniting the best elements of higher education, clinical training, simulation, artificial intelligence, competency based assessment, lifelong learning, and professional credentialing, LegonMed creates a single intelligent ecosystem for health sciences education. From the first day of training to specialist practice and continuous professional development, LegonMed exists to make world class healthcare education accessible, immersive, personalized, and transformative for learners everywhere."</p>
             <div style={{fontFamily:"'Source Sans 3',sans-serif",fontSize:12.5,color:C.gold,marginTop:9,fontWeight:700,letterSpacing:1}}>— PROF. KENNEDY KWAMI EDEM KUKUIA · FOUNDER & VISIONARY</div>
           </div>
         </div>
@@ -2947,10 +2958,10 @@ export default function LegonMed(){
         <div style={{background:`linear-gradient(135deg,${C.dark},${C.blue})`,padding:"68px 24px"}}>
           <div style={{maxWidth:1100,margin:"0 auto"}}>
             <div style={{textAlign:"center",marginBottom:44}}>
-              <span style={bdg}>Now Live · 28 Courses Across 12 Institutes</span>
+              <span style={bdg}>Now Live · 30 Courses Across 12 Institutes</span>
               <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(24px,4vw,44px)",fontWeight:900,color:"#fff",marginTop:14,marginBottom:10}}>Start Learning Today. Free.</h2>
               <p style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(14px,2.5vw,20px)",color:C.gold,fontStyle:"italic",marginBottom:14}}>Every course. Every profession. Module 1 always free.</p>
-              <p style={{color:"rgba(255,255,255,.78)",fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:640,margin:"0 auto 32px",lineHeight:1.9}}>From Clinical Medicine to Pharmacogenomics to AI in Drug Science — LegonMed now offers 28 live courses built for medical students, pharmacists, nurses, residents, and allied health professionals across Africa and the world.</p>
+              <p style={{color:"rgba(255,255,255,.78)",fontFamily:"'Source Sans 3',sans-serif",fontSize:15,maxWidth:640,margin:"0 auto 32px",lineHeight:1.9}}>From Clinical Medicine to Pharmacogenomics to AI in Drug Science — LegonMed now offers 30 live courses built for health science students, medical doctors, pharmacists, nurses, residents, and allied health professionals across Africa and the world.</p>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:14}}>
               {[
